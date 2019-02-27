@@ -2,6 +2,10 @@
 
 To run the analysis, just:
 
-1.  install slither (`pip install slither-analyzer`)
-2.  install universalmutator (`pip install universalmutator`)
-3.  `python analzyeall.py >& stats.txt`
+1.  install universalmutator (`pip install universalmutator`)
+
+2.  install, e.g., slither (`pip install slither-analyzer`)
+
+3.  `python analzyeslither.py >& slither_stats.txt`
+
+Installing Securify is a bit more work, but the analysis works the same and has the same interpretation.
