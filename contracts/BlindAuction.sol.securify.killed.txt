@@ -1,5 +1,0 @@
-BlindAuction.mutant.67.sol
-BlindAuction.mutant.77.sol
-BlindAuction.mutant.68.sol
-BlindAuction.mutant.71.sol
-BlindAuction.mutant.192.sol

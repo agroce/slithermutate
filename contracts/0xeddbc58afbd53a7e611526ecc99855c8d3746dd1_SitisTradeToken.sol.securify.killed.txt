@@ -1,2 +1,0 @@
-0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.147.sol
-0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.98.sol
