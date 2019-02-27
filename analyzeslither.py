@@ -37,7 +37,7 @@ for C in glob.glob("contracts/*.sol"):
         print("NO VALID MUTANTS, SKIPPING...")
         continue
     with open("out.txt", 'w') as outf:
-        subprocess.call(["analyze_mutants", C, "python maxissues.py " +
+        subprocess.call(["analyze_mutants", C, "python maxissuesslither.py " +
                              str(numIssues) + " " + C,
                              "--mutantDir", "mutants"],
                             stdout=outf, stderr=outf)
