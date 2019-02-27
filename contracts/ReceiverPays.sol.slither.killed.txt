@@ -1,0 +1,9 @@
+ReceiverPays.mutant.34.sol
+ReceiverPays.mutant.10.sol
+ReceiverPays.mutant.33.sol
+ReceiverPays.mutant.9.sol
+ReceiverPays.mutant.3.sol
+ReceiverPays.mutant.32.sol
+ReceiverPays.mutant.8.sol
+ReceiverPays.mutant.7.sol
+ReceiverPays.mutant.20.sol

@@ -1,0 +1,14 @@
+SimplePaymentChannel.mutant.34.sol
+SimplePaymentChannel.mutant.55.sol
+SimplePaymentChannel.mutant.11.sol
+SimplePaymentChannel.mutant.6.sol
+SimplePaymentChannel.mutant.62.sol
+SimplePaymentChannel.mutant.32.sol
+SimplePaymentChannel.mutant.8.sol
+SimplePaymentChannel.mutant.9.sol
+SimplePaymentChannel.mutant.10.sol
+SimplePaymentChannel.mutant.5.sol
+SimplePaymentChannel.mutant.33.sol
+SimplePaymentChannel.mutant.51.sol
+SimplePaymentChannel.mutant.35.sol
+SimplePaymentChannel.mutant.50.sol

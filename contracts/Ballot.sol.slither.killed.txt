@@ -1,0 +1,12 @@
+Ballot.mutant.151.sol
+Ballot.mutant.163.sol
+Ballot.mutant.5.sol
+Ballot.mutant.7.sol
+Ballot.mutant.176.sol
+Ballot.mutant.166.sol
+Ballot.mutant.6.sol
+Ballot.mutant.105.sol
+Ballot.mutant.30.sol
+Ballot.mutant.76.sol
+Ballot.mutant.159.sol
+Ballot.mutant.170.sol
