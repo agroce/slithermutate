@@ -23,16 +23,23 @@ for C in glob.glob("contracts/*.sol"):
         numIssues = runSecurify(C)
     print("ISSUES:", numIssues)
 
-    sys.stdout.flush()    
-    with open("out.txt", 'w') as outf:
-        r = subprocess.call(["mutate", C, "--mutantDir", "mutants"],
-                                stdout=outf, stderr=outf)
-    with open("out.txt", 'r') as outf:
-        for line in outf:
-            if "MUTANTS" in line:
-                print(line, end=" ")
-                if " VALID MUTANTS" in line:
-                    numMutants = int(line.split()[0])
+    sys.stdout.flush()
+    if not os.path.exists(C.replace("contracts/", "mutants/").replace(".sol", ".mutant.0.sol")):
+        print("GENERATING MUTANTS...")
+        with open("out.txt", 'w') as outf:
+            r = subprocess.call(["mutate", C, "--mutantDir", "mutants"],
+                                    stdout=outf, stderr=outf)
+        with open("out.txt", 'r') as outf:
+            for line in outf:
+                if "MUTANTS" in line:
+                    print(line, end=" ")
+                    if " VALID MUTANTS" in line:
+                        numMutants = int(line.split()[0])
+    else:
+        numMutants = len(glob.glob(C.replace("contracts/",
+                                             "mutants/").replace(".sol",
+                                                                 ".mutant.*.sol")))
+        print(numMutants, "MUTANTS FOR CONTRACT FOUND")    
     sys.stdout.flush()
     if numMutants == 0:
         print("NO VALID MUTANTS, SKIPPING...")
@@ -50,8 +57,8 @@ for C in glob.glob("contracts/*.sol"):
     subprocess.call(["wc","-l","killed.txt"])
     subprocess.call(["wc","-l","notkilled.txt"])
     sys.stdout.flush()    
-    subprocess.call(["cp","killed.txt",C+".killed.txt"])
-    subprocess.call(["cp","notkilled.txt",C+".notkilled.txt"])
+    subprocess.call(["cp","killed.txt",C+".securify.killed.txt"])
+    subprocess.call(["cp","notkilled.txt",C+".securify.notkilled.txt"])
     scores.append(score)
     if numIssues == 0:
         cleanScores.append(score)
