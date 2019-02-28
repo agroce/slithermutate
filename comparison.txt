@@ -1,26 +1,29 @@
 ================================================================================
 contracts/0xe624fb0c2666c393083acf34cb35c10b37a83ba5_Danakil.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 ****************************************
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0x896350cc0e416727262b339e307e4ef62078a4c3_test.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 ****************************************
 
 slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.0.sol not detected by securify
+slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.0.sol not detected by smartcheck
 slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.2.sol not detected by securify
+slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.2.sol not detected by smartcheck
 slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.1.sol not detected by securify
+slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.1.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 1
 ****************************************
 
 securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.61.sol not detected by slither
@@ -52,71 +55,265 @@ DIFF:
 >     allowed[msg.sender][_spender] = _value;
 
 
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.170.sol not detected by slither
+DIFF:
+179c179
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.141.sol not detected by slither
+DIFF:
+158c158
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.201.sol not detected by slither
+DIFF:
+193c193
+<         balances[tx.origin] = INITIAL_SUPPLY;
+---
+>         balances[msg.sender] = INITIAL_SUPPLY;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.57.sol not detected by slither
+DIFF:
+80c80
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.110.sol not detected by slither
+DIFF:
+115c115
+<     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.121.sol not detected by slither
+DIFF:
+117c117
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.71.sol not detected by slither
+DIFF:
+83c83
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.72.sol not detected by slither
+DIFF:
+83c83
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.132.sol not detected by slither
+DIFF:
+133c133
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.157.sol not detected by slither
+DIFF:
+175c175
+<       allowed[tx.origin][_spender] = 0;
+---
+>       allowed[msg.sender][_spender] = 0;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.65.sol not detected by slither
+DIFF:
+82c82
+<     emit Transfer(tx.origin, _to, _value);
+---
+>     emit Transfer(msg.sender, _to, _value);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.122.sol not detected by slither
+DIFF:
+131c131
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.150.sol not detected by slither
+DIFF:
+173c173
+<     uint oldValue = allowed[tx.origin][_spender];
+---
+>     uint oldValue = allowed[msg.sender][_spender];
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.169.sol not detected by slither
+DIFF:
+179c179
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.142.sol not detected by slither
+DIFF:
+158c158
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.56.sol not detected by slither
+DIFF:
+80c80
+<     balances[tx.origin] = balances[msg.sender].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.133.sol not detected by slither
+DIFF:
+133c133
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.126.sol not detected by slither
+DIFF:
+132c132
+<     emit Approval(tx.origin, _spender, _value);
+---
+>     emit Approval(msg.sender, _spender, _value);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.111.sol not detected by slither
+DIFF:
+115c115
+<     allowed[_from][msg.sender] = allowed[_from][tx.origin].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.120.sol not detected by slither
+DIFF:
+117c117
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.137.sol not detected by slither
+DIFF:
+157c157
+<     allowed[msg.sender][_spender] = allowed[tx.origin][_spender].add(_addedValue);
+---
+>     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.165.sol not detected by slither
+DIFF:
+177c177
+<       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+---
+>       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+
+smartcheck detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.136.sol not detected by slither
+DIFF:
+157c157
+<     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+---
+>     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+
+
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.166.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.166.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.197.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.197.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.82.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.82.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.127.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.127.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.161.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.161.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.70.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.90.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.90.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.112.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.112.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.123.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.123.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.62.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.62.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.102.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.102.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.119.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.175.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.175.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.115.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.115.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.138.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.138.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.143.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.143.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.198.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.198.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.131.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.44.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.44.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.200.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.200.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.53.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.53.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.158.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.158.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.52.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.58.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.58.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.106.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.106.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.66.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.66.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.171.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.171.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.99.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.99.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.147.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.147.sol not detected by smartcheck
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.98.sol not detected by securify
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+5 MUTANTS WERE DETECTED BY ALL TOOLS:
+   0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.52.sol
+   0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.131.sol
+   0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.119.sol
+   0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.98.sol
+   0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.70.sol
 
 ================================================================================
 contracts/0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 2 SMARTCHECK 0
 ****************************************
 
 slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.3.sol not detected by securify
+slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.3.sol not detected by smartcheck
 slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.2.sol not detected by securify
+slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.2.sol not detected by smartcheck
 slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.4.sol not detected by securify
+slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.4.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0xa9eb03f3a499e274170c378f958e4a0cbea2c7ef_NoFoundationProposal.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 1 SMARTCHECK 0
 ****************************************
 
 slither detects 0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.mutant.10.sol not detected by securify
+slither detects 0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.mutant.10.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 1 SMARTCHECK 1
 ****************************************
 
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.19.sol not detected by slither
@@ -190,48 +387,253 @@ DIFF:
 >     balances[msg.sender] = balances[msg.sender].sub(_value);
 
 
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.188.sol not detected by slither
+DIFF:
+286c286
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.203.sol not detected by slither
+DIFF:
+309c309
+<       allowed[tx.origin][_spender] = 0;
+---
+>       allowed[msg.sender][_spender] = 0;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.211.sol not detected by slither
+DIFF:
+311c311
+<       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+---
+>       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.186.sol not detected by slither
+DIFF:
+285c285
+<       allowed[tx.origin][_spender].add(_addedValue));
+---
+>       allowed[msg.sender][_spender].add(_addedValue));
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.102.sol not detected by slither
+DIFF:
+157c157
+<     balances[tx.origin] = balances[msg.sender].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.171.sol not detected by slither
+DIFF:
+245c245
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.159.sol not detected by slither
+DIFF:
+229c229
+<     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.216.sol not detected by slither
+DIFF:
+313c313
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.182.sol not detected by slither
+DIFF:
+247c247
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.181.sol not detected by slither
+DIFF:
+247c247
+< revert();
+---
+>     return true;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.175.sol not detected by slither
+DIFF:
+246c246
+<     emit Approval(tx.origin, _spender, _value);
+---
+>     emit Approval(msg.sender, _spender, _value);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.111.sol not detected by slither
+DIFF:
+159c159
+<     emit Transfer(tx.origin, _to, _value);
+---
+>     emit Transfer(msg.sender, _to, _value);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.185.sol not detected by slither
+DIFF:
+284c284
+<     allowed[tx.origin][_spender] = (
+---
+>     allowed[msg.sender][_spender] = (
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.5.sol not detected by slither
+DIFF:
+24c24
+<     owner = tx.origin;
+---
+>     owner = msg.sender;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.14.sol not detected by slither
+DIFF:
+31c31
+<     require(tx.origin == owner);
+---
+>     require(msg.sender == owner);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.236.sol not detected by slither
+DIFF:
+340c340
+<     require(tx.origin == owner);
+---
+>     require(msg.sender == owner);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.117.sol not detected by slither
+DIFF:
+160c160
+< revert();
+---
+>     return true;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.215.sol not detected by slither
+DIFF:
+313c313
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.187.sol not detected by slither
+DIFF:
+286c286
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.196.sol not detected by slither
+DIFF:
+307c307
+<     uint oldValue = allowed[tx.origin][_spender];
+---
+>     uint oldValue = allowed[msg.sender][_spender];
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.169.sol not detected by slither
+DIFF:
+231c231
+< revert();
+---
+>     return true;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.118.sol not detected by slither
+DIFF:
+160c160
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.170.sol not detected by slither
+DIFF:
+231c231
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.160.sol not detected by slither
+DIFF:
+229c229
+<     allowed[_from][msg.sender] = allowed[_from][tx.origin].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.103.sol not detected by slither
+DIFF:
+157c157
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.193.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.193.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.112.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.112.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.243.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.243.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.168.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.104.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.104.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.246.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.246.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.221.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.221.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.147.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.172.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.172.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.176.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.176.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.116.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.108.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.108.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.161.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.161.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.204.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.204.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.131.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.131.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.148.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.148.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.99.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.99.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.151.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.151.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.139.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.139.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.164.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.164.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.207.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.207.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.212.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.212.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.98.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.189.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.189.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.244.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.244.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.180.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.155.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.155.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.217.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.217.sol not detected by smartcheck
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.90.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.90.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+5 MUTANTS WERE DETECTED BY ALL TOOLS:
+   0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.116.sol
+   0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.180.sol
+   0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.168.sol
+   0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.147.sol
+   0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.98.sol
 
 ================================================================================
 contracts/0xbf54d498760fe8e8f4dff031b783362de7043cb4_VerifiedExample02.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 2 SMARTCHECK 2
 ****************************************
 
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.247.sol not detected by slither
@@ -319,88 +721,356 @@ DIFF:
 >     assert(b <= a);
 
 
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.167.sol not detected by slither
+DIFF:
+188c188
+<       allowed[tx.origin][_spender].add(_addedValue));
+---
+>       allowed[msg.sender][_spender].add(_addedValue));
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.197.sol not detected by slither
+DIFF:
+216c216
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.156.sol not detected by slither
+DIFF:
+149c149
+<     emit Approval(tx.origin, _spender, _value);
+---
+>     emit Approval(msg.sender, _spender, _value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.99.sol not detected by slither
+DIFF:
+78c78
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.219.sol not detected by slither
+DIFF:
+245c245
+<     require(tx.origin == owner);
+---
+>     require(msg.sender == owner);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.162.sol not detected by slither
+DIFF:
+150c150
+< revert();
+---
+>     return true;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.140.sol not detected by slither
+DIFF:
+132c132
+<     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.184.sol not detected by slither
+DIFF:
+212c212
+<       allowed[tx.origin][_spender] = 0;
+---
+>       allowed[msg.sender][_spender] = 0;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.192.sol not detected by slither
+DIFF:
+214c214
+<       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+---
+>       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.303.sol not detected by slither
+DIFF:
+384c384
+<     _burn(tx.origin, _value);
+---
+>     _burn(msg.sender, _value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.288.sol not detected by slither
+DIFF:
+338c338
+< revert();
+---
+>     return super.transferFrom(_from, _to, _value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.92.sol not detected by slither
+DIFF:
+77c77
+<     emit Transfer(tx.origin, _to, _value);
+---
+>     emit Transfer(msg.sender, _to, _value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.358.sol not detected by slither
+DIFF:
+408c408
+<         balances[tx.origin] = totalSupply_;
+---
+>         balances[msg.sender] = totalSupply_;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.151.sol not detected by slither
+DIFF:
+134c134
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.166.sol not detected by slither
+DIFF:
+187c187
+<     allowed[tx.origin][_spender] = (
+---
+>     allowed[msg.sender][_spender] = (
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.163.sol not detected by slither
+DIFF:
+150c150
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.150.sol not detected by slither
+DIFF:
+134c134
+< revert();
+---
+>     return true;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.292.sol not detected by slither
+DIFF:
+349c349
+< revert();
+---
+>     return super.approve(_spender, _value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.196.sol not detected by slither
+DIFF:
+216c216
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.168.sol not detected by slither
+DIFF:
+189c189
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.169.sol not detected by slither
+DIFF:
+189c189
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.84.sol not detected by slither
+DIFF:
+75c75
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.152.sol not detected by slither
+DIFF:
+148c148
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.177.sol not detected by slither
+DIFF:
+210c210
+<     uint oldValue = allowed[tx.origin][_spender];
+---
+>     uint oldValue = allowed[msg.sender][_spender];
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.210.sol not detected by slither
+DIFF:
+238c238
+<     owner = tx.origin;
+---
+>     owner = msg.sender;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.284.sol not detected by slither
+DIFF:
+326c326
+< revert();
+---
+>     return super.transfer(_to, _value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.141.sol not detected by slither
+DIFF:
+132c132
+<     allowed[_from][msg.sender] = allowed[_from][tx.origin].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.98.sol not detected by slither
+DIFF:
+78c78
+< revert();
+---
+>     return true;
+
+smartcheck detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.83.sol not detected by slither
+DIFF:
+75c75
+<     balances[tx.origin] = balances[msg.sender].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.97.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.161.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.170.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.170.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.80.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.80.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.128.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.363.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.363.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.198.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.198.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.149.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.153.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.153.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.85.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.85.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.145.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.145.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.291.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.304.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.304.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.112.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.112.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.299.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.299.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.287.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.188.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.188.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.93.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.93.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.283.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.157.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.157.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.202.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.202.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.295.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.295.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.136.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.136.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.129.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.129.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.120.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.120.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.185.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.185.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.79.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.193.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.193.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.142.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.142.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.174.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.174.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.71.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.71.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.89.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.89.sol not detected by smartcheck
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.132.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.132.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+8 MUTANTS WERE DETECTED BY ALL TOOLS:
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.161.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.149.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.291.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.79.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.128.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.283.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.97.sol
+   0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.287.sol
 
 ================================================================================
 contracts/SimpleOpenAuction.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 6 SMARTCHECK 1
 ****************************************
 
 slither detects SimpleOpenAuction.mutant.51.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.51.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.6.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.6.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.15.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.15.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.62.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.62.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.4.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.4.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.17.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.17.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.82.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.82.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.87.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.87.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.94.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.94.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.125.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.125.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.118.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.118.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.103.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.103.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.14.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.14.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.54.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.54.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.91.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.91.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.52.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.52.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.56.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.56.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.78.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.78.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.121.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.121.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.72.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.72.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.58.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.58.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.53.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.53.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.25.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.25.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.127.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.127.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.12.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.12.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.110.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.110.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.57.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.57.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.13.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.13.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.44.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.44.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.96.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.96.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.5.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.5.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.55.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.55.sol not detected by smartcheck
 slither detects SimpleOpenAuction.mutant.122.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.122.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/Ballot.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 2 SMARTCHECK 2
 ****************************************
 
 securify detects Ballot.mutant.143.sol not detected by slither
@@ -411,24 +1081,72 @@ DIFF:
 >         Voter storage sender = voters[msg.sender];
 
 
+smartcheck detects Ballot.mutant.58.sol not detected by slither
+DIFF:
+77c77
+<         Voter storage sender = voters[tx.origin];
+---
+>         Voter storage sender = voters[msg.sender];
+
+smartcheck detects Ballot.mutant.4.sol not detected by slither
+DIFF:
+32c32
+<         chairperson = tx.origin;
+---
+>         chairperson = msg.sender;
+
+smartcheck detects Ballot.mutant.146.sol not detected by slither
+DIFF:
+117c117
+<         require(sender.weight >= 0, "Has no right to vote");
+---
+>         require(sender.weight != 0, "Has no right to vote");
+
+smartcheck detects Ballot.mutant.143.sol not detected by slither
+DIFF:
+116c116
+<         Voter storage sender = voters[tx.origin];
+---
+>         Voter storage sender = voters[msg.sender];
+
+smartcheck detects Ballot.mutant.43.sol not detected by slither
+DIFF:
+70c70
+<         require(voters[voter].weight >= 0);
+---
+>         require(voters[voter].weight == 0);
+
+
 slither detects Ballot.mutant.151.sol not detected by securify
+slither detects Ballot.mutant.151.sol not detected by smartcheck
 slither detects Ballot.mutant.163.sol not detected by securify
+slither detects Ballot.mutant.163.sol not detected by smartcheck
 slither detects Ballot.mutant.5.sol not detected by securify
+slither detects Ballot.mutant.5.sol not detected by smartcheck
 slither detects Ballot.mutant.7.sol not detected by securify
+slither detects Ballot.mutant.7.sol not detected by smartcheck
 slither detects Ballot.mutant.176.sol not detected by securify
+slither detects Ballot.mutant.176.sol not detected by smartcheck
 slither detects Ballot.mutant.166.sol not detected by securify
+slither detects Ballot.mutant.166.sol not detected by smartcheck
 slither detects Ballot.mutant.6.sol not detected by securify
+slither detects Ballot.mutant.6.sol not detected by smartcheck
 slither detects Ballot.mutant.105.sol not detected by securify
 slither detects Ballot.mutant.76.sol not detected by securify
 slither detects Ballot.mutant.159.sol not detected by securify
+slither detects Ballot.mutant.159.sol not detected by smartcheck
 slither detects Ballot.mutant.170.sol not detected by securify
+slither detects Ballot.mutant.170.sol not detected by smartcheck
 
-1 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+4 MUTANTS WERE DETECTED BY ALL TOOLS:
+   Ballot.mutant.30.sol
+   Ballot.mutant.76.sol
+   Ballot.mutant.105.sol
+   Ballot.mutant.30.sol
 
 ================================================================================
 contracts/0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 1
 ****************************************
 
 securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.122.sol not detected by slither
@@ -460,75 +1178,268 @@ DIFF:
 >     balances[msg.sender] = balances[msg.sender].sub(_value);
 
 
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.122.sol not detected by slither
+DIFF:
+131c131
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.110.sol not detected by slither
+DIFF:
+115c115
+<     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.56.sol not detected by slither
+DIFF:
+80c80
+<     balances[tx.origin] = balances[msg.sender].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.137.sol not detected by slither
+DIFF:
+157c157
+<     allowed[msg.sender][_spender] = allowed[tx.origin][_spender].add(_addedValue);
+---
+>     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.72.sol not detected by slither
+DIFF:
+83c83
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.170.sol not detected by slither
+DIFF:
+179c179
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.208.sol not detected by slither
+DIFF:
+194c194
+<         balances[tx.origin] = INITIAL_SUPPLY;
+---
+>         balances[msg.sender] = INITIAL_SUPPLY;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.169.sol not detected by slither
+DIFF:
+179c179
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.132.sol not detected by slither
+DIFF:
+133c133
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.71.sol not detected by slither
+DIFF:
+83c83
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.126.sol not detected by slither
+DIFF:
+132c132
+<     emit Approval(tx.origin, _spender, _value);
+---
+>     emit Approval(msg.sender, _spender, _value);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.111.sol not detected by slither
+DIFF:
+115c115
+<     allowed[_from][msg.sender] = allowed[_from][tx.origin].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.120.sol not detected by slither
+DIFF:
+117c117
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.141.sol not detected by slither
+DIFF:
+158c158
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.142.sol not detected by slither
+DIFF:
+158c158
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.57.sol not detected by slither
+DIFF:
+80c80
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.150.sol not detected by slither
+DIFF:
+173c173
+<     uint oldValue = allowed[tx.origin][_spender];
+---
+>     uint oldValue = allowed[msg.sender][_spender];
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.65.sol not detected by slither
+DIFF:
+82c82
+<     emit Transfer(tx.origin, _to, _value);
+---
+>     emit Transfer(msg.sender, _to, _value);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.121.sol not detected by slither
+DIFF:
+117c117
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.133.sol not detected by slither
+DIFF:
+133c133
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.157.sol not detected by slither
+DIFF:
+175c175
+<       allowed[tx.origin][_spender] = 0;
+---
+>       allowed[msg.sender][_spender] = 0;
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.136.sol not detected by slither
+DIFF:
+157c157
+<     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+---
+>     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+
+smartcheck detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.165.sol not detected by slither
+DIFF:
+177c177
+<       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+---
+>       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+
+
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.131.sol not detected by securify
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.99.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.99.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.66.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.66.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.171.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.171.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.161.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.161.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.90.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.90.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.147.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.147.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.205.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.205.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.166.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.166.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.119.sol not detected by securify
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.58.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.58.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.123.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.123.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.52.sol not detected by securify
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.62.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.62.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.53.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.53.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.175.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.175.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.127.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.127.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.158.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.158.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.143.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.143.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.106.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.106.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.102.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.102.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.138.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.138.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.115.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.115.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.98.sol not detected by securify
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.112.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.112.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.207.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.207.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.204.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.204.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.70.sol not detected by securify
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.82.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.82.sol not detected by smartcheck
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.44.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.44.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+5 MUTANTS WERE DETECTED BY ALL TOOLS:
+   0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.70.sol
+   0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.52.sol
+   0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.98.sol
+   0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.131.sol
+   0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.119.sol
 
 ================================================================================
 contracts/0xc7dc19502db685fbfe3399042d443fef240d513b_SafeM.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 ****************************************
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0x3a933b622b82b5d6b2f27fa5a9be539747e8f92d_SafeMath.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x1450bde80a5c4082857827814f269d94d109771b_noFoundationProposal.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0xd9d01d4cb824219a8f482a0fad479cb971fd0628_EnterCoin.sol
-SLITHER FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 2 SECURIFY 0 SMARTCHECK 3
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x57914a2dd93d20940eeae8b9dfd53d8029456659_Address.sol
-SLITHER FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 1 SECURIFY 0 SMARTCHECK 0
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/ReceiverPays.sol
-SLITHER FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 2 SECURIFY 1 SMARTCHECK 0
 ****************************************
 
 securify detects ReceiverPays.mutant.22.sol not detected by slither
@@ -546,22 +1457,59 @@ DIFF:
 > revert();
 
 
+smartcheck detects ReceiverPays.mutant.23.sol not detected by slither
+DIFF:
+19c19
+<         tx.origin.transfer(amount);
+---
+>         msg.sender.transfer(amount);
+
+smartcheck detects ReceiverPays.mutant.35.sol not detected by slither
+DIFF:
+25c25
+<         selfdestruct(tx.origin);
+---
+>         selfdestruct(msg.sender);
+
+smartcheck detects ReceiverPays.mutant.0.sol not detected by slither
+DIFF:
+4c4
+<     address owner = tx.origin;
+---
+>     address owner = msg.sender;
+
+smartcheck detects ReceiverPays.mutant.12.sol not detected by slither
+DIFF:
+15c15
+<         bytes32 message = prefixed(keccak256(abi.encodePacked(tx.origin, amount, nonce, this)));
+---
+>         bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));
+
+
 slither detects ReceiverPays.mutant.34.sol not detected by securify
+slither detects ReceiverPays.mutant.34.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.10.sol not detected by securify
+slither detects ReceiverPays.mutant.10.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.33.sol not detected by securify
+slither detects ReceiverPays.mutant.33.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.9.sol not detected by securify
+slither detects ReceiverPays.mutant.9.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.3.sol not detected by securify
+slither detects ReceiverPays.mutant.3.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.32.sol not detected by securify
 slither detects ReceiverPays.mutant.8.sol not detected by securify
+slither detects ReceiverPays.mutant.8.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.7.sol not detected by securify
+slither detects ReceiverPays.mutant.7.sol not detected by smartcheck
 slither detects ReceiverPays.mutant.20.sol not detected by securify
+slither detects ReceiverPays.mutant.20.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+1 MUTANTS WERE DETECTED BY ALL TOOLS:
+   ReceiverPays.mutant.32.sol
 
 ================================================================================
 contracts/SimplePaymentChannel.sol
-SLITHER FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 2 SECURIFY 0 SMARTCHECK 1
 ****************************************
 
 securify detects SimplePaymentChannel.mutant.53.sol not detected by slither
@@ -579,64 +1527,95 @@ DIFF:
 >         selfdestruct(sender);
 
 
+
 slither detects SimplePaymentChannel.mutant.34.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.34.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.55.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.55.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.11.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.11.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.6.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.6.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.62.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.62.sol not detected by smartcheck
+slither detects SimplePaymentChannel.mutant.32.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.8.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.8.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.9.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.9.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.10.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.10.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.5.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.5.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.33.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.33.sol not detected by smartcheck
 slither detects SimplePaymentChannel.mutant.51.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.51.sol not detected by smartcheck
+slither detects SimplePaymentChannel.mutant.35.sol not detected by smartcheck
+slither detects SimplePaymentChannel.mutant.50.sol not detected by smartcheck
 
-3 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0xfDdD9B2093664411Ec07FAD807A660E3ad9c6ff5_ProofOfExistence.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 ****************************************
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0x305505c8c9d51602f3ebe0ce984ab2aeb0df3172_YesFoundationProposal.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 8 SMARTCHECK 0
 ****************************************
 
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.11.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.11.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.26.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.26.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.37.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.37.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.61.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.61.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.15.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.15.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.68.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.68.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.0.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.0.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.50.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.50.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.17.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.17.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.65.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.65.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.31.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.31.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.21.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.21.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.77.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.77.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.5.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.5.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.73.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.73.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.70.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.70.sol not detected by smartcheck
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.41.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.41.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/BlindAuction.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 1 SECURIFY 2 SMARTCHECK 1
 ****************************************
 
 securify detects BlindAuction.mutant.33.sol not detected by slither
@@ -647,61 +1626,94 @@ DIFF:
 >         bids[msg.sender].push(Bid({
 
 
+
 slither detects BlindAuction.mutant.67.sol not detected by securify
+slither detects BlindAuction.mutant.67.sol not detected by smartcheck
 slither detects BlindAuction.mutant.185.sol not detected by securify
+slither detects BlindAuction.mutant.185.sol not detected by smartcheck
 slither detects BlindAuction.mutant.101.sol not detected by securify
+slither detects BlindAuction.mutant.101.sol not detected by smartcheck
 slither detects BlindAuction.mutant.91.sol not detected by securify
+slither detects BlindAuction.mutant.91.sol not detected by smartcheck
 slither detects BlindAuction.mutant.121.sol not detected by securify
+slither detects BlindAuction.mutant.121.sol not detected by smartcheck
 slither detects BlindAuction.mutant.22.sol not detected by securify
+slither detects BlindAuction.mutant.22.sol not detected by smartcheck
 slither detects BlindAuction.mutant.90.sol not detected by securify
+slither detects BlindAuction.mutant.90.sol not detected by smartcheck
 slither detects BlindAuction.mutant.11.sol not detected by securify
 slither detects BlindAuction.mutant.158.sol not detected by securify
+slither detects BlindAuction.mutant.158.sol not detected by smartcheck
 slither detects BlindAuction.mutant.77.sol not detected by securify
+slither detects BlindAuction.mutant.77.sol not detected by smartcheck
 slither detects BlindAuction.mutant.180.sol not detected by securify
+slither detects BlindAuction.mutant.180.sol not detected by smartcheck
 slither detects BlindAuction.mutant.107.sol not detected by securify
+slither detects BlindAuction.mutant.107.sol not detected by smartcheck
 slither detects BlindAuction.mutant.71.sol not detected by securify
+slither detects BlindAuction.mutant.71.sol not detected by smartcheck
 slither detects BlindAuction.mutant.194.sol not detected by securify
+slither detects BlindAuction.mutant.194.sol not detected by smartcheck
 slither detects BlindAuction.mutant.106.sol not detected by securify
+slither detects BlindAuction.mutant.106.sol not detected by smartcheck
 slither detects BlindAuction.mutant.157.sol not detected by securify
+slither detects BlindAuction.mutant.157.sol not detected by smartcheck
 slither detects BlindAuction.mutant.160.sol not detected by securify
+slither detects BlindAuction.mutant.160.sol not detected by smartcheck
 slither detects BlindAuction.mutant.188.sol not detected by securify
+slither detects BlindAuction.mutant.188.sol not detected by smartcheck
 slither detects BlindAuction.mutant.68.sol not detected by securify
+slither detects BlindAuction.mutant.68.sol not detected by smartcheck
 slither detects BlindAuction.mutant.92.sol not detected by securify
+slither detects BlindAuction.mutant.92.sol not detected by smartcheck
 slither detects BlindAuction.mutant.21.sol not detected by securify
+slither detects BlindAuction.mutant.21.sol not detected by smartcheck
 slither detects BlindAuction.mutant.85.sol not detected by securify
+slither detects BlindAuction.mutant.85.sol not detected by smartcheck
 slither detects BlindAuction.mutant.8.sol not detected by securify
 slither detects BlindAuction.mutant.193.sol not detected by securify
+slither detects BlindAuction.mutant.193.sol not detected by smartcheck
 slither detects BlindAuction.mutant.23.sol not detected by securify
+slither detects BlindAuction.mutant.23.sol not detected by smartcheck
 slither detects BlindAuction.mutant.192.sol not detected by securify
+slither detects BlindAuction.mutant.192.sol not detected by smartcheck
 slither detects BlindAuction.mutant.124.sol not detected by securify
+slither detects BlindAuction.mutant.124.sol not detected by smartcheck
 slither detects BlindAuction.mutant.161.sol not detected by securify
+slither detects BlindAuction.mutant.161.sol not detected by smartcheck
 slither detects BlindAuction.mutant.159.sol not detected by securify
+slither detects BlindAuction.mutant.159.sol not detected by smartcheck
 slither detects BlindAuction.mutant.162.sol not detected by securify
+slither detects BlindAuction.mutant.162.sol not detected by smartcheck
 slither detects BlindAuction.mutant.174.sol not detected by securify
+slither detects BlindAuction.mutant.174.sol not detected by smartcheck
 slither detects BlindAuction.mutant.93.sol not detected by securify
+slither detects BlindAuction.mutant.93.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+2 MUTANTS WERE DETECTED BY ALL TOOLS:
+   BlindAuction.mutant.11.sol
+   BlindAuction.mutant.8.sol
 
 ================================================================================
 contracts/0xbc548594b0e17adcd1d551ae1ced65c2105d36fa_SafeMath.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 1 SMARTCHECK 0
 ****************************************
 
 slither detects 0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.mutant.8.sol not detected by securify
+slither detects 0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.mutant.8.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 1
 ****************************************
 
 securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.58.sol not detected by slither
@@ -733,89 +1745,363 @@ DIFF:
 >     balances[msg.sender] = balances[msg.sender].sub(_value);
 
 
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.110.sol not detected by slither
+DIFF:
+83c83
+<     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.121.sol not detected by slither
+DIFF:
+85c85
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.53.sol not detected by slither
+DIFF:
+53c53
+<     balances[tx.origin] = balances[msg.sender].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.68.sol not detected by slither
+DIFF:
+56c56
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.132.sol not detected by slither
+DIFF:
+91c91
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.136.sol not detected by slither
+DIFF:
+99c99
+<     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+---
+>     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.157.sol not detected by slither
+DIFF:
+107c107
+<       allowed[tx.origin][_spender] = 0;
+---
+>       allowed[msg.sender][_spender] = 0;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.198.sol not detected by slither
+DIFF:
+126c126
+<       balances[tx.origin] = INITIAL_SUPPLY;
+---
+>       balances[msg.sender] = INITIAL_SUPPLY;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.133.sol not detected by slither
+DIFF:
+91c91
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.165.sol not detected by slither
+DIFF:
+109c109
+<       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+---
+>       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.141.sol not detected by slither
+DIFF:
+100c100
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.62.sol not detected by slither
+DIFF:
+55c55
+<     emit Transfer(tx.origin, _to, _value);
+---
+>     emit Transfer(msg.sender, _to, _value);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.150.sol not detected by slither
+DIFF:
+105c105
+<     uint oldValue = allowed[tx.origin][_spender];
+---
+>     uint oldValue = allowed[msg.sender][_spender];
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.169.sol not detected by slither
+DIFF:
+111c111
+<     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.137.sol not detected by slither
+DIFF:
+99c99
+<     allowed[msg.sender][_spender] = allowed[tx.origin][_spender].add(_addedValue);
+---
+>     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.111.sol not detected by slither
+DIFF:
+83c83
+<     allowed[_from][msg.sender] = allowed[_from][tx.origin].sub(_value);
+---
+>     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.69.sol not detected by slither
+DIFF:
+56c56
+<     /*return true;*/
+---
+>     return true;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.170.sol not detected by slither
+DIFF:
+111c111
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.122.sol not detected by slither
+DIFF:
+89c89
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.120.sol not detected by slither
+DIFF:
+85c85
+< revert();
+---
+>     return true;
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.126.sol not detected by slither
+DIFF:
+90c90
+<     emit Approval(tx.origin, _spender, _value);
+---
+>     emit Approval(msg.sender, _spender, _value);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.142.sol not detected by slither
+DIFF:
+100c100
+<     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
+---
+>     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+
+smartcheck detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.54.sol not detected by slither
+DIFF:
+53c53
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+
+
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.112.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.112.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.143.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.143.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.123.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.123.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.102.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.102.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.138.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.138.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.50.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.50.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.55.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.55.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.194.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.194.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.67.sol not detected by securify
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.131.sol not detected by securify
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.119.sol not detected by securify
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.63.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.63.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.90.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.90.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.82.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.82.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.195.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.195.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.49.sol not detected by securify
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.98.sol not detected by securify
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.166.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.166.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.161.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.161.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.127.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.127.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.41.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.41.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.99.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.99.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.158.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.158.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.147.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.147.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.106.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.106.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.197.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.197.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.175.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.175.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.59.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.59.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.171.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.171.sol not detected by smartcheck
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.115.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.115.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+5 MUTANTS WERE DETECTED BY ALL TOOLS:
+   0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.131.sol
+   0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.49.sol
+   0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.67.sol
+   0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.98.sol
+   0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.119.sol
 
 ================================================================================
 contracts/SafeRemotePurchase.sol
-SECURIFY FINDS MORE ISSUES IN ORIGINAL
+ISSUE COUNTS: SLITHER 0 SECURIFY 5 SMARTCHECK 0
 ****************************************
 
+smartcheck detects SafeRemotePurchase.mutant.4.sol not detected by slither
+DIFF:
+14c14
+<         seller = tx.origin;
+---
+>         seller = msg.sender;
+
+smartcheck detects SafeRemotePurchase.mutant.102.sol not detected by slither
+DIFF:
+76c76
+<         buyer = tx.origin;
+---
+>         buyer = msg.sender;
+
 slither detects SafeRemotePurchase.mutant.7.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.7.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.103.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.103.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.15.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.15.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.16.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.16.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.17.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.17.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.6.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.6.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.99.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.99.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.106.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.106.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.105.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.105.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.5.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.5.sol not detected by smartcheck
+slither detects SafeRemotePurchase.mutant.72.sol not detected by smartcheck
+slither detects SafeRemotePurchase.mutant.109.sol not detected by smartcheck
 slither detects SafeRemotePurchase.mutant.104.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.104.sol not detected by smartcheck
 
-4 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+4 MUTANTS WERE DETECTED BY ALL TOOLS:
+   SafeRemotePurchase.mutant.59.sol
+   SafeRemotePurchase.mutant.47.sol
+   SafeRemotePurchase.mutant.59.sol
+   SafeRemotePurchase.mutant.47.sol
 
 ================================================================================
 contracts/Faucet8.sol
+ISSUE COUNTS: SLITHER 1 SECURIFY 1 SMARTCHECK 0
 ****************************************
 
+smartcheck detects Faucet8.mutant.55.sol not detected by slither
+DIFF:
+33c33
+< 		/*msg.sender.transfer(withdraw_amount);*/
+---
+> 		msg.sender.transfer(withdraw_amount);
+
+smartcheck detects Faucet8.mutant.52.sol not detected by slither
+DIFF:
+33c33
+< 		tx.origin.transfer(withdraw_amount);
+---
+> 		msg.sender.transfer(withdraw_amount);
+
+smartcheck detects Faucet8.mutant.0.sol not detected by slither
+DIFF:
+5c5
+< 		owner = tx.origin;
+---
+> 		owner = msg.sender;
+
+smartcheck detects Faucet8.mutant.56.sol not detected by slither
+DIFF:
+34c34
+< 		emit Withdrawal(tx.origin, withdraw_amount);
+---
+> 		emit Withdrawal(msg.sender, withdraw_amount);
+
+smartcheck detects Faucet8.mutant.60.sol not detected by slither
+DIFF:
+38c38
+< 		emit Deposit(tx.origin, msg.value);
+---
+> 		emit Deposit(msg.sender, msg.value);
+
+smartcheck detects Faucet8.mutant.54.sol not detected by slither
+DIFF:
+33c33
+< revert();
+---
+> 		msg.sender.transfer(withdraw_amount);
+
 slither detects Faucet8.mutant.39.sol not detected by securify
+slither detects Faucet8.mutant.39.sol not detected by smartcheck
 slither detects Faucet8.mutant.9.sol not detected by securify
 slither detects Faucet8.mutant.2.sol not detected by securify
+slither detects Faucet8.mutant.2.sol not detected by smartcheck
 slither detects Faucet8.mutant.36.sol not detected by securify
+slither detects Faucet8.mutant.36.sol not detected by smartcheck
 slither detects Faucet8.mutant.57.sol not detected by securify
+slither detects Faucet8.mutant.57.sol not detected by smartcheck
 slither detects Faucet8.mutant.1.sol not detected by securify
+slither detects Faucet8.mutant.1.sol not detected by smartcheck
 slither detects Faucet8.mutant.25.sol not detected by securify
+slither detects Faucet8.mutant.25.sol not detected by smartcheck
 slither detects Faucet8.mutant.50.sol not detected by securify
+slither detects Faucet8.mutant.50.sol not detected by smartcheck
 slither detects Faucet8.mutant.19.sol not detected by securify
+slither detects Faucet8.mutant.19.sol not detected by smartcheck
 slither detects Faucet8.mutant.3.sol not detected by securify
+slither detects Faucet8.mutant.3.sol not detected by smartcheck
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+1 MUTANTS WERE DETECTED BY ALL TOOLS:
+   Faucet8.mutant.9.sol
 
 ================================================================================
 contracts/0x616622527ecb889bd144cdee266126fda1e3d005_SafeMath.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 ****************************************
 
-0 MUTANTS WERE DETECTED BY BOTH TOOLS
-
+0 MUTANTS WERE DETECTED BY ALL TOOLS:
 
 ================================================================================
 contracts/0x8c57650a2866e5a0405e01bb65f64660e4ffd187_SafeMath.sol
-BOTH TOOLS FIND NO ISSUES
+ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
+ALL TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
 
 

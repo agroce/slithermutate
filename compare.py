@@ -6,7 +6,7 @@ securify_score = {}
 slither_issues = {}
 slither_score = {}
 smartcheck_issues = {}
-smartcheck_scores = {}
+smartcheck_score = {}
 
 with open("stats_securify.txt", 'r') as securify_stats:
     for line in securify_stats:
@@ -47,8 +47,7 @@ for contract in slither_score:
     print ("ISSUE COUNTS: SLITHER", slither_issues[contract],
                "SECURIFY", securify_issues[contract],
                "SMARTCHECK", smartcheck_issues[contract])
-    if (securify_issues[contract] == 0) and (slither_issues[contract] == 0) and
-        (smartcheck_issues[contract] == 0):
+    if (securify_issues[contract] == 0) and (slither_issues[contract] == 0) and (smartcheck_issues[contract] == 0):
         print("ALL TOOLS FIND NO ISSUES")
     if slither_score[contract] == -1.0:
         print("NO VALID MUTANTS FOR THIS CONTRACT")
