@@ -1,0 +1,581 @@
+================================================================================
+contracts/0xe624fb0c2666c393083acf34cb35c10b37a83ba5_Danakil.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x896350cc0e416727262b339e307e4ef62078a4c3_test.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.0.sol not detected by securify
+slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.2.sol not detected by securify
+slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.1.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.61.sol not detected by slither
+securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.60.sol not detected by slither
+securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.57.sol not detected by slither
+securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.122.sol not detected by slither
+
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.166.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.197.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.82.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.127.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.161.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.70.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.90.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.112.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.123.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.62.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.102.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.119.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.175.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.115.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.138.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.143.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.198.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.131.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.44.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.200.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.53.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.158.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.52.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.58.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.106.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.66.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.171.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.99.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.147.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.98.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.3.sol not detected by securify
+slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.2.sol not detected by securify
+slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.4.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0xa9eb03f3a499e274170c378f958e4a0cbea2c7ef_NoFoundationProposal.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+slither detects 0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.mutant.10.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.19.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.263.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.17.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.107.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.42.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.29.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.103.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.171.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.14.sol not detected by slither
+securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.106.sol not detected by slither
+
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.193.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.112.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.243.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.168.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.104.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.246.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.221.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.147.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.172.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.176.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.116.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.108.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.161.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.204.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.131.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.148.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.99.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.151.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.139.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.164.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.207.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.212.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.98.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.189.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.244.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.180.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.155.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.217.sol not detected by securify
+slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.90.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0xbf54d498760fe8e8f4dff031b783362de7043cb4_VerifiedExample02.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.247.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.219.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.264.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.88.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.84.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.222.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.234.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.224.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.87.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.152.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.273.sol not detected by slither
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.36.sol not detected by slither
+
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.97.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.161.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.170.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.80.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.128.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.363.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.198.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.149.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.153.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.85.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.145.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.291.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.304.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.112.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.299.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.287.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.188.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.93.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.283.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.157.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.202.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.295.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.136.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.129.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.120.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.185.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.79.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.193.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.142.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.174.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.71.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.89.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.132.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/SimpleOpenAuction.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+slither detects SimpleOpenAuction.mutant.51.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.6.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.15.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.62.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.4.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.17.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.82.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.87.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.94.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.125.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.118.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.103.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.14.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.54.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.91.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.52.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.56.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.78.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.121.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.72.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.58.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.53.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.25.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.127.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.12.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.110.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.57.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.13.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.44.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.96.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.5.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.55.sol not detected by securify
+slither detects SimpleOpenAuction.mutant.122.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/Ballot.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+securify detects Ballot.mutant.143.sol not detected by slither
+
+slither detects Ballot.mutant.151.sol not detected by securify
+slither detects Ballot.mutant.163.sol not detected by securify
+slither detects Ballot.mutant.5.sol not detected by securify
+slither detects Ballot.mutant.7.sol not detected by securify
+slither detects Ballot.mutant.176.sol not detected by securify
+slither detects Ballot.mutant.166.sol not detected by securify
+slither detects Ballot.mutant.6.sol not detected by securify
+slither detects Ballot.mutant.105.sol not detected by securify
+slither detects Ballot.mutant.76.sol not detected by securify
+slither detects Ballot.mutant.159.sol not detected by securify
+slither detects Ballot.mutant.170.sol not detected by securify
+
+1 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.122.sol not detected by slither
+securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.60.sol not detected by slither
+securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.61.sol not detected by slither
+securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.57.sol not detected by slither
+
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.131.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.99.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.66.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.171.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.161.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.90.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.147.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.205.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.166.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.119.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.58.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.123.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.52.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.62.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.53.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.175.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.127.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.158.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.143.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.106.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.102.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.138.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.115.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.98.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.112.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.207.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.204.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.70.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.82.sol not detected by securify
+slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.44.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0xc7dc19502db685fbfe3399042d443fef240d513b_SafeM.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x3a933b622b82b5d6b2f27fa5a9be539747e8f92d_SafeMath.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0x1450bde80a5c4082857827814f269d94d109771b_noFoundationProposal.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0xd9d01d4cb824219a8f482a0fad479cb971fd0628_EnterCoin.sol
+SLITHER FINDS MORE ISSUES IN ORIGINAL
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0x57914a2dd93d20940eeae8b9dfd53d8029456659_Address.sol
+SLITHER FINDS MORE ISSUES IN ORIGINAL
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/ReceiverPays.sol
+SLITHER FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+securify detects ReceiverPays.mutant.22.sol not detected by slither
+securify detects ReceiverPays.mutant.63.sol not detected by slither
+
+slither detects ReceiverPays.mutant.34.sol not detected by securify
+slither detects ReceiverPays.mutant.10.sol not detected by securify
+slither detects ReceiverPays.mutant.33.sol not detected by securify
+slither detects ReceiverPays.mutant.9.sol not detected by securify
+slither detects ReceiverPays.mutant.3.sol not detected by securify
+slither detects ReceiverPays.mutant.32.sol not detected by securify
+slither detects ReceiverPays.mutant.8.sol not detected by securify
+slither detects ReceiverPays.mutant.7.sol not detected by securify
+slither detects ReceiverPays.mutant.20.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/SimplePaymentChannel.sol
+SLITHER FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+securify detects SimplePaymentChannel.mutant.53.sol not detected by slither
+securify detects SimplePaymentChannel.mutant.73.sol not detected by slither
+
+slither detects SimplePaymentChannel.mutant.34.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.55.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.11.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.6.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.62.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.8.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.9.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.10.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.5.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.33.sol not detected by securify
+slither detects SimplePaymentChannel.mutant.51.sol not detected by securify
+
+3 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0xfDdD9B2093664411Ec07FAD807A660E3ad9c6ff5_ProofOfExistence.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x305505c8c9d51602f3ebe0ce984ab2aeb0df3172_YesFoundationProposal.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.11.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.26.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.37.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.61.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.15.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.68.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.0.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.50.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.17.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.65.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.31.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.21.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.77.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.5.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.73.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.70.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.41.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/BlindAuction.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+securify detects BlindAuction.mutant.33.sol not detected by slither
+
+slither detects BlindAuction.mutant.67.sol not detected by securify
+slither detects BlindAuction.mutant.185.sol not detected by securify
+slither detects BlindAuction.mutant.101.sol not detected by securify
+slither detects BlindAuction.mutant.91.sol not detected by securify
+slither detects BlindAuction.mutant.121.sol not detected by securify
+slither detects BlindAuction.mutant.22.sol not detected by securify
+slither detects BlindAuction.mutant.90.sol not detected by securify
+slither detects BlindAuction.mutant.11.sol not detected by securify
+slither detects BlindAuction.mutant.158.sol not detected by securify
+slither detects BlindAuction.mutant.77.sol not detected by securify
+slither detects BlindAuction.mutant.180.sol not detected by securify
+slither detects BlindAuction.mutant.107.sol not detected by securify
+slither detects BlindAuction.mutant.71.sol not detected by securify
+slither detects BlindAuction.mutant.194.sol not detected by securify
+slither detects BlindAuction.mutant.106.sol not detected by securify
+slither detects BlindAuction.mutant.157.sol not detected by securify
+slither detects BlindAuction.mutant.160.sol not detected by securify
+slither detects BlindAuction.mutant.188.sol not detected by securify
+slither detects BlindAuction.mutant.68.sol not detected by securify
+slither detects BlindAuction.mutant.92.sol not detected by securify
+slither detects BlindAuction.mutant.21.sol not detected by securify
+slither detects BlindAuction.mutant.85.sol not detected by securify
+slither detects BlindAuction.mutant.8.sol not detected by securify
+slither detects BlindAuction.mutant.193.sol not detected by securify
+slither detects BlindAuction.mutant.23.sol not detected by securify
+slither detects BlindAuction.mutant.192.sol not detected by securify
+slither detects BlindAuction.mutant.124.sol not detected by securify
+slither detects BlindAuction.mutant.161.sol not detected by securify
+slither detects BlindAuction.mutant.159.sol not detected by securify
+slither detects BlindAuction.mutant.162.sol not detected by securify
+slither detects BlindAuction.mutant.174.sol not detected by securify
+slither detects BlindAuction.mutant.93.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0xbc548594b0e17adcd1d551ae1ced65c2105d36fa_SafeMath.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
+================================================================================
+contracts/0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+slither detects 0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.mutant.8.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.58.sol not detected by slither
+securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.122.sol not detected by slither
+securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.57.sol not detected by slither
+securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.54.sol not detected by slither
+
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.112.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.143.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.123.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.102.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.138.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.50.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.55.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.194.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.67.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.131.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.119.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.63.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.90.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.82.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.195.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.49.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.98.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.166.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.161.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.127.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.41.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.99.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.158.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.147.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.106.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.197.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.175.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.59.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.171.sol not detected by securify
+slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.115.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/SafeRemotePurchase.sol
+SECURIFY FINDS MORE ISSUES IN ORIGINAL
+****************************************
+
+slither detects SafeRemotePurchase.mutant.7.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.103.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.15.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.16.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.17.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.6.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.99.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.106.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.105.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.5.sol not detected by securify
+slither detects SafeRemotePurchase.mutant.104.sol not detected by securify
+
+4 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/Faucet8.sol
+****************************************
+
+slither detects Faucet8.mutant.39.sol not detected by securify
+slither detects Faucet8.mutant.9.sol not detected by securify
+slither detects Faucet8.mutant.2.sol not detected by securify
+slither detects Faucet8.mutant.36.sol not detected by securify
+slither detects Faucet8.mutant.57.sol not detected by securify
+slither detects Faucet8.mutant.1.sol not detected by securify
+slither detects Faucet8.mutant.25.sol not detected by securify
+slither detects Faucet8.mutant.50.sol not detected by securify
+slither detects Faucet8.mutant.19.sol not detected by securify
+slither detects Faucet8.mutant.3.sol not detected by securify
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x616622527ecb889bd144cdee266126fda1e3d005_SafeMath.sol
+BOTH TOOLS FIND NO ISSUES
+****************************************
+
+0 MUTANTS WERE DETECTED BY BOTH TOOLS
+
+
+================================================================================
+contracts/0x8c57650a2866e5a0405e01bb65f64660e4ffd187_SafeMath.sol
+BOTH TOOLS FIND NO ISSUES
+NO VALID MUTANTS FOR THIS CONTRACT
+
+
