@@ -48,12 +48,15 @@ for contract in slither_score:
                "SECURIFY", securify_issues[contract],
                "SMARTCHECK", smartcheck_issues[contract])
     if (securify_issues[contract] == 0) and (slither_issues[contract] == 0) and (smartcheck_issues[contract] == 0):
-        print("ALL TOOLS FIND NO ISSUES")
+        print("   -- ALL TOOLS FIND NO ISSUES --")
     if slither_score[contract] == -1.0:
         print("NO VALID MUTANTS FOR THIS CONTRACT")
         print()
         print()
         continue
+    print("MUTATION SCORES: SLITHER", slither_score[contract],
+            "SECURIFY", securify_score[contract],
+            "SMARTCHECK", smartcheck_score[contract])
     print("*"*40)
     print()
     slither_kills = []
