@@ -1,0 +1,7 @@
+Faucet8.mutant.55.sol
+Faucet8.mutant.52.sol
+Faucet8.mutant.0.sol
+Faucet8.mutant.9.sol
+Faucet8.mutant.56.sol
+Faucet8.mutant.60.sol
+Faucet8.mutant.54.sol

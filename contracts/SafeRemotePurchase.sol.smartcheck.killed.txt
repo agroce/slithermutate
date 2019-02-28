@@ -1,0 +1,4 @@
+SafeRemotePurchase.mutant.59.sol
+SafeRemotePurchase.mutant.4.sol
+SafeRemotePurchase.mutant.102.sol
+SafeRemotePurchase.mutant.47.sol
