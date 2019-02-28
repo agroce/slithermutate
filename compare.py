@@ -57,6 +57,14 @@ for contract in slither_score:
     for m in securify_kills:
         if m not in slither_kills:
             print("securify detects", m, "not detected by slither")
+            print("DIFF:")
+            with open("diffout.txt", 'w') as diff_f:
+                subprocess.call(["diff", "mutants/" + m, contract],
+                                    stdout=diff_f, stderr=diff_f)
+            with open("diffout.txt", 'r') as diff_f:
+                for line in diff_f:
+                    print(line, end="")
+            print()
             any_securify = True
         else:
             shared_kills.append(m)
