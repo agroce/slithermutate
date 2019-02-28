@@ -1,7 +1,8 @@
 ================================================================================
 contracts/0xe624fb0c2666c393083acf34cb35c10b37a83ba5_Danakil.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
+MUTATION SCORES: SLITHER 0.0 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 0 MUTANTS WERE DETECTED BY ALL TOOLS:
@@ -9,7 +10,8 @@ ALL TOOLS FIND NO ISSUES
 ================================================================================
 contracts/0x896350cc0e416727262b339e307e4ef62078a4c3_test.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
+MUTATION SCORES: SLITHER 0.333333333333 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.0.sol not detected by securify
@@ -24,6 +26,7 @@ slither detects 0x896350cc0e416727262b339e307e4ef62078a4c3_test.mutant.1.sol not
 ================================================================================
 contracts/0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.146341463415 SECURIFY 0.019512195122 SMARTCHECK 0.136585365854
 ****************************************
 
 securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.61.sol not detected by slither
@@ -283,6 +286,7 @@ slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocu
 ================================================================================
 contracts/0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 2 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.12 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.3.sol not detected by securify
@@ -297,13 +301,14 @@ slither detects 0x70d8272f01937b750a670b4b69b578af46cb92fc_SourcePrice.mutant.4.
 ================================================================================
 contracts/0xa9eb03f3a499e274170c378f958e4a0cbea2c7ef_NoFoundationProposal.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 1 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.0769230769231 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 slither detects 0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.mutant.10.sol not detected by securify
@@ -314,6 +319,7 @@ slither detects 0x7d10c63e0dd522beaf128b4762d1b3a9f6907cdb_Foo.mutant.10.sol not
 ================================================================================
 contracts/0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 1 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.1 SECURIFY 0.0344827586207 SMARTCHECK 0.103448275862
 ****************************************
 
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.19.sol not detected by slither
@@ -627,13 +633,14 @@ slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutan
 ================================================================================
 contracts/0xbf54d498760fe8e8f4dff031b783362de7043cb4_VerifiedExample02.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 2 SMARTCHECK 2
+MUTATION SCORES: SLITHER 0.0901639344262 SECURIFY 0.0327868852459 SMARTCHECK 0.101092896175
 ****************************************
 
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.247.sol not detected by slither
@@ -997,6 +1004,7 @@ slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.132.sol
 ================================================================================
 contracts/SimpleOpenAuction.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 6 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.253846153846 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 slither detects SimpleOpenAuction.mutant.51.sol not detected by securify
@@ -1071,6 +1079,7 @@ slither detects SimpleOpenAuction.mutant.122.sol not detected by smartcheck
 ================================================================================
 contracts/Ballot.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 2 SMARTCHECK 2
+MUTATION SCORES: SLITHER 0.06 SECURIFY 0.01 SMARTCHECK 0.04
 ****************************************
 
 securify detects Ballot.mutant.143.sol not detected by slither
@@ -1147,6 +1156,7 @@ slither detects Ballot.mutant.170.sol not detected by smartcheck
 ================================================================================
 contracts/0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.141509433962 SECURIFY 0.0188679245283 SMARTCHECK 0.132075471698
 ****************************************
 
 securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.122.sol not detected by slither
@@ -1406,7 +1416,8 @@ slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.44.sol
 ================================================================================
 contracts/0xc7dc19502db685fbfe3399042d443fef240d513b_SafeM.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
+MUTATION SCORES: SLITHER 0.0 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 0 MUTANTS WERE DETECTED BY ALL TOOLS:
@@ -1414,14 +1425,14 @@ ALL TOOLS FIND NO ISSUES
 ================================================================================
 contracts/0x3a933b622b82b5d6b2f27fa5a9be539747e8f92d_SafeMath.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x1450bde80a5c4082857827814f269d94d109771b_noFoundationProposal.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
@@ -1440,6 +1451,7 @@ NO VALID MUTANTS FOR THIS CONTRACT
 ================================================================================
 contracts/ReceiverPays.sol
 ISSUE COUNTS: SLITHER 2 SECURIFY 1 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.12 SECURIFY 0.0266666666667 SMARTCHECK 0.0666666666667
 ****************************************
 
 securify detects ReceiverPays.mutant.22.sol not detected by slither
@@ -1510,6 +1522,7 @@ slither detects ReceiverPays.mutant.20.sol not detected by smartcheck
 ================================================================================
 contracts/SimplePaymentChannel.sol
 ISSUE COUNTS: SLITHER 2 SECURIFY 0 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.126126126126 SECURIFY 0.045045045045 SMARTCHECK 0.0
 ****************************************
 
 securify detects SimplePaymentChannel.mutant.53.sol not detected by slither
@@ -1559,7 +1572,8 @@ slither detects SimplePaymentChannel.mutant.50.sol not detected by smartcheck
 ================================================================================
 contracts/0xfDdD9B2093664411Ec07FAD807A660E3ad9c6ff5_ProofOfExistence.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
+MUTATION SCORES: SLITHER 0.0 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 0 MUTANTS WERE DETECTED BY ALL TOOLS:
@@ -1567,13 +1581,14 @@ ALL TOOLS FIND NO ISSUES
 ================================================================================
 contracts/0x305505c8c9d51602f3ebe0ce984ab2aeb0df3172_YesFoundationProposal.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 8 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.175257731959 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.11.sol not detected by securify
@@ -1616,6 +1631,7 @@ slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.41.
 ================================================================================
 contracts/BlindAuction.sol
 ISSUE COUNTS: SLITHER 1 SECURIFY 2 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.161616161616 SECURIFY 0.00505050505051 SMARTCHECK 0.010101010101
 ****************************************
 
 securify detects BlindAuction.mutant.33.sol not detected by slither
@@ -1697,13 +1713,14 @@ slither detects BlindAuction.mutant.93.sol not detected by smartcheck
 ================================================================================
 contracts/0xbc548594b0e17adcd1d551ae1ced65c2105d36fa_SafeMath.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
 ================================================================================
 contracts/0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 1 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.0909090909091 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 slither detects 0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.mutant.8.sol not detected by securify
@@ -1714,6 +1731,7 @@ slither detects 0x67609c47883855802ba5a71b5e669b1c8af33362_Foo.mutant.8.sol not 
 ================================================================================
 contracts/0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 1
+MUTATION SCORES: SLITHER 0.148514851485 SECURIFY 0.019801980198 SMARTCHECK 0.138613861386
 ****************************************
 
 securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.58.sol not detected by slither
@@ -1973,6 +1991,7 @@ slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.115.
 ================================================================================
 contracts/SafeRemotePurchase.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 5 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.11811023622 SECURIFY 0.0314960629921 SMARTCHECK 0.0314960629921
 ****************************************
 
 smartcheck detects SafeRemotePurchase.mutant.4.sol not detected by slither
@@ -2023,6 +2042,7 @@ slither detects SafeRemotePurchase.mutant.104.sol not detected by smartcheck
 ================================================================================
 contracts/Faucet8.sol
 ISSUE COUNTS: SLITHER 1 SECURIFY 1 SMARTCHECK 0
+MUTATION SCORES: SLITHER 0.151515151515 SECURIFY 0.0 SMARTCHECK 0.106060606061
 ****************************************
 
 smartcheck detects Faucet8.mutant.55.sol not detected by slither
@@ -2093,7 +2113,8 @@ slither detects Faucet8.mutant.3.sol not detected by smartcheck
 ================================================================================
 contracts/0x616622527ecb889bd144cdee266126fda1e3d005_SafeMath.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
+MUTATION SCORES: SLITHER 0.0 SECURIFY 0.0 SMARTCHECK 0.0
 ****************************************
 
 0 MUTANTS WERE DETECTED BY ALL TOOLS:
@@ -2101,7 +2122,7 @@ ALL TOOLS FIND NO ISSUES
 ================================================================================
 contracts/0x8c57650a2866e5a0405e01bb65f64660e4ffd187_SafeMath.sol
 ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
-ALL TOOLS FIND NO ISSUES
+   -- ALL TOOLS FIND NO ISSUES --
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
