@@ -1,3 +1,19 @@
+80c80
+<     /*balances[msg.sender] = balances[msg.sender].sub(_value);*/
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+80c80
+<     balances[msg.sender] = 
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+80c80
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+131c131
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
 ================================================================================
 contracts/0xe624fb0c2666c393083acf34cb35c10b37a83ba5_Danakil.sol
 BOTH TOOLS FIND NO ISSUES
@@ -24,9 +40,17 @@ BOTH TOOLS FIND NO ISSUES
 ****************************************
 
 securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.61.sol not detected by slither
+DIFF:
+
 securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.60.sol not detected by slither
+DIFF:
+
 securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.57.sol not detected by slither
+DIFF:
+
 securify detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.122.sol not detected by slither
+DIFF:
+
 
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.166.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.197.sol not detected by securify
@@ -47,7 +71,47 @@ slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocu
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.198.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.131.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.44.sol not detected by securify
-slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.200.sol not detected by securify
+slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.200.sol not de38c38
+<   function renounceOwnership() public  {
+---
+>   function renounceOwnership() public onlyOwner {
+370c370
+<   function finishMinting()  canMint public returns (bool) {
+---
+>   function finishMinting() onlyOwner canMint public returns (bool) {
+31c31
+<     /*require(msg.sender == owner);*/
+---
+>     require(msg.sender == owner);
+157c157
+<     /*balances[msg.sender] = balances[msg.sender].sub(_value);*/
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+56c56
+<     /*require(_newOwner != address(0));*/
+---
+>     require(_newOwner != address(0));
+47c47
+<   function transferOwnership(address _newOwner) public  {
+---
+>   function transferOwnership(address _newOwner) public onlyOwner {
+157c157
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+245c245
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+31c31
+<     require(tx.origin == owner);
+---
+>     require(msg.sender == owner);
+157c157
+<     balances[msg.sender] = 
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+tected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.53.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.158.sol not detected by securify
 slither detects 0x6311fc2152379d874bce0a9b411daf1c96397dd0_BeyondDiamondCryptocurrency.mutant.52.sol not detected by securify
@@ -96,18 +160,50 @@ SECURIFY FINDS MORE ISSUES IN ORIGINAL
 ****************************************
 
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.19.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.263.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.17.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.107.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.42.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.29.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.103.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.171.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.14.sol not detected by slither
+DIFF:
+
 securify detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.106.sol not detected by slither
+DIFF:
+
 
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.193.sol not detected by securify
-slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.112.sol not detected by securify
+slither detects 0xe270c270
+<     /*require(_newOwner != address(0));*/
+---
+>     require(_newOwner != address(0));
+245c245
+<     require(tx.origin == owner);
+---
+>     require(msg.sender == owner);
+302c302
+<   function pause()  whenNotPaused public {
+---
+>   function pause() onlyOwner whenNotPaused public {
+ddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.112.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.243.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.168.sol not detected by securify
 slither detects 0xeddbc58afbd53a7e611526ecc99855c8d3746dd1_SitisTradeToken.mutant.104.sol not detected by securify
@@ -151,17 +247,77 @@ SECURIFY FINDS MORE ISSUES IN ORIGINAL
 ****************************************
 
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.247.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.219.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.264.sol not detected by slither
-securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.88.sol not detected by slither
+DIFF:
+
+securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant75c75
+<     /*balances[msg.sender] = balances[msg.sender].sub(_value);*/
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+75c75
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+245c245
+<     /*require(msg.sender == owner);*/
+---
+>     require(msg.sender == owner);
+261c261
+<   function transferOwnership(address _newOwner) public  {
+---
+>   function transferOwnership(address _newOwner) public onlyOwner {
+252c252
+<   function renounceOwnership() public  {
+---
+>   function renounceOwnership() public onlyOwner {
+75c75
+<     balances[msg.sender] = 
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+148c148
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+310c310
+<   function unpause()  whenPaused public {
+---
+>   function unpause() onlyOwner whenPaused public {
+33c33
+<     /*assert(b <= a);*/
+---
+>     assert(b <= a);
+.88.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.84.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.222.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.234.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.224.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.87.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.152.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.273.sol not detected by slither
+DIFF:
+
 securify detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.36.sol not detected by slither
+DIFF:
+
 
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.97.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.161.sol not detected by securify
@@ -192,7 +348,11 @@ slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.185.sol
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.79.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.193.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.142.sol not detected by securify
-slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.174.sol not detected by securify
+slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.174.sol not d116c116
+<         Voter storage sender = voters[tx.origin];
+---
+>         Voter storage sender = voters[msg.sender];
+etected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.71.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.89.sol not detected by securify
 slither detects 0xe006fe964761b866a01524720a74cb1d8b1f4693_PGCoin.mutant.132.sol not detected by securify
@@ -248,6 +408,8 @@ SECURIFY FINDS MORE ISSUES IN ORIGINAL
 ****************************************
 
 securify detects Ballot.mutant.143.sol not detected by slither
+DIFF:
+
 
 slither detects Ballot.mutant.151.sol not detected by securify
 slither detects Ballot.mutant.163.sol not detected by securify
@@ -265,14 +427,38 @@ slither detects Ballot.mutant.170.sol not detected by securify
 
 
 ================================================================================
-contracts/0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.sol
+contracts131c131
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+80c80
+<     balances[msg.sender] = 
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+80c80
+<     /*balances[msg.sender] = balances[msg.sender].sub(_value);*/
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+80c80
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+/0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.sol
 BOTH TOOLS FIND NO ISSUES
 ****************************************
 
 securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.122.sol not detected by slither
+DIFF:
+
 securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.60.sol not detected by slither
+DIFF:
+
 securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.61.sol not detected by slither
+DIFF:
+
 securify detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.57.sol not detected by slither
+DIFF:
+
 
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.131.sol not detected by securify
 slither detects 0x7668223b8aa954fb894b6fe41d9bffcf140c1303_Cartoon.mutant.99.sol not detected by securify
@@ -316,7 +502,23 @@ BOTH TOOLS FIND NO ISSUES
 0 MUTANTS WERE DETECTED BY BOTH TOOLS
 
 
-================================================================================
+==========================17c17
+<         /*require(recoverSigner(message, signature) == owner);*/
+---
+>         require(recoverSigner(message, signature) == owner);
+55c55
+< /*revert();*/
+---
+> revert();
+41c41
+<         /*require(msg.sender == sender);*/
+---
+>         require(msg.sender == sender);
+51c51
+<         /*selfdestruct(sender);*/
+---
+>         selfdestruct(sender);
+======================================================
 contracts/0x3a933b622b82b5d6b2f27fa5a9be539747e8f92d_SafeMath.sol
 BOTH TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
@@ -346,7 +548,11 @@ SLITHER FINDS MORE ISSUES IN ORIGINAL
 ****************************************
 
 securify detects ReceiverPays.mutant.22.sol not detected by slither
+DIFF:
+
 securify detects ReceiverPays.mutant.63.sol not detected by slither
+DIFF:
+
 
 slither detects ReceiverPays.mutant.34.sol not detected by securify
 slither detects ReceiverPays.mutant.10.sol not detected by securify
@@ -367,7 +573,11 @@ SLITHER FINDS MORE ISSUES IN ORIGINAL
 ****************************************
 
 securify detects SimplePaymentChannel.mutant.53.sol not detected by slither
+DIFF:
+
 securify detects SimplePaymentChannel.mutant.73.sol not detected by slither
+DIFF:
+
 
 slither detects SimplePaymentChannel.mutant.34.sol not detected by securify
 slither detects SimplePaymentChannel.mutant.55.sol not detected by securify
@@ -405,7 +615,11 @@ SECURIFY FINDS MORE ISSUES IN ORIGINAL
 
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.11.sol not detected by securify
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.26.sol not detected by securify
-slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.37.sol not detected by securify
+slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.37.sol not 55c55
+<         bids[tx.origin].push(Bid({
+---
+>         bids[msg.sender].push(Bid({
+detected by securify
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.61.sol not detected by securify
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.15.sol not detected by securify
 slither detects 0x55f44e8b16651a7c5ea1ffcc54749336ffc17e3a_SetLibrary.mutant.68.sol not detected by securify
@@ -430,6 +644,8 @@ SECURIFY FINDS MORE ISSUES IN ORIGINAL
 ****************************************
 
 securify detects BlindAuction.mutant.33.sol not detected by slither
+DIFF:
+
 
 slither detects BlindAuction.mutant.67.sol not detected by securify
 slither detects BlindAuction.mutant.185.sol not detected by securify
@@ -467,7 +683,23 @@ slither detects BlindAuction.mutant.93.sol not detected by securify
 0 MUTANTS WERE DETECTED BY BOTH TOOLS
 
 
-================================================================================
+===========53c53
+<     /*balances[msg.sender] = balances[msg.sender].sub(_value);*/
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+89c89
+<     allowed[tx.origin][_spender] = _value;
+---
+>     allowed[msg.sender][_spender] = _value;
+53c53
+<     balances[msg.sender] = 
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+53c53
+<     balances[msg.sender] = balances[tx.origin].sub(_value);
+---
+>     balances[msg.sender] = balances[msg.sender].sub(_value);
+=====================================================================
 contracts/0xbc548594b0e17adcd1d551ae1ced65c2105d36fa_SafeMath.sol
 BOTH TOOLS FIND NO ISSUES
 NO VALID MUTANTS FOR THIS CONTRACT
@@ -489,9 +721,17 @@ BOTH TOOLS FIND NO ISSUES
 ****************************************
 
 securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.58.sol not detected by slither
+DIFF:
+
 securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.122.sol not detected by slither
+DIFF:
+
 securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.57.sol not detected by slither
+DIFF:
+
 securify detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.54.sol not detected by slither
+DIFF:
+
 
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.112.sol not detected by securify
 slither detects 0x1044ef958a44cb829cd7ff7b7e4849c122662f78_WorkToken.mutant.143.sol not detected by securify
