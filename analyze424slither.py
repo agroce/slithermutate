@@ -8,7 +8,7 @@ import os
 import random
 
 try:
-    os.mkdir("424mutants")
+    os.mkdir("mutants424")
 except:
     pass
 
