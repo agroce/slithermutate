@@ -8,6 +8,9 @@ slither_score = {}
 smartcheck_issues = {}
 smartcheck_score = {}
 
+def mutno(mutant):
+    return int(mutant.split(".mutant.")[1].split(".")[0])
+
 with open("stats_securify.txt", 'r') as securify_stats:
     for line in securify_stats:
         if "analyzing contracts/" in line:
@@ -73,7 +76,7 @@ for contract in slither_score:
             smartcheck_kills.append(line[:-1])
     shared_kills = []
     any_securify = False
-    for m in securify_kills:
+    for m in sorted(securify_kills, key=mutno):
         if m not in slither_kills:
             print("securify detects", m, "not detected by slither")
             print("DIFF:")
@@ -91,9 +94,11 @@ for contract in slither_score:
     if any_securify:
         print()
     any_smartcheck = False
-    for m in smartcheck_kills:
+    for m in sorted(smartcheck_kills, key=mutno):
         if m not in slither_kills:
             print("smartcheck detects", m, "not detected by slither")
+            if m in securify_kills:
+                print("** mutant detected by both non-slither tools **")
             print("DIFF:")
             with open("diffout.txt", 'w') as diff_f:
                 subprocess.call(["diff", "mutants/" + m, contract],
@@ -108,7 +113,7 @@ for contract in slither_score:
     if any_securify:
         print()
     any_slither = False
-    for m in slither_kills:
+    for m in sorted(slither_kills, key=mutno):
         if m not in securify_kills:
             print("slither detects", m, "not detected by securify")
             any_slither = True
@@ -117,9 +122,9 @@ for contract in slither_score:
             any_slither = True            
     if any_slither:
         print()
-    print(len(shared_kills), "MUTANTS WERE DETECTED BY ALL TOOLS:")
-    for m in shared_kills:
-        print("  ", m)
+    if len(shared_kills) > 0:
+        print(len(shared_kills), "MUTANTS WERE DETECTED BY ALL TOOLS:")
+        for m in shared_kills:
+            print("  ", m)
     print()
-        
     
