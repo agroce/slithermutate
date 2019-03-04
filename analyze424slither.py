@@ -5,9 +5,10 @@ import sys
 import scipy
 import scipy.stats
 import os
+import random
 
 try:
-    os.mkdir("mutants")
+    os.mkdir("424mutants")
 except:
     pass
 
@@ -17,6 +18,9 @@ cleanContracts = []
 
 CONTRACTS_DIR = "424contracts/"
 CONTRACTS = sorted(glob.glob(CONTRACTS_DIR + "*.sol"))
+
+random.seed(1)
+random.shuffle(CONTRACTS)
 
 already_done = []
 if os.path.exists("424.analyzed.slither.txt"):
@@ -63,10 +67,10 @@ for C in CONTRACTS:
     sys.stdout.flush()
     if failed:
         continue
-    if not os.path.exists(C.replace(CONTRACTS_DIR, "mutants/").replace(".sol", ".mutant.0.sol")):
+    if not os.path.exists(C.replace(CONTRACTS_DIR, "mutants424/").replace(".sol", ".mutant.0.sol")):
         print("GENERATING MUTANTS...")
         with open("out.txt", 'w') as outf:
-            r = subprocess.call(["mutate", C, "--mutantDir", "mutants"],
+            r = subprocess.call(["mutate", C, "--mutantDir", "mutants424"],
                                     stdout=outf, stderr=outf)
         with open("out.txt", 'r') as outf:
             for line in outf:
@@ -76,7 +80,7 @@ for C in CONTRACTS:
                         numMutants = int(line.split()[0])
     else:
         numMutants = len(glob.glob(C.replace(CONTRACTS_DIR,
-                                             "mutants/").replace(".sol",
+                                             "mutants424/").replace(".sol",
                                                                  ".mutant.*.sol")))
         print(numMutants, "MUTANTS FOR CONTRACT FOUND")
     sys.stdout.flush()
@@ -86,7 +90,7 @@ for C in CONTRACTS:
     with open("out.txt", 'w') as outf:
         subprocess.call(["analyze_mutants", C, "python maxissuesslither.py " +
                              str(numIssues) + " " + C,
-                             "--mutantDir", "mutants"],
+                             "--mutantDir", "mutants424"],
                             stdout=outf, stderr=outf)
     with open("out.txt", 'r') as outf:
         for line in outf:
