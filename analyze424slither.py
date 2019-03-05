@@ -56,71 +56,74 @@ for C in CONTRACTS:
             print(killedCount + notKilledCount, "VALID MUTANTS")
             print(killedCount, "killed.txt")
             print(notKilledCount, "notkilled.txt")
-            print("MUTATION SCORE:", float(killedCount)/float(killedCount+notKilledCount))
-            continue
+            score = float(killedCount)/float(killedCount+notKilledCount)
+            print("MUTATION SCORE:", score)
         else:
             print("NO VALID MUTANTS")
-    with open("out.txt", 'w') as outf:
-        numIssues = subprocess.call(["slither", C, "--exclude-informational"],
-                                        stdout=outf, stderr=outf)
-    with open("out.txt", 'r') as outf:
-        results = outf.read()
-    failed = b'root:Error' in results or (numIssues == 255 and not b'255 result(s) found' in results)
-    if failed:
-        print("SLITHER FAILED")
-        numIssues = -1
-    print("ISSUES:", numIssues)
-    with open(C+".slither.issues", 'w') as issuef:
-        issuef.write(str(numIssues)+"\n")
-    sys.stdout.flush()
-    if failed:
-        continue
-    if not os.path.exists(C.replace(CONTRACTS_DIR, "424mutants/").replace(".sol", ".mutant.0.sol")):
-        print("GENERATING MUTANTS...")
+            continue
+    else:
         with open("out.txt", 'w') as outf:
-            r = subprocess.call(["mutate", C, "--mutantDir", "424mutants"],
-                                    stdout=outf, stderr=outf)
+            numIssues = subprocess.call(["slither", C, "--exclude-informational"],
+                                            stdout=outf, stderr=outf)
+        with open("out.txt", 'r') as outf:
+            results = outf.read()
+        failed = b'root:Error' in results or (numIssues == 255 and not b'255 result(s) found' in results)
+        if failed:
+            print("SLITHER FAILED")
+            numIssues = -1
+        print("ISSUES:", numIssues)
+        with open(C+".slither.issues", 'w') as issuef:
+            issuef.write(str(numIssues)+"\n")
+        sys.stdout.flush()
+        if failed:
+            continue
+        if not os.path.exists(C.replace(CONTRACTS_DIR, "424mutants/").replace(".sol", ".mutant.0.sol")):
+            print("GENERATING MUTANTS...")
+            with open("out.txt", 'w') as outf:
+                r = subprocess.call(["mutate", C, "--mutantDir", "424mutants"],
+                                        stdout=outf, stderr=outf)
+            with open("out.txt", 'r') as outf:
+                for line in outf:
+                    if "MUTANTS" in line:
+                        print(line, end=" ")
+                        if " VALID MUTANTS" in line:
+                            numMutants = int(line.split()[0])
+        else:
+            numMutants = len(glob.glob(C.replace(CONTRACTS_DIR,
+                                                 "424mutants/").replace(".sol",
+                                                                     ".mutant.*.sol")))
+            print(numMutants, "MUTANTS FOR CONTRACT FOUND")
+        sys.stdout.flush()
+        if numMutants == 0:
+            print("NO VALID MUTANTS, SKIPPING...")
+            continue
+        with open("out.txt", 'w') as outf:
+            subprocess.call(["analyze_mutants", C, "python maxissuesslither.py " +
+                                 str(numIssues) + " " + C,
+                                 "--mutantDir", "424mutants"],
+                                stdout=outf, stderr=outf)
         with open("out.txt", 'r') as outf:
             for line in outf:
-                if "MUTANTS" in line:
+                if "MUTATION SCORE" in line:
                     print(line, end=" ")
-                    if " VALID MUTANTS" in line:
-                        numMutants = int(line.split()[0])
-    else:
-        numMutants = len(glob.glob(C.replace(CONTRACTS_DIR,
-                                             "424mutants/").replace(".sol",
-                                                                 ".mutant.*.sol")))
-        print(numMutants, "MUTANTS FOR CONTRACT FOUND")
-    sys.stdout.flush()
-    if numMutants == 0:
-        print("NO VALID MUTANTS, SKIPPING...")
-        continue
-    with open("out.txt", 'w') as outf:
-        subprocess.call(["analyze_mutants", C, "python maxissuesslither.py " +
-                             str(numIssues) + " " + C,
-                             "--mutantDir", "424mutants"],
-                            stdout=outf, stderr=outf)
-    with open("out.txt", 'r') as outf:
-        for line in outf:
-            if "MUTATION SCORE" in line:
-                print(line, end=" ")
-                score = float(line.split()[-1])
-    subprocess.call(["wc","-l","killed.txt"])
-    subprocess.call(["wc","-l","notkilled.txt"])
-    sys.stdout.flush()    
-    subprocess.call(["cp","killed.txt",C+".slither.killed.txt"])
-    subprocess.call(["cp","notkilled.txt",C+".slither.notkilled.txt"])
+                    score = float(line.split()[-1])
+        subprocess.call(["wc","-l","killed.txt"])
+        subprocess.call(["wc","-l","notkilled.txt"])
+        sys.stdout.flush()    
+        subprocess.call(["cp","killed.txt",C+".slither.killed.txt"])
+        subprocess.call(["cp","notkilled.txt",C+".slither.notkilled.txt"])
+        with open("424.analyzed.slither.txt", 'a') as finished:
+            finished.write(C + "\n")
     scores.append(score)
     if numIssues == 0:
         cleanScores.append(score)
         cleanContracts.append(C)
-    with open("424.analyzed.slither.txt", 'a') as finished:
-        finished.write(C + "\n")
     print()
     print("RUNNING TOTALS ON", len(scores), "CONTRACTS /", len(cleanScores), "CLEAN CONTRACTS")
     print("MEAN:", scipy.mean(scores), "MEDIAN:", scipy.median(scores), "STD:", scipy.std(scores))
     print("CLEAN MEAN:", scipy.mean(cleanScores), "MEDIAN:", scipy.median(cleanScores),
-              "STD:", scipy.std(cleanScores))    
+              "STD:", scipy.std(cleanScores))
+    sys.stdout.flush()
 
 print("*"*80)
 print()
