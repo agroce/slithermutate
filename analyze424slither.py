@@ -8,7 +8,7 @@ import os
 import random
 
 try:
-    os.mkdir("mutants424")
+    os.mkdir("424mutants")
 except:
     pass
 
@@ -30,7 +30,12 @@ if os.path.exists("424.analyzed.slither.txt"):
 
 for C in CONTRACTS:
     print("="*80)
-    print("analyzing", C)    
+    print("analyzing", C)
+    loc = 0
+    with open(C) as contractf:
+        for line in contractf:
+            loc += 1
+    print("  LOC:", loc)
     if C in already_done:
         print("already analyzed")
         with open(C+".slither.issues", 'r') as issuef:
@@ -45,9 +50,12 @@ for C in CONTRACTS:
             with open(C+".slither.killed.txt", 'r') as killed:
                 for line in killed:
                     killedCount += 1
-            with open(C+".slither.killed.txt", 'r') as notKilled:
+            with open(C+".slither.notkilled.txt", 'r') as notKilled:
                 for line in notKilled:
                     notKilledCount += 1
+            print(killedCount + notKilledCount, "VALID MUTANTS")
+            print(killedCount, "killed.txt")
+            print(notKilledCount, "notkilled.txt")
             print("MUTATION SCORE:", float(killedCount)/float(killedCount+notKilledCount))
             continue
         else:
@@ -67,10 +75,10 @@ for C in CONTRACTS:
     sys.stdout.flush()
     if failed:
         continue
-    if not os.path.exists(C.replace(CONTRACTS_DIR, "mutants424/").replace(".sol", ".mutant.0.sol")):
+    if not os.path.exists(C.replace(CONTRACTS_DIR, "424mutants/").replace(".sol", ".mutant.0.sol")):
         print("GENERATING MUTANTS...")
         with open("out.txt", 'w') as outf:
-            r = subprocess.call(["mutate", C, "--mutantDir", "mutants424"],
+            r = subprocess.call(["mutate", C, "--mutantDir", "424mutants"],
                                     stdout=outf, stderr=outf)
         with open("out.txt", 'r') as outf:
             for line in outf:
@@ -80,7 +88,7 @@ for C in CONTRACTS:
                         numMutants = int(line.split()[0])
     else:
         numMutants = len(glob.glob(C.replace(CONTRACTS_DIR,
-                                             "mutants424/").replace(".sol",
+                                             "424mutants/").replace(".sol",
                                                                  ".mutant.*.sol")))
         print(numMutants, "MUTANTS FOR CONTRACT FOUND")
     sys.stdout.flush()
@@ -90,7 +98,7 @@ for C in CONTRACTS:
     with open("out.txt", 'w') as outf:
         subprocess.call(["analyze_mutants", C, "python maxissuesslither.py " +
                              str(numIssues) + " " + C,
-                             "--mutantDir", "mutants424"],
+                             "--mutantDir", "424mutants"],
                             stdout=outf, stderr=outf)
     with open("out.txt", 'r') as outf:
         for line in outf:
@@ -108,6 +116,11 @@ for C in CONTRACTS:
         cleanContracts.append(C)
     with open("424.analyzed.slither.txt", 'a') as finished:
         finished.write(C + "\n")
+    print()
+    print("RUNNING TOTALS ON", len(scores), "CONTRACTS /", len(cleanScores), "CLEAN CONTRACTS")
+    print("MEAN:", scipy.mean(scores), "MEDIAN:", scipy.median(scores), "STD:", scipy.std(scores))
+    print("CLEAN MEAN:", scipy.mean(cleanScores), "MEDIAN:", scipy.median(cleanScores),
+              "STD:", scipy.std(cleanScores))    
 
 print("*"*80)
 print()
