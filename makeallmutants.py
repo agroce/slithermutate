@@ -17,6 +17,8 @@ CONTRACTS = sorted(glob.glob(CONTRACTS_DIR + "*.sol"))
 random.seed(1)
 random.shuffle(CONTRACTS)
 
+CONTRACTS = CONTRACTS[:100]
+
 already_done = []
 if os.path.exists("424.analyzed.slither.txt"):
     with open("424.analyzed.slither.txt", 'r') as finished:
@@ -33,9 +35,13 @@ for i in range(0, maxSlots):
 
 for C in CONTRACTS:
     if C in already_done:
+        print("ALREADY ANALYZED", C)        
         continue
-    if os.path.exists(C.replace(CONTRACTS_DIR, "424mutants/").replace(".sol", ".mutant.0.sol")):
+    if os.path.exists(C + ".done"):
+        print("ALREADY MUTATED", C)
         continue
+    subprocess.call(["rm -rf " + C.replace("424contracts","424mutants").replace(".sol", "*.sol")],
+                        shell=True)
     loc = 0
     with open(C) as contractf:
         for line in contractf:
@@ -55,7 +61,9 @@ for C in CONTRACTS:
                 if P.poll() is not None:
                     print("*"*40)
                     print("DONE GENERATING MUTANTS FOR", contract, "IN SLOT", i)
-                    print("*"*40)                    
+                    print("*"*40)                                        
+                    with open(contract + ".done", 'w') as outf:
+                        outf.write("DONE\n")
                     slots[i] = None
                 else:
                     last = "NOT STARTED YET"
