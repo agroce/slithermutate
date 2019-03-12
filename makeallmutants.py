@@ -26,7 +26,7 @@ if os.path.exists("424.analyzed.slither.txt"):
             already_done.append(line[:-1])
 
 slots = {}
-maxSlots = 6
+maxSlots = 2
 outFiles = {}
 
 for i in range(0, maxSlots):
