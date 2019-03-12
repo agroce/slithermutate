@@ -22,6 +22,8 @@ CONTRACTS = sorted(glob.glob(CONTRACTS_DIR + "*.sol"))
 random.seed(1)
 random.shuffle(CONTRACTS)
 
+CONTRACTS = CONTRACTS[:100] # just first 100 for first run
+
 already_done = []
 if os.path.exists("424.analyzed.slither.txt"):
     with open("424.analyzed.slither.txt", 'r') as finished:
