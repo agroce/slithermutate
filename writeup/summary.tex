@@ -1,5 +1,8 @@
 \documentclass{article}
 
+\usepackage{url}
+\usepackage{code}
+
 \title{Mutation Analysis of Smart Contracts}
 
 \author{Alex Groce}
@@ -10,12 +13,14 @@
 
 \begin{abstract}
 In mutation analysis (also called mutation testing), large numbers of small syntactic changes to a program are introduced.  These variations (called mutants) are considered ``killed'' if a test suite can distinguish them from the original, unmodified program, and surviving if it cannot.  Mutation score (percent killed mutants) is thus a measure, stronger than code coverage, of the fault detection power of a test suite.
-Mutation analysis is typically used to evaluate the quality of a test suite, or perhaps a test-generation technique, and most often, at least until recently, only in an academic research setting.  This work proposes (1) use of \emph{differential} mutation result comparison to compare and improve static analysis tools, (2) use of statistics of such mutation scores to approximately compare the ``implicit specification'' strength of various programming languages, and (3) use of mutation analysis over combined static and dynamic analyses, combined with prioritization of surviving mutants, to strengthen smart contract testing and verification efforts.
+Mutation analysis is typically used to evaluate the quality of a test suite, or perhaps a test-generation technique, and most often, at least until recently, only in an academic research setting.  This work proposes (1) use of \emph{differential} mutation result comparison to compare and improve static analysis tools, (2) use of statistics of such mutation scores to approximately compare the ``implicit specification'' strength of various programming languages, and (3) use of mutation analysis over combined static and dynamic analyses, combined with prioritization of surviving mutants, to strengthen smart contract testing and verification efforts.  We focus on smart contracts due to certain characteristics that are unusual or even unique to smart contract code, that make them especially suitable for a mutation-based approach.
 \end{abstract}
 
 \section{Introduction}
 
-In an ASE 2015 \cite{groce2015verified} paper and a 2018 journal extension \cite{groce2018verified} of that paper, Groce et al. proposed examining individual mutants that survive a formal verification or automated test generation process to detect and correct weaknesses in a specification or test generator.
+In an ASE 2015 \cite{groce2015verified} paper and a 2018 journal extension \cite{groce2018verified} of that paper, Groce et al. proposed examining individual mutants that survive a formal verification or automated test generation process to detect and correct weaknesses in a specification or test generator.  The approach was able to expose bugs in a heavily-tested module of the Linux kernel \cite{mutKernel}.  Recently, mutation analysis has been adopted in industrial settings, though not yet for precisely the same purpose \cite{MutGoogle,ivankovic2018industrial}.
+
+\subsection{Why Smart Contracts?}
 
 \section{Differential Mutation Comparison}
 
@@ -24,6 +29,12 @@ We can say that a static analysis tool kills a mutant when the number of non-inf
 The value of the differential comparison lies in a few key points.  First, this is a measure that does not reward a tool that produces too many false positives.  The tool cannot simply flag all code as having a problem or it will perform poorly at the task of \emph{distinguishing} the mutated code from non-mutated (and presumably at least \emph{more} correct) code.  Based on verification and testing uses of mutations, it is safe to say that at least 50, and likely 60-70\% or more, of mutants that are not semantically equivalent to the original code are actually fault-inducing, so the task presented to a static analysis tool is the generalization of the task we ideally expect static analysis to perform:  to identify faulty code, without executing it, and, most critically, to distinguish faulty from correct code.  Obviously, many faults cannot be identified statically without a complete specification, or at low cost, but the measure of performance here is relative to other tools applied to the same code.
 
 This approach can also be used to improve tools.  If a tool fails to detect a mutant, but another tool does kill that mutant, the pattern involved can be examined to see if it offers a potential to improve the non-detecting tool.  In some cases, the change would produce too many false positives, but it is worth considering, especially when more than two tools are available to compare, and a majority do kill a mutant.
+
+\subsection{Application to Solidity Static Analysis Tools}
+
+We used the universalmutator tool \cite{universalmutator,regexpMut} to compare three Solidity static analysis tools using this differential approach: Trail of Bits' Slither, Securify, and SmartCheck.
+
+\subsubsection{Solidity 0.5.4 Results}
 
 \section{Cross-Language Comparison}
 
