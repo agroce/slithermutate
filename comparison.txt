@@ -2128,3 +2128,31 @@ ISSUE COUNTS: SLITHER 0 SECURIFY 0 SMARTCHECK 0
 NO VALID MUTANTS FOR THIS CONTRACT
 
 
+
+********************************************************************************
+MUTATION SCORE SUMMARY:
+5 CONTRACTS ARE CLEAN FOR ALL TOOLS
+slither MEAN: 0.11496032122549524 MEDIAN: 0.12 STD: 0.0804374598706841
+slither CLEAN MEAN: 0.06666666666660001 MEDIAN: 0.0 STD: 0.13333333333320005
+
+smartcheck MEAN: 0.041244772228371425 MEDIAN: 0.0 STD: 0.05295918798196471
+smartcheck CLEAN MEAN: 0.0 MEDIAN: 0.0 STD: 0.0
+
+securify MEAN: 0.011605239212819524 MEDIAN: 0.0 STD: 0.014511484612823321
+securify CLEAN MEAN: 0.0 MEDIAN: 0.0 STD: 0.0
+
+
+STATISTICAL COMPARISONS:
+slither VS. smartcheck:
+Wilc/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/stats/morestats.py:2778: UserWarning: Warning: sample size too small for normal approximation.
+  warnings.warn("Warning: sample size too small for normal approximation.")
+/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/stats/morestats.py:2803: RuntimeWarning: invalid value encountered in double_scalars
+  z = (T - mn - correction) / se
+oxonResult(statistic=6.0, pvalue=0.0008458546226604534)
+CLEAN: WilcoxonResult(statistic=0.0, pvalue=0.31731050786291415)
+slither VS. securify:
+WilcoxonResult(statistic=0.0, pvalue=0.0002930525201924893)
+CLEAN: WilcoxonResult(statistic=0.0, pvalue=0.31731050786291415)
+smartcheck VS. securify:
+WilcoxonResult(statistic=4.0, pvalue=0.016604878103722735)
+CLEAN: WilcoxonResult(statistic=0.0, pvalue=nan)
