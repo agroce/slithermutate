@@ -1,5 +1,7 @@
 from __future__ import print_function
 import subprocess
+import scipy
+import scipy.stats
 
 securify_issues = {}
 securify_score = {}
@@ -47,6 +49,8 @@ with open("stats_424_smartcheck.txt", 'r') as smartcheck_stats:
         if "NO VALID MUTANTS" in line:
             smartcheck_score[contract] = -1.0
 
+allClean = []
+            
 for contract in slither_score:
     print("="*80)
     print(contract)
@@ -55,6 +59,8 @@ for contract in slither_score:
                "SMARTCHECK", smartcheck_issues[contract])
     if (securify_issues[contract] == 0) and (slither_issues[contract] == 0) and (smartcheck_issues[contract] == 0):
         print("   -- ALL TOOLS FIND NO ISSUES --")
+        if slither_score[contract] != -1.0:
+            allClean.append(contract)
     if slither_score[contract] == -1.0:
         print("NO VALID MUTANTS FOR THIS CONTRACT")
         print()
@@ -130,4 +136,36 @@ for contract in slither_score:
         for m in shared_kills:
             print("  ", m)
     print()
-    
+
+print()
+print("*"*80)
+print("MUTATION SCORE SUMMARY:")
+print(len(allClean), "CONTRACTS ARE CLEAN FOR ALL TOOLS")
+toolScores = {}
+toolCleanScores = {}
+for (tool, scores) in [("slither", slither_score),
+                       ("smartcheck", smartcheck_score),
+                       ("securify", securify_score)]:
+    svals = filter(lambda x: x >= 0.0, scores.values())
+    toolScores[tool] = svals
+    print(tool, "MEAN:", scipy.mean(svals), "MEDIAN:", scipy.median(svals),
+              "STD:", scipy.std(svals))
+    svals = map(lambda x: scores[x], allClean)
+    toolCleanScores[tool] = svals
+    print(tool, "CLEAN MEAN:", scipy.mean(svals), "MEDIAN:", scipy.median(svals),
+              "STD:", scipy.std(svals))
+    print()
+print()
+print("STATISTICAL COMPARISONS:")
+done = []
+for tool1 in ["slither", "smartcheck", "securify"]:
+    for tool2 in ["slither", "smartcheck", "securify"]:
+        if tool1 == tool2:
+            continue
+        if sorted([tool1, tool2]) not in done:
+            done.append(sorted([tool1, tool2]))
+        else:
+            continue
+        print(tool1, "VS.", tool2 + ":")
+        print(scipy.stats.wilcoxon(toolScores[tool1], toolScores[tool2]))
+        print("CLEAN:", scipy.stats.wilcoxon(toolCleanScores[tool1], toolCleanScores[tool2]))
