@@ -5,6 +5,7 @@ securify_issues = {}
 securify_score = {}
 slither_issues = {}
 slither_score = {}
+loc = {}
 smartcheck_issues = {}
 smartcheck_score = {}
 
@@ -28,6 +29,8 @@ with open("stats_424_slither.txt", 'r') as slither_stats:
             contract = line.split()[1]
         if "ISSUES:" in line:
             slither_issues[contract] = int(line.split()[-1])
+        if "LOC:" in line:
+            loc[contract] = int(line.split()[-1])
         if "MUTATION SCORE" in line:
             slither_score[contract] = float(line.split()[-1])
         if "NO VALID MUTANTS" in line:

@@ -3,10 +3,10 @@ import os
 
 def runSmartcheck(file):
     count = 0
-    with open("out.txt", 'w') as outf:
+    with open("smartout.txt", 'w') as outf:
         r = subprocess.call(["smartcheck", "-p", file],
                                 stdout=outf, stderr=outf)
-    with open("out.txt", 'r') as outf:
+    with open("smartout.txt", 'r') as outf:
         for line in outf:
             if "severity: " in line:
                 sev = int(line.split()[-1])
