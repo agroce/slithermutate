@@ -70,7 +70,7 @@ Finally, the practical Trail of Bits/Crytic application of all this (other than 
 \item Ranks those mutants so that a user can quickly look at very different mutants the analysis cannot detect, and mark them as interesting/uninteresting, which provides feedback for presentation of further mutants.
 \end{enumerate}
 
-To our knowledge, previous mutation analysis has never ignored mutants that are easily detected by static tools.  This has some serious benefits:  some faults are hard to detect dynamically, but easy to detect statically, or have impact in terms of best-practices or code maintainability but not in dynamic behavior, and these are not the mutants users need to see, when looking to improve their tests or test generation.
+To our knowledge, previous mutation analysis has never ignored mutants that are easily detected by static tools.  This has some serious benefits:  some faults are hard to detect dynamically, but easy to detect statically, or have impact in terms of best-practices or code maintainability but not in dynamic behavior, and these are not the mutants users need to see, when looking to improve their tests or test generation.  Because even in this setting, examining all mutants may be impractical, we plan to develop methods, based on similarity and heuristic estimates of interestingness (e.g., amount of bytecode change), to rank mutants for presentation.  One route to such methods is to use the FPF \cite{Gonzalez85} method used in ``fuzzer taming'' previously \cite{PLDI13,distMut}.
 
 \bibliographystyle{plain}
 \bibliography{bibliography_ag,rahul}
