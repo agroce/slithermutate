@@ -8,6 +8,6 @@ def runSecurify(file):
                                 stdout=outf, stderr=outf)
     with open("out.txt", 'r') as outf:
         for line in outf:
-            if "Violation" in line:
+            if "Violation" in line or "Warning" in line:
                 count += 1
     return count
