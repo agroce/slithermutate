@@ -1,0 +1,5 @@
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.114.sol
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.113.sol
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.139.sol
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.138.sol
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.70.sol
