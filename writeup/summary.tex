@@ -61,7 +61,16 @@ The best Solidity analysis tool (Slither) detects 10\% or more of mutants in cle
 
 \section{Full-Spectrum Mutation Analysis}
 
-The practical 
+Finally, the practical Trail of Bits/Crytic application of all this (other than improving/evaluating Slither) is the development of a framework for automatic mutation analysis of Solidity contracts, where the tool:
+
+\begin{enumerate}
+\item Generates mutants of the contract being analyzed.
+\item Runs Slither (and any other static tools) to throw out mutants easily detect statically.
+\item Runs Echidna / Manticore to find surviving mutants.
+\item Ranks those mutants so that a user can quickly look at very different mutants the analysis cannot detect, and mark them as interesting/uninteresting, which provides feedback for presentation of further mutants.
+\end{enumerate}
+
+To our knowledge, previous mutation analysis has never ignored mutants that are easily detected by static tools.  This has some serious benefits:  some faults are hard to detect dynamically, but easy to detect statically, or have impact in terms of best-practices or code maintainability but not in dynamic behavior, and these are not the mutants users need to see, when looking to improve their tests or test generation.
 
 \bibliographystyle{plain}
 \bibliography{bibliography_ag,rahul}
