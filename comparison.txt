@@ -2129,8 +2129,31 @@ NO VALID MUTANTS FOR THIS CONTRACT
 
 
 
-********************************************************************************
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ISSUES SUMMARY:
+
+slither MEAN: 0.2857142857142857 MEDIAN: 0.0 STD: 0.6281383789653772
+
+smartcheck MEAN: 0.5238095238095238 MEDIAN: 0.0 STD: 0.6632565846278151
+
+securify MEAN: 1.5238095238095237 MEDIAN: 1.0 STD: 2.151833052894286
+
+
+STATISTICAL COMPARISONS:
+slither VS. smartcheck:
+WilcoxonResult(statistic=17.0, pvalue=0.26503718695941936)
+slither VS. securify:
+WilcoxonResult(statistic=10.5, pvalue=0.02369888603370162)
+smartcheck VS. securify:
+WilcoxonResult(statistic=20.0, pvalue=0.06405558662860182)
+
++++/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/stats/morestats.py:2778: UserWarning: Warning: sample size too small for normal approximation.
+  warnings.warn("Warning: sample size too small for normal approximation.")
+/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/stats/morestats.py:2803: RuntimeWarning: invalid value encountered in double_scalars
+  z = (T - mn - correction) / se
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 MUTATION SCORE SUMMARY:
+
 5 CONTRACTS ARE CLEAN FOR ALL TOOLS
 slither MEAN: 0.11496032122549524 MEDIAN: 0.12 STD: 0.0804374598706841
 slither CLEAN MEAN: 0.06666666666660001 MEDIAN: 0.0 STD: 0.13333333333320005
@@ -2144,11 +2167,7 @@ securify CLEAN MEAN: 0.0 MEDIAN: 0.0 STD: 0.0
 
 STATISTICAL COMPARISONS:
 slither VS. smartcheck:
-Wilc/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/stats/morestats.py:2778: UserWarning: Warning: sample size too small for normal approximation.
-  warnings.warn("Warning: sample size too small for normal approximation.")
-/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/stats/morestats.py:2803: RuntimeWarning: invalid value encountered in double_scalars
-  z = (T - mn - correction) / se
-oxonResult(statistic=6.0, pvalue=0.0008458546226604534)
+WilcoxonResult(statistic=6.0, pvalue=0.0008458546226604534)
 CLEAN: WilcoxonResult(statistic=0.0, pvalue=0.31731050786291415)
 slither VS. securify:
 WilcoxonResult(statistic=0.0, pvalue=0.0002930525201924893)

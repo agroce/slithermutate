@@ -138,8 +138,38 @@ for contract in slither_score:
     print()
 
 print()
-print("*"*80)
+print("+"*80)
+print("ISSUES SUMMARY:")
+print()
+toolIssues = {}
+for (tool, scores, issues) in [("slither", slither_score, slither_issues),
+                       ("smartcheck", smartcheck_score, smartcheck_issues),
+                       ("securify", securify_score, securify_issues)]:
+    cbasis = filter(lambda x: scores[x] >= 0.0, scores.keys())
+    svals = map(lambda x: issues[x], cbasis)
+    toolIssues[tool] = svals
+    print(tool, "MEAN:", scipy.mean(svals), "MEDIAN:", scipy.median(svals),
+              "STD:", scipy.std(svals))
+    print()
+print()
+print("STATISTICAL COMPARISONS:")
+done = []
+for tool1 in ["slither", "smartcheck", "securify"]:
+    for tool2 in ["slither", "smartcheck", "securify"]:
+        if tool1 == tool2:
+            continue
+        if sorted([tool1, tool2]) not in done:
+            done.append(sorted([tool1, tool2]))
+        else:
+            continue
+        print(tool1, "VS.", tool2 + ":")
+        print(scipy.stats.wilcoxon(toolIssues[tool1], toolIssues[tool2]))
+    
+    
+print()
+print("+"*80)
 print("MUTATION SCORE SUMMARY:")
+print()
 print(len(allClean), "CONTRACTS ARE CLEAN FOR ALL TOOLS")
 toolScores = {}
 toolCleanScores = {}
