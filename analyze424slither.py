@@ -13,6 +13,7 @@ except:
     pass
 
 scores = []
+issues = []
 cleanScores = []
 cleanContracts = []
 
@@ -117,13 +118,15 @@ for C in CONTRACTS:
         with open("424.analyzed.slither.txt", 'a') as finished:
             finished.write(C + "\n")
     scores.append(score)
+    issues.append(numIssues)
     if numIssues == 0:
         cleanScores.append(score)
         cleanContracts.append(C)
     print()
     print("RUNNING TOTALS ON", len(scores), "CONTRACTS /", len(cleanScores), "CLEAN CONTRACTS")
-    print("MEAN:", scipy.mean(scores), "MEDIAN:", scipy.median(scores), "STD:", scipy.std(scores))
-    print("CLEAN MEAN:", scipy.mean(cleanScores), "MEDIAN:", scipy.median(cleanScores),
+    print("ISSUES MEAN:", scipy.mean(issues), "MEDIAN:", scipy.median(issues), "STD:", scipy.std(issues))
+    print("MUTANTS MEAN:", scipy.mean(scores), "MEDIAN:", scipy.median(scores), "STD:", scipy.std(scores))
+    print("CLEAN MUTANTS MEAN:", scipy.mean(cleanScores), "MEDIAN:", scipy.median(cleanScores),
               "STD:", scipy.std(cleanScores))
     sys.stdout.flush()
 
