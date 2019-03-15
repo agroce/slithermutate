@@ -16,7 +16,7 @@ def mutno(mutant):
 
 with open("stats_424_securify.txt", 'r') as securify_stats:
     for line in securify_stats:
-        if "analyzing contracts/" in line:
+        if "analyzing 424contracts/" in line:
             contract = line.split()[1]
         if "ISSUES:" in line:
             securify_issues[contract] = int(line.split()[-1])
@@ -27,7 +27,7 @@ with open("stats_424_securify.txt", 'r') as securify_stats:
 
 with open("stats_424_slither.txt", 'r') as slither_stats:
     for line in slither_stats:
-        if "analyzing contracts/" in line:
+        if "analyzing 424contracts/" in line:
             contract = line.split()[1]
         if "ISSUES:" in line:
             slither_issues[contract] = int(line.split()[-1])
@@ -40,7 +40,7 @@ with open("stats_424_slither.txt", 'r') as slither_stats:
 
 with open("stats_424_smartcheck.txt", 'r') as smartcheck_stats:
     for line in smartcheck_stats:
-        if "analyzing contracts424/" in line:
+        if "analyzing 424contracts/" in line:
             contract = line.split()[1]
         if "ISSUES:" in line:
             smartcheck_issues[contract] = int(line.split()[-1])
@@ -110,7 +110,7 @@ for contract in slither_score:
                 print("** mutant detected by both non-slither tools **")
             print("DIFF:")
             with open("diffout.txt", 'w') as diff_f:
-                subprocess.call(["diff", "mutants/" + m, contract],
+                subprocess.call(["diff", "424mutants/" + m, contract],
                                     stdout=diff_f, stderr=diff_f)
             with open("diffout.txt", 'r') as diff_f:
                 for line in diff_f:
@@ -119,7 +119,7 @@ for contract in slither_score:
             any_smartcheck = True
         else:
             shared_kills.append(m)
-    if any_securify:
+    if any_smartcheck:
         print()
     any_slither = False
     for m in sorted(slither_kills, key=mutno):

@@ -117,7 +117,7 @@ for contract in slither_score:
             any_smartcheck = True
         else:
             shared_kills.append(m)
-    if any_securify:
+    if any_smartcheck:
         print()
     any_slither = False
     for m in sorted(slither_kills, key=mutno):
