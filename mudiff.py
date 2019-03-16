@@ -87,10 +87,13 @@ def d(m1,m2):
     mchange1 = changed(orig1, mutant1)
     mchange2 = changed(orig2, mutant2)
     dm1m2 = Levenshtein.distance(mchange1,mchange2)
+    mchange1 = orig1 + "==>" + mutant1
+    mchange2 = orig2 + "==>" + mutant2   
+    dm1m2 += 0.1 * Levenshtein.distance(mchange1,mchange2)    
     dcache[(m1, m2)] = dm1m2
     return dm1m2
 
-while len(shown) < 10:
+while len(shown) < 50:
     best = None
     maxMin = -1
     for m1 in smartwins:
@@ -102,6 +105,7 @@ while len(shown) < 10:
         if smallest > maxMin:
             best = m1
             maxMin = smallest
-
+    print "*"*80
+    print "new distance", maxMin
     show(best)
     shown.append(best)
