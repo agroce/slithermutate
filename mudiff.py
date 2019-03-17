@@ -32,23 +32,13 @@ for f in glob.glob("424contracts/*.smartcheck.killed.txt"):
         if m not in nkslither:
             smartwins.append((m, origCode, mutantCode, lineno))
 
-def show(m):
-    (mfile, orig, mutant, lineno) = m
-    print "="*80
-    print mfile
-    print orig[:-1]
-    print " ==> "
-    print mutant[:-1]
-            
-shown = [smartwins[0]]
-
-show(smartwins[0])
-
 dcache = {}
 
 def changed(orig, mutant):
     eops = Levenshtein.editops(orig,mutant)
     blocks = Levenshtein.matching_blocks(eops, orig, mutant)
+    if len(blocks) > 4:
+        return mutant
     keep = ''.join([orig[x[0]:x[0]+x[2]] for x in blocks])
     notkeep = ""
     pos = 0
@@ -92,6 +82,19 @@ def d(m1,m2):
     dm1m2 += 0.1 * Levenshtein.distance(mchange1,mchange2)    
     dcache[(m1, m2)] = dm1m2
     return dm1m2
+
+def show(m):
+    (mfile, orig, mutant, lineno) = m
+    print "="*80
+    print mfile
+    print orig[:-1]
+    print " ==> "
+    print mutant[:-1]
+    print "CHANGE:", changed(orig, mutant)
+            
+shown = [smartwins[0]]
+
+show(smartwins[0])
 
 while len(shown) < 50:
     best = None
