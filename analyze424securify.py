@@ -98,7 +98,7 @@ for C in CONTRACTS:
             subprocess.call(["analyze_mutants", C, "python maxissuessecurify.py " +
                                  str(numIssues) + " " + C,
                                  "--mutantDir", "424mutants",
-                                 "--timeout", "120"],
+                                 "--timeout", "3600"],
                                 stdout=outf, stderr=outf)
         with open("out.txt", 'r') as outf:
             for line in outf:

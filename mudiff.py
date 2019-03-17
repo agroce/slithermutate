@@ -96,7 +96,7 @@ shown = [smartwins[0]]
 
 show(smartwins[0])
 
-while len(shown) < 50:
+while len(shown) < 500:
     best = None
     maxMin = -1
     for m1 in smartwins:
