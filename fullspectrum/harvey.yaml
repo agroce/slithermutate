@@ -1,0 +1,6 @@
+testLimit: 10000
+epochs: 100
+range: 1
+printCoverage: true
+outdir: "outdir"
+dashboard: false
