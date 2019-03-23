@@ -66,10 +66,14 @@ for C in CONTRACTS:
             print("NO VALID MUTANTS")
             continue
     else:
-        with open("out.txt", 'w') as outf:
-            numIssues = runSecurify(C)
-        with open("out.txt", 'r') as outf:
-            results = outf.read()
+        if not os.path.exists(C+".securify.issues"):
+            with open("out.txt", 'w') as outf:
+                numIssues = runSecurify(C)
+            with open("out.txt", 'r') as outf:
+                results = outf.read()
+        else:
+            with open(C+".securify.issues", 'r') as issuef:
+                numIssues = int(issuef.read())        
         print("ISSUES:", numIssues)
         with open(C+".securify.issues", 'w') as issuef:
             issuef.write(str(numIssues)+"\n")
@@ -108,8 +112,8 @@ for C in CONTRACTS:
         subprocess.call(["wc","-l","killed.txt"])
         subprocess.call(["wc","-l","notkilled.txt"])
         sys.stdout.flush()    
-        subprocess.call(["cp","killed.txt",C+".securify.killed.txt"])
-        subprocess.call(["cp","notkilled.txt",C+".securify.notkilled.txt"])
+        subprocess.call(["mv","killed.txt",C+".securify.killed.txt"])
+        subprocess.call(["mv","notkilled.txt",C+".securify.notkilled.txt"])
         with open("424.analyzed.securify.txt", 'a') as finished:
             finished.write(C + "\n")
     scores.append(score)
