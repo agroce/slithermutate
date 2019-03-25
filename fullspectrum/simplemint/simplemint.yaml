@@ -1,0 +1,4 @@
+sender: ["0x1", "0x2", "0x3"]
+testLimit: 10000
+deployer: "0x1"
+dashboard: false
