@@ -1,0 +1,5 @@
+\Wemit\W
+\Wevent\W
+function receiveApproval
+symbol = "TT";
+name = "TestToken";
