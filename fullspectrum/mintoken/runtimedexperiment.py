@@ -21,7 +21,7 @@ def fixTimeout(str):
 
 experiments = map(fixTimeout, experiments)
 
-for i in range(0,30):
+for i in range(0,15):
     print "RUNNING", i
     for e in experiments:
         cmd = e.replace("EXPN", str(i))
