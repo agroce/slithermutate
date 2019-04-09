@@ -1,0 +1,703 @@
+READ 117 MUTANTS
+********************************************************************************
+MUTANT #1:
+Multiandtest.mutant.156.sol: Multiandtest.sol:196
+        return normalize(l*(10**dscale) / r, 2, xor(lhs.sign, rhs.sign));
+ ==>  ...==>.../*...*/...
+        /*return normalize(l*(10**dscale) / r, 2, xor(lhs.sign, rhs.sign));*/
+********************************************************************************
+MUTANT #2:
+Multiandtest.mutant.94.sol: Multiandtest.sol:95
+        data.f = f;
+ ==>  ...==>.../*...*/...
+        /*data.f = f;*/
+********************************************************************************
+MUTANT #3:
+Multiandtest.mutant.139.sol: Multiandtest.sol:130
+            else
+ ==>  ...==>.../*...*/...
+            /*else*/
+********************************************************************************
+MUTANT #4:
+Multiandtest.mutant.36.sol: Multiandtest.sol:75
+            data.part = uint(integral);
+ ==>  ...==>.../*...*/...
+            /*data.part = uint(integral);*/
+********************************************************************************
+MUTANT #5:
+Multiandtest.mutant.116.sol: Multiandtest.sol:122
+            return normalize(l + r, 2, rhs.sign);
+ ==>  ...==>.../*...*/...
+            /*return normalize(l + r, 2, rhs.sign);*/
+********************************************************************************
+MUTANT #6:
+Multiandtest.mutant.79.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...==>.../*...*/...
+        /*if (f % dot == 0)*/
+********************************************************************************
+MUTANT #7:
+Multiandtest.mutant.119.sol: Multiandtest.sol:124
+        else
+ ==>  ...==>.../*...*/...
+        /*else*/
+********************************************************************************
+MUTANT #8:
+Multiandtest.mutant.34.sol: Multiandtest.sol:74
+        } else {
+ ==>  ...==>.../*...*/...
+        /*} else {*/
+********************************************************************************
+MUTANT #9:
+Multiandtest.mutant.28.sol: Multiandtest.sol:72
+            data.sign = true;
+ ==>  ...==>.../*...*/...
+            /*data.sign = true;*/
+********************************************************************************
+MUTANT #10:
+Multiandtest.mutant.87.sol: Multiandtest.sol:92
+            f /= dot;
+ ==>  ...==>.../*...*/...
+            /*f /= dot;*/
+********************************************************************************
+MUTANT #11:
+Multiandtest.mutant.38.sol: Multiandtest.sol:77
+        data.f = fractional;
+ ==>  ...==>.../*...*/...
+        /*data.f = fractional;*/
+********************************************************************************
+MUTANT #12:
+Multiandtest.mutant.97.sol: Multiandtest.sol:96
+        data.sign = sign;
+ ==>  ...==>.../*...*/...
+        /*data.sign = sign;*/
+********************************************************************************
+MUTANT #13:
+Multiandtest.mutant.91.sol: Multiandtest.sol:94
+        data.part = part;
+ ==>  ...==>.../*...*/...
+        /*data.part = part;*/
+********************************************************************************
+MUTANT #14:
+Multiandtest.mutant.18.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...<...==>...>...
+        if(integral > 0)
+********************************************************************************
+MUTANT #15:
+Multiandtest.mutant.30.sol: Multiandtest.sol:73
+            data.part = uint(-integral);
+ ==>  revert();
+revert();
+********************************************************************************
+MUTANT #16:
+Multiandtest.mutant.24.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>          if(true)
+        if(true)
+********************************************************************************
+MUTANT #17:
+Multiandtest.mutant.3.sol: Multiandtest.sol:7
+#    the Free Software Foundation, either version 3 of the License, or
+ ==>  #    the F...e Softw...re Foundation, either version 3 of the License, or...==>b...k;...
+break;
+********************************************************************************
+MUTANT #18:
+Multiandtest.mutant.154.sol: Multiandtest.sol:180
+     */
+ ==>       */...==>selfdestruct(msg.sender);...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #19:
+Multiandtest.mutant.37.sol: Multiandtest.sol:77
+        data.f = fractional;
+ ==>          data.f = f...ac...ional...==>...ever...()...
+revert();
+********************************************************************************
+MUTANT #20:
+Multiandtest.mutant.105.sol: Multiandtest.sol:120
+        if (lhs.sign == rhs.sign)
+ ==>  ...lh....sign == rhs.sign...==>...fal...e...
+        if (false)
+********************************************************************************
+MUTANT #21:
+Multiandtest.mutant.78.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...f % do... == 0...==>...rue...
+        if (true)
+********************************************************************************
+MUTANT #22:
+Multiandtest.mutant.152.sol: Multiandtest.sol:169
+            double memory data;
+ ==>  ...mem...y...==>...st...age...
+            double storage data;
+********************************************************************************
+MUTANT #23:
+Multiandtest.mutant.98.sol: Multiandtest.sol:100
+    function xor(bool a, bool b) internal pure returns (bool)
+ ==>  ...internal...==>...
+    function xor(bool a, bool b)  pure returns (bool)
+********************************************************************************
+MUTANT #24:
+Multiandtest.mutant.4.sol: Multiandtest.sol:12
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ==>  ...FITNESS...==>...
+#    MERCHANTABILITY or  FOR A PARTICULAR PURPOSE.  See the
+********************************************************************************
+MUTANT #25:
+Multiandtest.mutant.17.sol: Multiandtest.sol:59
+        dscale = prec;
+ ==>          dscal... = prec...==>r...vert()...
+revert();
+********************************************************************************
+MUTANT #26:
+Multiandtest.mutant.23.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...integr... < 0...==>...f...se...
+        if(false)
+********************************************************************************
+MUTANT #27:
+Multiandtest.mutant.90.sol: Multiandtest.sol:94
+        data.part = part;
+ ==>  ...part;...==>...
+        data.part = 
+********************************************************************************
+MUTANT #28:
+Multiandtest.mutant.88.sol: Multiandtest.sol:94
+        data.part = part;
+ ==>          data.pa...t = part...==>selfdest...uct(msg.sender)...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #29:
+Multiandtest.mutant.27.sol: Multiandtest.sol:72
+            data.sign = true;
+ ==>              da...a.sign = true...==>rever...()...
+revert();
+********************************************************************************
+MUTANT #30:
+Multiandtest.mutant.1.sol: Multiandtest.sol:3
+#    Copyright (C) 2017  alianse777
+ ==>  ...2...17...==>...
+#    Copyright (C) 0  alianse777
+********************************************************************************
+MUTANT #31:
+Multiandtest.mutant.153.sol: Multiandtest.sol:169
+            double memory data;
+ ==>  ...memory...==>...
+            double  data;
+********************************************************************************
+MUTANT #32:
+Multiandtest.mutant.181.sol: Multiandtest.sol:285
+    function reshape_int(int [2] data) internal pure returns (double [])
+ ==>  ...pure...==>...view...
+    function reshape_int(int [2] data) internal view returns (double [])
+********************************************************************************
+MUTANT #33:
+Multiandtest.mutant.150.sol: Multiandtest.sol:149
+                return normalize(l + r, 2, lhs.sign);
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #34:
+Multiandtest.mutant.120.sol: Multiandtest.sol:124
+        else
+ ==>  ...else...==>...
+        
+********************************************************************************
+MUTANT #35:
+Multiandtest.mutant.22.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...==>...(...+1...)...
+        if(integral < (0+1))
+********************************************************************************
+MUTANT #36:
+Multiandtest.mutant.85.sol: Multiandtest.sol:92
+            f /= dot;
+ ==>              f /= ...ot...==>self...estruct(msg.sender)...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #37:
+Multiandtest.mutant.32.sol: Multiandtest.sol:74
+        } else {
+ ==>          } ...lse {...==>r...vert();...
+revert();
+********************************************************************************
+MUTANT #38:
+Multiandtest.mutant.51.sol: Multiandtest.sol:85
+    function normalize(uint num, uint s, bool sign) internal view returns (double data)
+ ==>  ...view...==>...
+    function normalize(uint num, uint s, bool sign) internal  returns (double data)
+********************************************************************************
+MUTANT #39:
+Multiandtest.mutant.26.sol: Multiandtest.sol:72
+            data.sign = true;
+ ==>  ...tru...==>...fals...
+            data.sign = false;
+********************************************************************************
+MUTANT #40:
+Multiandtest.mutant.8.sol: Multiandtest.sol:36
+*               b = double_t(1, 0); // 1.00
+ ==>  ...0);...==>...
+*               b = double_t(1,  // 1.00
+********************************************************************************
+MUTANT #41:
+Multiandtest.mutant.173.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...&&...==>...||...
+        return (lhs.part == rhs.part && lhs.f == rhs.f || rhs.sign == lhs.sign);
+********************************************************************************
+MUTANT #42:
+Multiandtest.mutant.2.sol: Multiandtest.sol:3
+#    Copyright (C) 2017  alianse777
+ ==>  ...777...==>...0...
+#    Copyright (C) 2017  alianse0
+********************************************************************************
+MUTANT #43:
+Multiandtest.mutant.137.sol: Multiandtest.sol:130
+            else
+ ==>              el...==>...lfdestruct(msg.sender);...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #44:
+Multiandtest.mutant.75.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>          if (f % dot == 0)...==>selfdestruct(msg.sender);...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #45:
+Multiandtest.mutant.125.sol: Multiandtest.sol:126
+            if (l > r)
+ ==>  ...==>...!(...)...
+            if (!(l > r))
+********************************************************************************
+MUTANT #46:
+Multiandtest.mutant.72.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...==...==>...<...
+        if (f % dot < 0)
+********************************************************************************
+MUTANT #47:
+Multiandtest.mutant.5.sol: Multiandtest.sol:13
+#    GNU General Public License for more details.
+ ==>  ...General...==>...
+#    GNU  Public License for more details.
+********************************************************************************
+MUTANT #48:
+Multiandtest.mutant.10.sol: Multiandtest.sol:54
+    uint private dscale = 2;  // precision
+ ==>  ...2...==>...1...
+    uint private dscale = 1;  // precision
+********************************************************************************
+MUTANT #49:
+Multiandtest.mutant.43.sol: Multiandtest.sol:82
+        r = data.part*dot + data.f;
+ ==>  ...*...==>...+...
+        r = data.part+dot + data.f;
+********************************************************************************
+MUTANT #50:
+Multiandtest.mutant.108.sol: Multiandtest.sol:122
+            return normalize(l + r, 2, rhs.sign);
+ ==>  ...+...==>...*...
+            return normalize(l * r, 2, rhs.sign);
+********************************************************************************
+MUTANT #51:
+Multiandtest.mutant.182.sol: Multiandtest.sol:285
+    function reshape_int(int [2] data) internal pure returns (double [])
+ ==>  ...pure...==>...
+    function reshape_int(int [2] data) internal  returns (double [])
+********************************************************************************
+MUTANT #52:
+Multiandtest.mutant.7.sol: Multiandtest.sol:32
+*               double memory b = double_t(0, 2); // 0.02
+ ==>  ...b...==>...
+*               double memory  = double_t(0, 2); // 0.02
+********************************************************************************
+MUTANT #53:
+Multiandtest.mutant.77.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ... % dot == 0...==>...alse...
+        if (false)
+********************************************************************************
+MUTANT #54:
+Multiandtest.mutant.82.sol: Multiandtest.sol:92
+            f /= dot;
+ ==>  .../...==>...-...
+            f -= dot;
+********************************************************************************
+MUTANT #55:
+Multiandtest.mutant.0.sol: Multiandtest.sol:1
+pragma solidity ^0.4.0;
+ ==>  ...==>/*...*/...
+/*pragma solidity ^0.4.0;*/
+********************************************************************************
+MUTANT #56:
+Multiandtest.mutant.15.sol: Multiandtest.sol:55
+    uint private dot = 10**dscale;
+ ==>  ...==>...(...-1)...
+    uint private dot = (10-1)**dscale;
+********************************************************************************
+MUTANT #57:
+Multiandtest.mutant.151.sol: Multiandtest.sol:158
+            if (rhs.sign != lhs.sign)
+ ==>  ...!=...==>...>...
+            if (rhs.sign > lhs.sign)
+********************************************************************************
+MUTANT #58:
+Multiandtest.mutant.121.sol: Multiandtest.sol:126
+            if (l > r)
+ ==>  ...>...==>...<...
+            if (l < r)
+********************************************************************************
+MUTANT #59:
+Multiandtest.mutant.13.sol: Multiandtest.sol:55
+    uint private dot = 10**dscale;
+ ==>  ...0...==>...
+    uint private dot = 1**dscale;
+********************************************************************************
+MUTANT #60:
+Multiandtest.mutant.21.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...0...==>...-1...
+        if(integral < -1)
+********************************************************************************
+MUTANT #61:
+Multiandtest.mutant.63.sol: Multiandtest.sol:89
+        uint f = num % d;
+ ==>  ...%...==>.../...
+        uint f = num / d;
+********************************************************************************
+MUTANT #62:
+Multiandtest.mutant.92.sol: Multiandtest.sol:95
+        data.f = f;
+ ==>          da...a...f = f...==>selfdes...ruct(msg...sender)...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #63:
+Multiandtest.mutant.25.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...==>... ...!(...)...
+        if (!(integral < 0))
+********************************************************************************
+MUTANT #64:
+Multiandtest.mutant.39.sol: Multiandtest.sol:82
+        r = data.part*dot + data.f;
+ ==>  ...+...==>...-...
+        r = data.part*dot - data.f;
+********************************************************************************
+MUTANT #65:
+Multiandtest.mutant.111.sol: Multiandtest.sol:122
+            return normalize(l + r, 2, rhs.sign);
+ ==>  ...2...==>...0...
+            return normalize(l + r, 0, rhs.sign);
+********************************************************************************
+MUTANT #66:
+Multiandtest.mutant.113.sol: Multiandtest.sol:122
+            return normalize(l + r, 2, rhs.sign);
+ ==>  ...==>...(...+1)...
+            return normalize(l + r, (2+1), rhs.sign);
+********************************************************************************
+MUTANT #67:
+Multiandtest.mutant.29.sol: Multiandtest.sol:73
+            data.part = uint(-integral);
+ ==>  ...-...==>...+...
+            data.part = uint(+integral);
+********************************************************************************
+MUTANT #68:
+Multiandtest.mutant.160.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...=...==>...<...
+        return (lhs.part <= rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+********************************************************************************
+MUTANT #69:
+Multiandtest.mutant.73.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...0...==>...1...
+        if (f % dot == 1)
+********************************************************************************
+MUTANT #70:
+Multiandtest.mutant.56.sol: Multiandtest.sol:88
+        uint part = num / d;
+ ==>  .../...==>...+...
+        uint part = num + d;
+********************************************************************************
+MUTANT #71:
+Multiandtest.mutant.68.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...=...==>...!...
+        if (f % dot != 0)
+********************************************************************************
+MUTANT #72:
+Multiandtest.mutant.19.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...<...==>...==...
+        if(integral == 0)
+********************************************************************************
+MUTANT #73:
+Multiandtest.mutant.64.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...%...==>...+...
+        if (f + dot == 0)
+********************************************************************************
+MUTANT #74:
+Multiandtest.mutant.6.sol: Multiandtest.sol:31
+*               double memory a = double_t(1, 20); // 1.20
+ ==>  ...==>...(...-1)...
+*               double memory a = double_t(1, 20); // (1-1).20
+********************************************************************************
+MUTANT #75:
+Multiandtest.mutant.117.sol: Multiandtest.sol:124
+        else
+ ==>          el...==>...lfdestruct(msg.sender);...
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #76:
+Multiandtest.mutant.11.sol: Multiandtest.sol:54
+    uint private dscale = 2;  // precision
+ ==>  ...==>...(...+1)...
+    uint private dscale = (2+1);  // precision
+********************************************************************************
+MUTANT #77:
+Multiandtest.mutant.54.sol: Multiandtest.sol:87
+        uint d = 10**s;
+ ==>  ...==>...(...+1)...
+        uint d = (10+1)**s;
+********************************************************************************
+MUTANT #78:
+Multiandtest.mutant.80.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...==>...!(...)...
+        if (!(f % dot == 0))
+********************************************************************************
+MUTANT #79:
+Multiandtest.mutant.53.sol: Multiandtest.sol:87
+        uint d = 10**s;
+ ==>  ...0...==>...
+        uint d = 1**s;
+********************************************************************************
+MUTANT #80:
+Multiandtest.mutant.74.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...==>...(...+1...)...
+        if (f % dot == (0+1))
+********************************************************************************
+MUTANT #81:
+Multiandtest.mutant.99.sol: Multiandtest.sol:116
+    function double_add(double lhs, double rhs) internal view returns (double)
+ ==>  ...view...==>...
+    function double_add(double lhs, double rhs) internal  returns (double)
+********************************************************************************
+MUTANT #82:
+Multiandtest.mutant.47.sol: Multiandtest.sol:82
+        r = data.part*dot + data.f;
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #83:
+Multiandtest.mutant.83.sol: Multiandtest.sol:92
+            f /= dot;
+ ==>  .../...==>...*...
+            f *= dot;
+********************************************************************************
+MUTANT #84:
+Multiandtest.mutant.84.sol: Multiandtest.sol:92
+            f /= dot;
+ ==>  .../...==>...%...
+            f %= dot;
+********************************************************************************
+MUTANT #85:
+Multiandtest.mutant.65.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...%...==>...-...
+        if (f - dot == 0)
+********************************************************************************
+MUTANT #86:
+Multiandtest.mutant.62.sol: Multiandtest.sol:89
+        uint f = num % d;
+ ==>  ...%...==>...*...
+        uint f = num * d;
+********************************************************************************
+MUTANT #87:
+Multiandtest.mutant.70.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...=...==>...>...
+        if (f % dot >= 0)
+********************************************************************************
+MUTANT #88:
+Multiandtest.mutant.44.sol: Multiandtest.sol:82
+        r = data.part*dot + data.f;
+ ==>  ...*...==>...-...
+        r = data.part-dot + data.f;
+********************************************************************************
+MUTANT #89:
+Multiandtest.mutant.45.sol: Multiandtest.sol:82
+        r = data.part*dot + data.f;
+ ==>  ...*...==>.../...
+        r = data.part/dot + data.f;
+********************************************************************************
+MUTANT #90:
+Multiandtest.mutant.164.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...=...==>...>...
+        return (lhs.part == rhs.part && lhs.f >= rhs.f && rhs.sign == lhs.sign);
+********************************************************************************
+MUTANT #91:
+Multiandtest.mutant.9.sol: Multiandtest.sol:54
+    uint private dscale = 2;  // precision
+ ==>  ...2...==>...0...
+    uint private dscale = 0;  // precision
+********************************************************************************
+MUTANT #92:
+Multiandtest.mutant.112.sol: Multiandtest.sol:122
+            return normalize(l + r, 2, rhs.sign);
+ ==>  ...2...==>...1...
+            return normalize(l + r, 1, rhs.sign);
+********************************************************************************
+MUTANT #93:
+Multiandtest.mutant.95.sol: Multiandtest.sol:96
+        data.sign = sign;
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #94:
+Multiandtest.mutant.33.sol: Multiandtest.sol:74
+        } else {
+ ==>  ...else...==>...
+        }  {
+********************************************************************************
+MUTANT #95:
+Multiandtest.mutant.155.sol: Multiandtest.sol:185
+        return normalize(l*r, 4, xor(lhs.sign, rhs.sign));
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #96:
+Multiandtest.mutant.55.sol: Multiandtest.sol:87
+        uint d = 10**s;
+ ==>  ...==>...(...-1)...
+        uint d = (10-1)**s;
+********************************************************************************
+MUTANT #97:
+Multiandtest.mutant.147.sol: Multiandtest.sol:132
+                return normalize(r - l, 2, rhs.sign);
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #98:
+Multiandtest.mutant.114.sol: Multiandtest.sol:122
+            return normalize(l + r, 2, rhs.sign);
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #99:
+Multiandtest.mutant.81.sol: Multiandtest.sol:92
+            f /= dot;
+ ==>  .../...==>...+...
+            f += dot;
+********************************************************************************
+MUTANT #100:
+Multiandtest.mutant.57.sol: Multiandtest.sol:88
+        uint part = num / d;
+ ==>  .../...==>...-...
+        uint part = num - d;
+********************************************************************************
+MUTANT #101:
+Multiandtest.mutant.58.sol: Multiandtest.sol:88
+        uint part = num / d;
+ ==>  .../...==>...*...
+        uint part = num * d;
+********************************************************************************
+MUTANT #102:
+Multiandtest.mutant.59.sol: Multiandtest.sol:88
+        uint part = num / d;
+ ==>  .../...==>...%...
+        uint part = num % d;
+********************************************************************************
+MUTANT #103:
+Multiandtest.mutant.20.sol: Multiandtest.sol:70
+        if(integral < 0)
+ ==>  ...0...==>...1...
+        if(integral < 1)
+********************************************************************************
+MUTANT #104:
+Multiandtest.mutant.69.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...=...==>...<...
+        if (f % dot <= 0)
+********************************************************************************
+MUTANT #105:
+Multiandtest.mutant.71.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...==...==>...>...
+        if (f % dot > 0)
+********************************************************************************
+MUTANT #106:
+Multiandtest.mutant.67.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...%...==>.../...
+        if (f / dot == 0)
+********************************************************************************
+MUTANT #107:
+Multiandtest.mutant.60.sol: Multiandtest.sol:89
+        uint f = num % d;
+ ==>  ...%...==>...+...
+        uint f = num + d;
+********************************************************************************
+MUTANT #108:
+Multiandtest.mutant.61.sol: Multiandtest.sol:89
+        uint f = num % d;
+ ==>  ...%...==>...-...
+        uint f = num - d;
+********************************************************************************
+MUTANT #109:
+Multiandtest.mutant.66.sol: Multiandtest.sol:90
+        if (f % dot == 0)
+ ==>  ...%...==>...*...
+        if (f * dot == 0)
+********************************************************************************
+MUTANT #110:
+Multiandtest.mutant.134.sol: Multiandtest.sol:128
+                return normalize(l - r, 2, lhs.sign);
+ ==>  selfdestruct(msg.sender);
+selfdestruct(msg.sender);
+********************************************************************************
+MUTANT #111:
+Multiandtest.mutant.14.sol: Multiandtest.sol:55
+    uint private dot = 10**dscale;
+ ==>  ...==>...(...+1)...
+    uint private dot = (10+1)**dscale;
+********************************************************************************
+MUTANT #112:
+Multiandtest.mutant.35.sol: Multiandtest.sol:75
+            data.part = uint(integral);
+ ==>  revert();
+revert();
+********************************************************************************
+MUTANT #113:
+Multiandtest.mutant.172.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...&&...==>...||...
+        return (lhs.part == rhs.part || lhs.f == rhs.f && rhs.sign == lhs.sign);
+********************************************************************************
+MUTANT #114:
+Multiandtest.mutant.165.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...=...==>...>...
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign >= lhs.sign);
+********************************************************************************
+MUTANT #115:
+Multiandtest.mutant.163.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...=...==>...>...
+        return (lhs.part >= rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+********************************************************************************
+MUTANT #116:
+Multiandtest.mutant.161.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...=...==>...<...
+        return (lhs.part == rhs.part && lhs.f <= rhs.f && rhs.sign == lhs.sign);
+********************************************************************************
+MUTANT #117:
+Multiandtest.mutant.162.sol: Multiandtest.sol:228
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign == lhs.sign);
+ ==>  ...=...==>...<...
+        return (lhs.part == rhs.part && lhs.f == rhs.f && rhs.sign <= lhs.sign);
