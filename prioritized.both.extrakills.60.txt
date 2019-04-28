@@ -1,1129 +1,2257 @@
-READ 188 MUTANTS
+READ 376 MUTANTS
 ********************************************************************************
 MUTANT #1:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #2:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.352.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:402
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.352.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:402
     return true;
  ==>  revert();
 revert();
 ********************************************************************************
 MUTANT #3:
-0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.342.sol: 424contracts/0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:383
-    /*internal*/
- ==>  .../*...*/...==>...
-    internal
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.342.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:511
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #4:
-0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.383.sol: 424contracts/0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:242
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.383.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:242
         msg.sender.transfer(amount * sellPrice);          // sends ether to the seller. It's important to do this last to avoid recursion attacks
  ==>  ...msg...sender...==>...tx...origin...
         tx.origin.transfer(amount * sellPrice);          // sends ether to the seller. It's important to do this last to avoid recursion attacks
 ********************************************************************************
 MUTANT #5:
-0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.84.sol: 424contracts/0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:115
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.84.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:115
     modifier onlySecurityGuard { if (msg.sender != securityGuard) throw; _; }
  ==>  ...msg...sender...==>...tx...origin...
     modifier onlySecurityGuard { if (tx.origin != securityGuard) throw; _; }
 ********************************************************************************
 MUTANT #6:
-0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.187.sol: 424contracts/0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:292
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.187.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:292
     buyTokens(msg.sender);
  ==>  ...msg...sender...==>...tx...origin...
     buyTokens(tx.origin);
 ********************************************************************************
 MUTANT #7:
-0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.mutant.288.sol: 424contracts/0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.sol:245
+0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.mutant.288.sol: 424contracts//0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.sol:245
         confirmations[transactionId][msg.sender] = true;
  ==>  ...msg...sender...==>...tx...origin...
         confirmations[transactionId][tx.origin] = true;
 ********************************************************************************
 MUTANT #8:
-0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.332.sol: 424contracts/0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:244
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.332.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:244
     require(msg.sender == owner || msg.sender == saleAgent || mintingFinished);
  ==>  ...msg...sender...==>...tx...origin...
     require(msg.sender == owner || tx.origin == saleAgent || mintingFinished);
 ********************************************************************************
 MUTANT #9:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.45.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:53
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.45.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:53
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] = totalSupply;                // Give the creator all initial tokens
 ********************************************************************************
 MUTANT #10:
-0xf35c09172F521F11569147fBa340a27cEc76E086_WithDrawChildDAO.mutant.1153.sol: 424contracts/0xf35c09172F521F11569147fBa340a27cEc76E086_WithDrawChildDAO.sol:84
+0xf35c09172F521F11569147fBa340a27cEc76E086_WithDrawChildDAO.mutant.1153.sol: 424contracts//0xf35c09172F521F11569147fBa340a27cEc76E086_WithDrawChildDAO.sol:84
         if (!_childDAO.transferFrom(msg.sender, this, balance) || !msg.sender.send(amount))
  ==>  ...msg...sender...==>...tx...origin...
         if (!_childDAO.transferFrom(msg.sender, this, balance) || !tx.origin.send(amount))
 ********************************************************************************
 MUTANT #11:
-0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.123.sol: 424contracts/0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:51
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.123.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:51
 		allowance[from][msg.sender] -= value;							
  ==>  ...msg...sender...==>...tx...origin...
 		allowance[from][tx.origin] -= value;							
 ********************************************************************************
 MUTANT #12:
-0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.810.sol: 424contracts/0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:305
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.810.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:305
     orderFills[msg.sender][hash] = amountGet;
  ==>  ...msg...sender...==>...tx...origin...
     orderFills[tx.origin][hash] = amountGet;
 ********************************************************************************
 MUTANT #13:
-0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.241.sol: 424contracts/0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:153
+0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.241.sol: 424contracts//0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:153
             allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #14:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.731.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:578
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.731.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:578
       address investor = msg.sender;
  ==>  ...msg...sender...==>...tx...origin...
       address investor = tx.origin;
 ********************************************************************************
 MUTANT #15:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.515.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:203
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.515.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:203
       msg.sender.transfer(amount);
  ==>  ...msg...sender...==>...tx...origin...
       tx.origin.transfer(amount);
 ********************************************************************************
 MUTANT #16:
-0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.mutant.150.sol: 424contracts/0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.sol:73
+0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.mutant.150.sol: 424contracts//0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.sol:73
         token_buyins[msg.sender] = tokens_bought;
  ==>  ...msg...sender...==>...tx...origin...
         token_buyins[tx.origin] = tokens_bought;
 ********************************************************************************
 MUTANT #17:
-0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.258.sol: 424contracts/0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:169
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.258.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:169
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
 ********************************************************************************
 MUTANT #18:
-0x968815CD73647C3af02a740a2438D6f8219e7534_TTPresale.mutant.129.sol: 424contracts/0x968815CD73647C3af02a740a2438D6f8219e7534_TTPresale.sol:82
+0x968815CD73647C3af02a740a2438D6f8219e7534_TTPresale.mutant.129.sol: 424contracts//0x968815CD73647C3af02a740a2438D6f8219e7534_TTPresale.sol:82
         require(msg.sender == addrFinance || msg.sender == addrAdmin);
  ==>  ...msg...sender...==>...tx...origin...
         require(tx.origin == addrFinance || msg.sender == addrAdmin);
 ********************************************************************************
 MUTANT #19:
-0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.mutant.154.sol: 424contracts/0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.sol:97
+0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.mutant.154.sol: 424contracts//0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.sol:97
         _approvals[msg.sender][guy] = wad;
  ==>  ...msg...sender...==>...tx...origin...
         _approvals[tx.origin][guy] = wad;
 ********************************************************************************
 MUTANT #20:
-0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.219.sol: 424contracts/0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:148
+0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.219.sol: 424contracts//0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:148
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
 ********************************************************************************
 MUTANT #21:
-0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.mutant.207.sol: 424contracts/0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.sol:85
+0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.mutant.207.sol: 424contracts//0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.sol:85
                     balanceOf[msg.sender] = amount;
  ==>  ...msg...sender...==>...tx...origin...
                     balanceOf[tx.origin] = amount;
 ********************************************************************************
 MUTANT #22:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.147.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:114
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.147.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:114
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 ********************************************************************************
 MUTANT #23:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.175.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:192
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.175.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:192
     require(msg.sender == owner);
  ==>  ...msg...sender...==>...tx...origin...
     require(tx.origin == owner);
 ********************************************************************************
 MUTANT #24:
-0x0e6c6e01f02bbeeed3c0166fca9c234b88605b43_VIUREFoundersTokenSale.mutant.279.sol: 424contracts/0x0e6c6e01f02bbeeed3c0166fca9c234b88605b43_VIUREFoundersTokenSale.sol:90
+0x0e6c6e01f02bbeeed3c0166fca9c234b88605b43_VIUREFoundersTokenSale.mutant.279.sol: 424contracts//0x0e6c6e01f02bbeeed3c0166fca9c234b88605b43_VIUREFoundersTokenSale.sol:90
     balances[msg.sender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = 0;
 ********************************************************************************
 MUTANT #25:
-0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.154.sol: 424contracts/0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:51
+0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.154.sol: 424contracts//0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:51
         balanceOf[msg.sender] -= _value;            
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] -= _value;            
 ********************************************************************************
 MUTANT #26:
-0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.115.sol: 424contracts/0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:128
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.115.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:128
     allowed[_from][msg.sender] = _allowance.sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = _allowance.sub(_value);
 ********************************************************************************
 MUTANT #27:
-0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.299.sol: 424contracts/0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:224
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.299.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:224
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ********************************************************************************
 MUTANT #28:
-0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.113.sol: 424contracts/0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:62
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.113.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:62
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #29:
-0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.219.sol: 424contracts/0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:181
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.219.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:181
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = safeSub(balances[msg.sender], tokens);
 ********************************************************************************
 MUTANT #30:
-0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.158.sol: 424contracts/0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:94
+0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.158.sol: 424contracts//0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:94
             allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #31:
-0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.mutant.405.sol: 424contracts/0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.sol:244
+0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.mutant.405.sol: 424contracts//0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.sol:244
         balances[msg.sender] -= amount;
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] -= amount;
 ********************************************************************************
 MUTANT #32:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.213.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:237
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.213.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:237
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #33:
-0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.35.sol: 424contracts/0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:49
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.35.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:49
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #34:
-0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.164.sol: 424contracts/0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:130
+0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.164.sol: 424contracts//0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:130
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] -= _value;            // Subtract from the sender
 ********************************************************************************
 MUTANT #35:
-0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.188.sol: 424contracts/0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:272
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.188.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:272
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #36:
-0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.34.sol: 424contracts/0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:41
+0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.34.sol: 424contracts//0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:41
         balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #37:
-0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.120.sol: 424contracts/0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:42
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.120.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:42
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #38:
-0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.168.sol: 424contracts/0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:71
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.168.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:71
         allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #39:
-0x7bc8e26db75dfc68ee5ef70420e2327b23224e6e_TokenVault.mutant.622.sol: 424contracts/0x7bc8e26db75dfc68ee5ef70420e2327b23224e6e_TokenVault.sol:352
+0x7bc8e26db75dfc68ee5ef70420e2327b23224e6e_TokenVault.mutant.622.sol: 424contracts//0x7bc8e26db75dfc68ee5ef70420e2327b23224e6e_TokenVault.sol:352
     address investor = msg.sender;
  ==>  ...msg...sender...==>...tx...origin...
     address investor = tx.origin;
 ********************************************************************************
 MUTANT #40:
-0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.42.sol: 424contracts/0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:49
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.42.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:49
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #41:
-0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.27.sol: 424contracts/0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:47
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.27.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:47
         balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #42:
-0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.50.sol: 424contracts/0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:51
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.50.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:51
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #43:
-0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.230.sol: 424contracts/0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:147
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.230.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:147
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = safeSub(balances[msg.sender], tokens);
 ********************************************************************************
 MUTANT #44:
-0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.47.sol: 424contracts/0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:49
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.47.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:49
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #45:
-0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.37.sol: 424contracts/0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:51
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.37.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:51
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #46:
-0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.225.sol: 424contracts/0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:147
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.225.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:147
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = safeSub(balances[msg.sender], tokens);
 ********************************************************************************
 MUTANT #47:
-0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.62.sol: 424contracts/0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:70
+0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.62.sol: 424contracts//0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:70
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #48:
-0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.263.sol: 424contracts/0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:144
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.263.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:144
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = safeSub(balances[msg.sender], tokens);
 ********************************************************************************
 MUTANT #49:
-0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.139.sol: 424contracts/0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:100
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.139.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:100
         allowance[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #50:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.414.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:341
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.414.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:341
         allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ********************************************************************************
 MUTANT #51:
-0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.142.sol: 424contracts/0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:212
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.142.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:212
         p.spender = msg.sender;
  ==>  ...msg...sender...==>...tx...origin...
         p.spender = tx.origin;
 ********************************************************************************
 MUTANT #52:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.187.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:104
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.187.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:104
         _transfer(msg.sender, _to, _value);
  ==>  ...msg...sender...==>...tx...origin...
         _transfer(tx.origin, _to, _value);
 ********************************************************************************
 MUTANT #53:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.244.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:178
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.244.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:178
     require(msg.sender == owner);
  ==>  ...msg...sender...==>...tx...origin...
     require(tx.origin == owner);
 ********************************************************************************
 MUTANT #54:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.118.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:137
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.118.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:137
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 ********************************************************************************
 MUTANT #55:
-0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.188.sol: 424contracts/0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:111
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.188.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:111
     Approval(msg.sender, _spender, _value);
  ==>  ...msg...sender...==>...tx...origin...
     Approval(tx.origin, _spender, _value);
 ********************************************************************************
 MUTANT #56:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.628.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:414
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.628.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:414
     buyTokens(msg.sender);
  ==>  ...msg...sender...==>...tx...origin...
     buyTokens(tx.origin);
 ********************************************************************************
 MUTANT #57:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.101.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:131
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.101.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:131
     address burner = msg.sender;
  ==>  ...msg...sender...==>...tx...origin...
     address burner = tx.origin;
 ********************************************************************************
 MUTANT #58:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.330.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:143
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.330.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:143
       allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[from][tx.origin] = allowed[from][msg.sender].sub(tokens);
 ********************************************************************************
 MUTANT #59:
-0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.46.sol: 424contracts/0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:56
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.46.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:56
         if ((msg.sender != escapeHatchCaller)&&(msg.sender != owner))
  ==>  ...msg...sender...==>...tx...origin...
         if ((tx.origin != escapeHatchCaller)&&(msg.sender != owner))
 ********************************************************************************
 MUTANT #60:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.92.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:65
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.92.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:65
         balanceOf[msg.sender] = balanceOf[msg.sender] + amount;
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] = balanceOf[msg.sender] + amount;
 ********************************************************************************
 MUTANT #61:
-0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.134.sol: 424contracts/0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:98
+0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.134.sol: 424contracts//0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:98
         allowance[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #62:
-0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.218.sol: 424contracts/0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:138
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.218.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:138
     uint oldValue = allowed[msg.sender][_spender];
  ==>  ...msg...sender...==>...tx...origin...
     uint oldValue = allowed[tx.origin][_spender];
 ********************************************************************************
 MUTANT #63:
-0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.131.sol: 424contracts/0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:98
+0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.131.sol: 424contracts//0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:98
         allowance[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #64:
-0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.189.sol: 424contracts/0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:178
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.189.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:178
       allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #65:
-0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.262.sol: 424contracts/0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:174
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.262.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:174
     require(msg.sender == owner);
  ==>  ...msg...sender...==>...tx...origin...
     require(tx.origin == owner);
 ********************************************************************************
 MUTANT #66:
-0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.199.sol: 424contracts/0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:82
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.199.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:82
       allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #67:
-0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.mutant.65.sol: 424contracts/0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.sol:48
+0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.mutant.65.sol: 424contracts//0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.sol:48
         assert (msg.sender==owner);
  ==>  ...msg...sender...==>...tx...origin...
         assert (tx.origin==owner);
 ********************************************************************************
 MUTANT #68:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.140.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:155
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.140.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:155
       allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #69:
-0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.183.sol: 424contracts/0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:147
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.183.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:147
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] -= _value;            // Subtract from the sender
 ********************************************************************************
 MUTANT #70:
-0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.163.sol: 424contracts/0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:134
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.163.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:134
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #71:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.246.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:220
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.246.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:220
       balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
       balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #72:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.133.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:165
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.133.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:165
     require(msg.sender == owner);
  ==>  ...msg...sender...==>...tx...origin...
     require(tx.origin == owner);
 ********************************************************************************
 MUTANT #73:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.302.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:183
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.302.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:183
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
 ********************************************************************************
 MUTANT #74:
-0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.49.sol: 424contracts/0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:23
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.49.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:23
 		balanceOf[msg.sender] -= value;  // deduct from sender's balance							
  ==>  ...msg...sender...==>...tx...origin...
 		balanceOf[tx.origin] -= value;  // deduct from sender's balance							
 ********************************************************************************
 MUTANT #75:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.64.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:75
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.64.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:75
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #76:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.27.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:42
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.27.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:42
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #77:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.207.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:178
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.207.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:178
     require(msg.sender == owner);
  ==>  ...msg...sender...==>...tx...origin...
     require(tx.origin == owner);
 ********************************************************************************
 MUTANT #78:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.176.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:138
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.176.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:138
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #79:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.67.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:95
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.67.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:95
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #80:
-0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.134.sol: 424contracts/0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:131
+0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.134.sol: 424contracts//0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:131
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #81:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.448.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:184
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.448.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:184
         balances[msg.sender] = balances[msg.sender] + tokensBought;
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = balances[msg.sender] + tokensBought;
 ********************************************************************************
 MUTANT #82:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.230.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:263
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.230.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:263
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 ********************************************************************************
 MUTANT #83:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.275.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:310
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.275.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:310
     _burn(msg.sender, _value);
  ==>  ...msg...sender...==>...tx...origin...
     _burn(tx.origin, _value);
 ********************************************************************************
 MUTANT #84:
-0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.mutant.889.sol: 424contracts/0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.sol:372
+0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.mutant.889.sol: 424contracts//0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.sol:372
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #85:
-0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.246.sol: 424contracts/0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:148
+0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.246.sol: 424contracts//0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:148
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #86:
-0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.238.sol: 424contracts/0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:197
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.238.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:197
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #87:
-0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.248.sol: 424contracts/0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:163
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.248.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:163
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #88:
-0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.243.sol: 424contracts/0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:163
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.243.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:163
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #89:
-0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.282.sol: 424contracts/0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:160
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.282.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:160
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #90:
-0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.241.sol: 424contracts/0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:152
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.241.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:152
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #91:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.205.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:118
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.205.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:118
         allowance[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #92:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.350.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:156
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.350.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:156
       allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #93:
-0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.169.sol: 424contracts/0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:242
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.169.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:242
         balances[msg.sender] = balances[msg.sender].sub(tokens);
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = balances[msg.sender].sub(tokens);
 ********************************************************************************
 MUTANT #94:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.139.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:120
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.139.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:120
     allowed[_from][msg.sender] = _allowance.sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = _allowance.sub(_value);
 ********************************************************************************
 MUTANT #95:
-0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.68.sol: 424contracts/0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:90
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.68.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:90
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #96:
-0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.99.sol: 424contracts/0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:113
+0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.99.sol: 424contracts//0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:113
     allowed[_from][msg.sender] = _allowance.sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = _allowance.sub(_value);
 ********************************************************************************
 MUTANT #97:
-0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.264.sol: 424contracts/0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:204
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.264.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:204
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 ********************************************************************************
 MUTANT #98:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.376.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:321
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.376.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:321
       allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 ********************************************************************************
 MUTANT #99:
-0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.414.sol: 424contracts/0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:213
+0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.414.sol: 424contracts//0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:213
             touched[msg.sender] = true;
  ==>  ...msg...sender...==>...tx...origin...
             touched[tx.origin] = true;
 ********************************************************************************
 MUTANT #100:
-0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.125.sol: 424contracts/0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:73
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.125.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:73
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #101:
-0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.34.sol: 424contracts/0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:19
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.34.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:19
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #102:
-0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.132.sol: 424contracts/0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:73
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.132.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:73
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #103:
-0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.139.sol: 424contracts/0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:75
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.139.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:75
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #104:
-0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.138.sol: 424contracts/0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:73
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.138.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:73
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #105:
-0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.126.sol: 424contracts/0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:75
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.126.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:75
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #106:
-0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.244.sol: 424contracts/0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:178
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.244.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:178
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #107:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.261.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:283
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.261.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:283
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ********************************************************************************
 MUTANT #108:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.119.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:98
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.119.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:98
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #109:
-0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.226.sol: 424contracts/0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:162
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.226.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:162
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #110:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.89.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:95
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.89.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:95
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #111:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.199.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:221
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.199.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:221
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #112:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.346.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:295
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.346.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:295
       allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #113:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.323.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:279
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.323.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:279
       allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #114:
-0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.70.sol: 424contracts/0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:63
+0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.70.sol: 424contracts//0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:63
         balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] = balanceOf[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #115:
-0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.125.sol: 424contracts/0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:67
+0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.125.sol: 424contracts//0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:67
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #116:
-0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.103.sol: 424contracts/0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:69
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.103.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:69
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #117:
-0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.216.sol: 424contracts/0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:93
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.216.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:93
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #118:
-0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.130.sol: 424contracts/0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:73
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.130.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:73
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #119:
-0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.205.sol: 424contracts/0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:304
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.205.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:304
         allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[from][tx.origin] = allowed[from][msg.sender].sub(tokens);
 ********************************************************************************
 MUTANT #120:
-0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.5.sol: 424contracts/0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:14
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.5.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:14
     modifier onlyOwner { if (msg.sender != owner) throw; _; }
  ==>  ...msg...sender...==>...tx...origin...
     modifier onlyOwner { if (tx.origin != owner) throw; _; }
 ********************************************************************************
 MUTANT #121:
-0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.223.sol: 424contracts/0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:136
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.223.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:136
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] = safeSub(balances[msg.sender], tokens);
 ********************************************************************************
 MUTANT #122:
-0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.255.sol: 424contracts/0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:214
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.255.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:214
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
 ********************************************************************************
 MUTANT #123:
-0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.265.sol: 424contracts/0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:180
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.265.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:180
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
 ********************************************************************************
 MUTANT #124:
-0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.260.sol: 424contracts/0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:180
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.260.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:180
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
 ********************************************************************************
 MUTANT #125:
-0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.299.sol: 424contracts/0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:177
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.299.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:177
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
  ==>  ...msg...sender...==>...tx...origin...
         allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
 ********************************************************************************
 MUTANT #126:
-0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.124.sol: 424contracts/0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:69
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.124.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:69
       balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
       balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #127:
-0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.182.sol: 424contracts/0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:82
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.182.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:82
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #128:
-0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.105.sol: 424contracts/0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:54
+0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.105.sol: 424contracts//0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:54
         allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #129:
-0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.96.sol: 424contracts/0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:58
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.96.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:58
         balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #130:
-0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.150.sol: 424contracts/0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:115
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.150.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:115
         allowance[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #131:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.216.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:133
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.216.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:133
         allowance[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #132:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.176.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:124
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.176.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:124
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ********************************************************************************
 MUTANT #133:
-0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.40.sol: 424contracts/0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:49
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.40.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:49
             balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #134:
-0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.108.sol: 424contracts/0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:62
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.108.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:62
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #135:
-0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.103.sol: 424contracts/0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:31
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.103.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:31
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #136:
-0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.115.sol: 424contracts/0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:62
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.115.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:62
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #137:
-0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.122.sol: 424contracts/0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:64
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.122.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:64
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #138:
-0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.121.sol: 424contracts/0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:62
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.121.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:62
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #139:
-0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.109.sol: 424contracts/0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:64
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.109.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:64
             allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
             allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #140:
-0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.72.sol: 424contracts/0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:37
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.72.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:37
 		allowance[msg.sender][spender] = value;							
  ==>  ...msg...sender...==>...tx...origin...
 		allowance[tx.origin][spender] = value;							
 ********************************************************************************
 MUTANT #141:
-0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.168.sol: 424contracts/0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:169
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.168.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:169
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 ********************************************************************************
 MUTANT #142:
-0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.544.sol: 424contracts/0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:244
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.544.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:244
     orders[msg.sender][hash] = true;
  ==>  ...msg...sender...==>...tx...origin...
     orders[tx.origin][hash] = true;
 ********************************************************************************
 MUTANT #143:
-0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.167.sol: 424contracts/0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:130
+0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.167.sol: 424contracts//0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:130
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] -= _value;            // Subtract from the sender
 ********************************************************************************
 MUTANT #144:
-0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.216.sol: 424contracts/0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:148
+0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.216.sol: 424contracts//0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:148
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
 ********************************************************************************
 MUTANT #145:
-0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.235.sol: 424contracts/0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:165
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.235.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:165
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
 ********************************************************************************
 MUTANT #146:
-0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.249.sol: 424contracts/0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:165
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.249.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:165
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
  ==>  ...msg...sender...==>...tx...origin...
         balanceOf[tx.origin] -= _value;            // Subtract from the sender
 ********************************************************************************
 MUTANT #147:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.296.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:127
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.296.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:127
       balances[msg.sender] = balances[msg.sender].sub(tokens);
  ==>  ...msg...sender...==>...tx...origin...
       balances[tx.origin] = balances[msg.sender].sub(tokens);
 ********************************************************************************
 MUTANT #148:
-0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.205.sol: 424contracts/0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:136
+0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.205.sol: 424contracts//0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:136
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #149:
-0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.149.sol: 424contracts/0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:146
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.149.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:146
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #150:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.102.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:111
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.102.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:111
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #151:
-0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.89.sol: 424contracts/0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:59
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.89.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:59
         allowed[_from][msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[_from][tx.origin] -= _value;
 ********************************************************************************
 MUTANT #152:
-0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.mutant.305.sol: 424contracts/0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.sol:258
+0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.mutant.305.sol: 424contracts//0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.sol:258
         confirmations[transactionId][msg.sender] = false;
  ==>  ...msg...sender...==>...tx...origin...
         confirmations[transactionId][tx.origin] = false;
 ********************************************************************************
 MUTANT #153:
-0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.263.sol: 424contracts/0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:133
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.263.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:133
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #154:
-0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.260.sol: 424contracts/0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:135
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.260.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:135
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #155:
-0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.225.sol: 424contracts/0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:344
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.225.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:344
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #156:
-0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.183.sol: 424contracts/0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:77
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.183.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:77
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #157:
-0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.246.sol: 424contracts/0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:112
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.246.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:112
         balances[msg.sender] -= _value;
  ==>  ...msg...sender...==>...tx...origin...
         balances[tx.origin] -= _value;
 ********************************************************************************
 MUTANT #158:
-0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.262.sol: 424contracts/0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:126
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.262.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:126
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #159:
-0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.149.sol: 424contracts/0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:106
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.149.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:106
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #160:
-0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.217.sol: 424contracts/0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:128
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.217.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:128
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #161:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.376.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:430
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.376.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:430
     return true;
  ==>  revert();
 revert();
 ********************************************************************************
 MUTANT #162:
-0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.280.sol: 424contracts/0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:191
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.280.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:191
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #163:
-0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.274.sol: 424contracts/0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:236
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.274.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:236
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #164:
-0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.283.sol: 424contracts/0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:202
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.283.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:202
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #165:
-0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.202.sol: 424contracts/0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:109
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.202.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:109
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #166:
-0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.191.sol: 424contracts/0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:116
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.191.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:116
         allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #167:
-0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.281.sol: 424contracts/0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:202
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.281.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:202
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #168:
-0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.319.sol: 424contracts/0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:199
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.319.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:199
         allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #169:
-0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.206.sol: 424contracts/0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:61
+0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.206.sol: 424contracts//0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:61
         allowance[_from][msg.sender] -= _value;             
  ==>  ...msg...sender...==>...tx...origin...
         allowance[_from][tx.origin] -= _value;             
 ********************************************************************************
 MUTANT #170:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.314.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:135
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.314.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:135
       allowed[msg.sender][spender] = tokens;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][spender] = tokens;
 ********************************************************************************
 MUTANT #171:
-0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.25.sol: 424contracts/0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:16
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.25.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:16
 		balanceOf[msg.sender] = totalSupply;							
  ==>  ...msg...sender...==>...tx...origin...
 		balanceOf[tx.origin] = totalSupply;							
 ********************************************************************************
 MUTANT #172:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.131.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:104
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.131.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:104
     allowed[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
     allowed[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #173:
-0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.133.sol: 424contracts/0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:45
+0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.133.sol: 424contracts//0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:45
         allowance[msg.sender][_spender] = _value;
  ==>  ...msg...sender...==>...tx...origin...
         allowance[tx.origin][_spender] = _value;
 ********************************************************************************
 MUTANT #174:
-0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.mutant.184.sol: 424contracts/0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.sol:80
+0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.mutant.184.sol: 424contracts//0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.sol:80
             balanceOf[msg.sender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
             balanceOf[tx.origin] = 0;
 ********************************************************************************
 MUTANT #175:
-0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.511.sol: 424contracts/0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:202
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.511.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:202
       pendingWithdrawals[msg.sender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
       pendingWithdrawals[tx.origin] = 0;
 ********************************************************************************
 MUTANT #176:
-0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.168.sol: 424contracts/0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:122
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.168.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:122
       allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #177:
-0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.291.sol: 424contracts/0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:222
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.291.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:222
       allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #178:
-0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.197.sol: 424contracts/0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:180
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.197.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:180
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ********************************************************************************
 MUTANT #179:
-0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.148.sol: 424contracts/0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:157
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.148.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:157
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ********************************************************************************
 MUTANT #180:
-0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.253.sol: 424contracts/0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:281
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.253.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:281
       allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
       allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #181:
-0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.406.sol: 424contracts/0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:339
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.406.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:339
         allowed[msg.sender][_spender] = 0;
  ==>  ...msg...sender...==>...tx...origin...
         allowed[tx.origin][_spender] = 0;
 ********************************************************************************
 MUTANT #182:
-0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.mutant.155.sol: 424contracts/0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.sol:74
+0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.mutant.155.sol: 424contracts//0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.sol:74
         last_round_bought[msg.sender] = current_round;
  ==>  ...msg...sender...==>...tx...origin...
         last_round_bought[tx.origin] = current_round;
 ********************************************************************************
 MUTANT #183:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #184:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #185:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #186:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #187:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
 ********************************************************************************
 MUTANT #188:
-0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts/0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
     balances[msg.sender] = balances[msg.sender].sub(_value);
  ==>  ...msg...sender...==>...tx...origin...
     balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #189:
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.88.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:62
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #190:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.352.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:402
+    return true;
+ ==>  revert();
+revert();
+********************************************************************************
+MUTANT #191:
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.383.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:242
+        msg.sender.transfer(amount * sellPrice);          // sends ether to the seller. It's important to do this last to avoid recursion attacks
+ ==>  ...msg...sender...==>...tx...origin...
+        tx.origin.transfer(amount * sellPrice);          // sends ether to the seller. It's important to do this last to avoid recursion attacks
+********************************************************************************
+MUTANT #192:
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.84.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:115
+    modifier onlySecurityGuard { if (msg.sender != securityGuard) throw; _; }
+ ==>  ...msg...sender...==>...tx...origin...
+    modifier onlySecurityGuard { if (tx.origin != securityGuard) throw; _; }
+********************************************************************************
+MUTANT #193:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.187.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:292
+    buyTokens(msg.sender);
+ ==>  ...msg...sender...==>...tx...origin...
+    buyTokens(tx.origin);
+********************************************************************************
+MUTANT #194:
+0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.mutant.288.sol: 424contracts//0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.sol:245
+        confirmations[transactionId][msg.sender] = true;
+ ==>  ...msg...sender...==>...tx...origin...
+        confirmations[transactionId][tx.origin] = true;
+********************************************************************************
+MUTANT #195:
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.332.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:244
+    require(msg.sender == owner || msg.sender == saleAgent || mintingFinished);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(msg.sender == owner || tx.origin == saleAgent || mintingFinished);
+********************************************************************************
+MUTANT #196:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.45.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:53
+        balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] = totalSupply;                // Give the creator all initial tokens
+********************************************************************************
+MUTANT #197:
+0xf35c09172F521F11569147fBa340a27cEc76E086_WithDrawChildDAO.mutant.1153.sol: 424contracts//0xf35c09172F521F11569147fBa340a27cEc76E086_WithDrawChildDAO.sol:84
+        if (!_childDAO.transferFrom(msg.sender, this, balance) || !msg.sender.send(amount))
+ ==>  ...msg...sender...==>...tx...origin...
+        if (!_childDAO.transferFrom(msg.sender, this, balance) || !tx.origin.send(amount))
+********************************************************************************
+MUTANT #198:
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.123.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:51
+		allowance[from][msg.sender] -= value;							
+ ==>  ...msg...sender...==>...tx...origin...
+		allowance[from][tx.origin] -= value;							
+********************************************************************************
+MUTANT #199:
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.810.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:305
+    orderFills[msg.sender][hash] = amountGet;
+ ==>  ...msg...sender...==>...tx...origin...
+    orderFills[tx.origin][hash] = amountGet;
+********************************************************************************
+MUTANT #200:
+0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.241.sol: 424contracts//0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:153
+            allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #201:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.731.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:578
+      address investor = msg.sender;
+ ==>  ...msg...sender...==>...tx...origin...
+      address investor = tx.origin;
+********************************************************************************
+MUTANT #202:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.515.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:203
+      msg.sender.transfer(amount);
+ ==>  ...msg...sender...==>...tx...origin...
+      tx.origin.transfer(amount);
+********************************************************************************
+MUTANT #203:
+0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.mutant.150.sol: 424contracts//0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.sol:73
+        token_buyins[msg.sender] = tokens_bought;
+ ==>  ...msg...sender...==>...tx...origin...
+        token_buyins[tx.origin] = tokens_bought;
+********************************************************************************
+MUTANT #204:
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.258.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:169
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
+********************************************************************************
+MUTANT #205:
+0x968815CD73647C3af02a740a2438D6f8219e7534_TTPresale.mutant.129.sol: 424contracts//0x968815CD73647C3af02a740a2438D6f8219e7534_TTPresale.sol:82
+        require(msg.sender == addrFinance || msg.sender == addrAdmin);
+ ==>  ...msg...sender...==>...tx...origin...
+        require(tx.origin == addrFinance || msg.sender == addrAdmin);
+********************************************************************************
+MUTANT #206:
+0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.mutant.154.sol: 424contracts//0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.sol:97
+        _approvals[msg.sender][guy] = wad;
+ ==>  ...msg...sender...==>...tx...origin...
+        _approvals[tx.origin][guy] = wad;
+********************************************************************************
+MUTANT #207:
+0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.219.sol: 424contracts//0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:148
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
+********************************************************************************
+MUTANT #208:
+0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.mutant.207.sol: 424contracts//0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.sol:85
+                    balanceOf[msg.sender] = amount;
+ ==>  ...msg...sender...==>...tx...origin...
+                    balanceOf[tx.origin] = amount;
+********************************************************************************
+MUTANT #209:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.147.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:114
+    allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+********************************************************************************
+MUTANT #210:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.175.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:192
+    require(msg.sender == owner);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(tx.origin == owner);
+********************************************************************************
+MUTANT #211:
+0x0e6c6e01f02bbeeed3c0166fca9c234b88605b43_VIUREFoundersTokenSale.mutant.279.sol: 424contracts//0x0e6c6e01f02bbeeed3c0166fca9c234b88605b43_VIUREFoundersTokenSale.sol:90
+    balances[msg.sender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = 0;
+********************************************************************************
+MUTANT #212:
+0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.154.sol: 424contracts//0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:51
+        balanceOf[msg.sender] -= _value;            
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] -= _value;            
+********************************************************************************
+MUTANT #213:
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.115.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:128
+    allowed[_from][msg.sender] = _allowance.sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = _allowance.sub(_value);
+********************************************************************************
+MUTANT #214:
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.299.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:224
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #215:
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.113.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:62
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #216:
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.219.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:181
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = safeSub(balances[msg.sender], tokens);
+********************************************************************************
+MUTANT #217:
+0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.158.sol: 424contracts//0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:94
+            allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #218:
+0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.mutant.405.sol: 424contracts//0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.sol:244
+        balances[msg.sender] -= amount;
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] -= amount;
+********************************************************************************
+MUTANT #219:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.213.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:237
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #220:
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.35.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:49
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #221:
+0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.164.sol: 424contracts//0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:130
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] -= _value;            // Subtract from the sender
+********************************************************************************
+MUTANT #222:
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.188.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:272
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #223:
+0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.34.sol: 424contracts//0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:41
+        balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #224:
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.120.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:42
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #225:
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.168.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:71
+        allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #226:
+0x7bc8e26db75dfc68ee5ef70420e2327b23224e6e_TokenVault.mutant.622.sol: 424contracts//0x7bc8e26db75dfc68ee5ef70420e2327b23224e6e_TokenVault.sol:352
+    address investor = msg.sender;
+ ==>  ...msg...sender...==>...tx...origin...
+    address investor = tx.origin;
+********************************************************************************
+MUTANT #227:
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.42.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:49
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #228:
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.27.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:47
+        balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #229:
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.50.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:51
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #230:
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.230.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:147
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = safeSub(balances[msg.sender], tokens);
+********************************************************************************
+MUTANT #231:
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.47.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:49
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #232:
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.37.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:51
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #233:
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.225.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:147
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = safeSub(balances[msg.sender], tokens);
+********************************************************************************
+MUTANT #234:
+0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.62.sol: 424contracts//0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:70
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #235:
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.263.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:144
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = safeSub(balances[msg.sender], tokens);
+********************************************************************************
+MUTANT #236:
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.139.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:100
+        allowance[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #237:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.397.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:562
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #238:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.414.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:341
+        allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #239:
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.142.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:212
+        p.spender = msg.sender;
+ ==>  ...msg...sender...==>...tx...origin...
+        p.spender = tx.origin;
+********************************************************************************
+MUTANT #240:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.187.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:104
+        _transfer(msg.sender, _to, _value);
+ ==>  ...msg...sender...==>...tx...origin...
+        _transfer(tx.origin, _to, _value);
+********************************************************************************
+MUTANT #241:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.244.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:178
+    require(msg.sender == owner);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(tx.origin == owner);
+********************************************************************************
+MUTANT #242:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.118.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:137
+    allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+********************************************************************************
+MUTANT #243:
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.188.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:111
+    Approval(msg.sender, _spender, _value);
+ ==>  ...msg...sender...==>...tx...origin...
+    Approval(tx.origin, _spender, _value);
+********************************************************************************
+MUTANT #244:
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.628.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:414
+    buyTokens(msg.sender);
+ ==>  ...msg...sender...==>...tx...origin...
+    buyTokens(tx.origin);
+********************************************************************************
+MUTANT #245:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.101.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:131
+    address burner = msg.sender;
+ ==>  ...msg...sender...==>...tx...origin...
+    address burner = tx.origin;
+********************************************************************************
+MUTANT #246:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.330.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:143
+      allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[from][tx.origin] = allowed[from][msg.sender].sub(tokens);
+********************************************************************************
+MUTANT #247:
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.46.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:56
+        if ((msg.sender != escapeHatchCaller)&&(msg.sender != owner))
+ ==>  ...msg...sender...==>...tx...origin...
+        if ((tx.origin != escapeHatchCaller)&&(msg.sender != owner))
+********************************************************************************
+MUTANT #248:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.92.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:65
+        balanceOf[msg.sender] = balanceOf[msg.sender] + amount;
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] = balanceOf[msg.sender] + amount;
+********************************************************************************
+MUTANT #249:
+0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.134.sol: 424contracts//0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:98
+        allowance[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #250:
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.218.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:138
+    uint oldValue = allowed[msg.sender][_spender];
+ ==>  ...msg...sender...==>...tx...origin...
+    uint oldValue = allowed[tx.origin][_spender];
+********************************************************************************
+MUTANT #251:
+0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.131.sol: 424contracts//0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:98
+        allowance[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #252:
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.189.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:178
+      allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #253:
+0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.mutant.262.sol: 424contracts//0x8604ef1a75999a916f42ed5b30a686b5e6cf90de_MYTCToken.sol:174
+    require(msg.sender == owner);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(tx.origin == owner);
+********************************************************************************
+MUTANT #254:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.448.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:639
+      allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #255:
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.199.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:82
+      allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #256:
+0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.mutant.65.sol: 424contracts//0x134a2b5b1a1e3f3c3c7cfed71000035a53d4d127_OPC.sol:48
+        assert (msg.sender==owner);
+ ==>  ...msg...sender...==>...tx...origin...
+        assert (tx.origin==owner);
+********************************************************************************
+MUTANT #257:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.140.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:155
+      allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #258:
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.183.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:147
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] -= _value;            // Subtract from the sender
+********************************************************************************
+MUTANT #259:
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.163.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:134
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #260:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.246.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:220
+      balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+      balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #261:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.133.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:165
+    require(msg.sender == owner);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(tx.origin == owner);
+********************************************************************************
+MUTANT #262:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.302.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:183
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
+********************************************************************************
+MUTANT #263:
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.49.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:23
+		balanceOf[msg.sender] -= value;  // deduct from sender's balance							
+ ==>  ...msg...sender...==>...tx...origin...
+		balanceOf[tx.origin] -= value;  // deduct from sender's balance							
+********************************************************************************
+MUTANT #264:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.64.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:75
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #265:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.27.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:42
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #266:
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.207.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:178
+    require(msg.sender == owner);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(tx.origin == owner);
+********************************************************************************
+MUTANT #267:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.481.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:669
+    require(msg.sender == owner);
+ ==>  ...msg...sender...==>...tx...origin...
+    require(tx.origin == owner);
+********************************************************************************
+MUTANT #268:
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.176.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:138
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #269:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.67.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:95
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #270:
+0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.134.sol: 424contracts//0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:131
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #271:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.448.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:184
+        balances[msg.sender] = balances[msg.sender] + tokensBought;
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = balances[msg.sender] + tokensBought;
+********************************************************************************
+MUTANT #272:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.230.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:263
+    allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+********************************************************************************
+MUTANT #273:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.275.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:310
+    _burn(msg.sender, _value);
+ ==>  ...msg...sender...==>...tx...origin...
+    _burn(tx.origin, _value);
+********************************************************************************
+MUTANT #274:
+0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.mutant.889.sol: 424contracts//0xd6fb9c69d7f3307c151c41a56227f7e3e4d08526_COBABURN.sol:372
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #275:
+0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.246.sol: 424contracts//0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:148
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #276:
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.238.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:197
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #277:
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.248.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:163
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #278:
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.243.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:163
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #279:
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.282.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:160
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #280:
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.241.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:152
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #281:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.205.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:118
+        allowance[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #282:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.350.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:156
+      allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #283:
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.169.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:242
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = balances[msg.sender].sub(tokens);
+********************************************************************************
+MUTANT #284:
+0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.mutant.139.sol: 424contracts//0xc936a131b1f1576ccadb8196d91ecbf108d11d01_EmpireCrowdsale.sol:120
+    allowed[_from][msg.sender] = _allowance.sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = _allowance.sub(_value);
+********************************************************************************
+MUTANT #285:
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.68.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:90
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #286:
+0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.mutant.99.sol: 424contracts//0x8bb2d2dcd0fac903e70a02d09331add0025cd507_ApprovedTokenDone.sol:113
+    allowed[_from][msg.sender] = _allowance.sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = _allowance.sub(_value);
+********************************************************************************
+MUTANT #287:
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.264.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:204
+    allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+********************************************************************************
+MUTANT #288:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.376.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:321
+      allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+********************************************************************************
+MUTANT #289:
+0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.414.sol: 424contracts//0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:213
+            touched[msg.sender] = true;
+ ==>  ...msg...sender...==>...tx...origin...
+            touched[tx.origin] = true;
+********************************************************************************
+MUTANT #290:
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.125.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:73
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #291:
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.34.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:19
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #292:
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.132.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:73
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #293:
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.139.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:75
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #294:
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.138.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:73
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #295:
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.126.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:75
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #296:
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.244.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:178
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #297:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.261.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:283
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #298:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.119.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:98
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #299:
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.226.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:162
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #300:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.342.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:511
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    balances[tx.origin] = balances[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #301:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.89.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:95
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #302:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.199.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:221
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #303:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.346.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:295
+      allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #304:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.323.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:279
+      allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
+********************************************************************************
+MUTANT #305:
+0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.mutant.70.sol: 424contracts//0x911ce7a305ed6411191d134af8d835cf7bde22c6_Hyperion.sol:63
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] = balanceOf[msg.sender].sub(_value);
+********************************************************************************
+MUTANT #306:
+0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.125.sol: 424contracts//0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:67
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #307:
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.103.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:69
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #308:
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.216.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:93
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #309:
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.130.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:73
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #310:
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.205.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:304
+        allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[from][tx.origin] = allowed[from][msg.sender].sub(tokens);
+********************************************************************************
+MUTANT #311:
+0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.mutant.5.sol: 424contracts//0x598ab825d607ace3b00d8714c0a141c7ae2e6822_Vault.sol:14
+    modifier onlyOwner { if (msg.sender != owner) throw; _; }
+ ==>  ...msg...sender...==>...tx...origin...
+    modifier onlyOwner { if (tx.origin != owner) throw; _; }
+********************************************************************************
+MUTANT #312:
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.223.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:136
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] = safeSub(balances[msg.sender], tokens);
+********************************************************************************
+MUTANT #313:
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.255.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:214
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
+********************************************************************************
+MUTANT #314:
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.265.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:180
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
+********************************************************************************
+MUTANT #315:
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.260.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:180
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
+********************************************************************************
+MUTANT #316:
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.299.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:177
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[from][tx.origin] = safeSub(allowed[from][msg.sender], tokens);
+********************************************************************************
+MUTANT #317:
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.124.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:69
+      balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+      balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #318:
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.182.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:82
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #319:
+0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.mutant.105.sol: 424contracts//0x1515a1cA7b7963E7FFd3bA4C32398d27E5f3a1c8_GDC.sol:54
+        allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #320:
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.96.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:58
+        balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #321:
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.150.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:115
+        allowance[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #322:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.216.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:133
+        allowance[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #323:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.176.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:124
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #324:
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.40.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:49
+            balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #325:
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.108.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:62
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #326:
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.103.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:31
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #327:
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.115.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:62
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #328:
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.122.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:64
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #329:
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.121.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:62
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #330:
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.109.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:64
+            allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+            allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #331:
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.72.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:37
+		allowance[msg.sender][spender] = value;							
+ ==>  ...msg...sender...==>...tx...origin...
+		allowance[tx.origin][spender] = value;							
+********************************************************************************
+MUTANT #332:
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.168.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:169
+    allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = allowed[msg.sender][_spender].add(_addedValue);
+********************************************************************************
+MUTANT #333:
+0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.mutant.544.sol: 424contracts//0x25066b77ae6174d372a9fe2b1d7886a2be150e9b_PolarisDEX.sol:244
+    orders[msg.sender][hash] = true;
+ ==>  ...msg...sender...==>...tx...origin...
+    orders[tx.origin][hash] = true;
+********************************************************************************
+MUTANT #334:
+0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.mutant.167.sol: 424contracts//0x377d7480849cd03dc4048243ee4a397fc00bfaaf_NullBlockCoin.sol:130
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] -= _value;            // Subtract from the sender
+********************************************************************************
+MUTANT #335:
+0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.mutant.216.sol: 424contracts//0xf6ed7942a5f79e49098ce7082cfee92d44160756_SCPSToken.sol:148
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
+********************************************************************************
+MUTANT #336:
+0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.mutant.235.sol: 424contracts//0x8b141bc2f7a130d166e0a94331e1c5cc7e9832e2_TripPay.sol:165
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;             // Subtract from the sender's allowance
+********************************************************************************
+MUTANT #337:
+0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.mutant.249.sol: 424contracts//0x73bd0cba93bbb6bc332ad47ea0ae31ae05e44cb0_HyperChipToken.sol:165
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+ ==>  ...msg...sender...==>...tx...origin...
+        balanceOf[tx.origin] -= _value;            // Subtract from the sender
+********************************************************************************
+MUTANT #338:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.296.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:127
+      balances[msg.sender] = balances[msg.sender].sub(tokens);
+ ==>  ...msg...sender...==>...tx...origin...
+      balances[tx.origin] = balances[msg.sender].sub(tokens);
+********************************************************************************
+MUTANT #339:
+0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.mutant.205.sol: 424contracts//0x6dceb0027a9e92ddfccc09a00d0779d3c1e2a8b7_NetkillerAdvancedToken.sol:136
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #340:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.410.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:577
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #341:
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.149.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:146
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #342:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.102.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:111
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #343:
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.89.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:59
+        allowed[_from][msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[_from][tx.origin] -= _value;
+********************************************************************************
+MUTANT #344:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.427.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:615
+    allowed[msg.sender][_spender] = (
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = (
+********************************************************************************
+MUTANT #345:
+0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.mutant.305.sol: 424contracts//0x2ec79c67cb6ad4e3f8206fd8264620f3c476ebbd_MultiSigWalletWithDailyLimit.sol:258
+        confirmations[transactionId][msg.sender] = false;
+ ==>  ...msg...sender...==>...tx...origin...
+        confirmations[transactionId][tx.origin] = false;
+********************************************************************************
+MUTANT #346:
+0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.mutant.263.sol: 424contracts//0xec821190f78bffaca775c3d607475ec7cd6686ea_Zignal.sol:133
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #347:
+0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.mutant.260.sol: 424contracts//0xf340358c95ef99200777bc8eb3b2b2edab9bbc88_HashnodeTestCoin.sol:135
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #348:
+0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.mutant.225.sol: 424contracts//0x6e7cf33736bafee311a73093741f93ab8cd6530c_ERC20Token.sol:344
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #349:
+0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.mutant.183.sol: 424contracts//0xb063acc75387dd60eee2ddce01adec93e8624273_CandyCoinBigBang.sol:77
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #350:
+0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.mutant.246.sol: 424contracts//0x7bD93D340e712F0b5F0A67bF217438cd9F7B5771_STTC.sol:112
+        balances[msg.sender] -= _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        balances[tx.origin] -= _value;
+********************************************************************************
+MUTANT #351:
+0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.mutant.262.sol: 424contracts//0x836df2f88797c85bdead4bb780aabadf0a738e15_Tutancoin.sol:126
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #352:
+0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.mutant.149.sol: 424contracts//0x79a6e552b1bf27fff02f383ae795bd35dd2f3f8c_TokenBBB17.sol:106
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #353:
+0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.mutant.217.sol: 424contracts//0x4a41661a42436b4b07bc887abcf69b07d567c706_THXToken.sol:128
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #354:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.376.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:430
+    return true;
+ ==>  revert();
+revert();
+********************************************************************************
+MUTANT #355:
+0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.mutant.280.sol: 424contracts//0xc2addba7c18381eea227f76415fd2b4b4686a70b_Cred.sol:191
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #356:
+0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.mutant.274.sol: 424contracts//0x4583655912cd2bc084789599c9b6b320ece8a9b1_GayBananaToken.sol:236
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #357:
+0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.mutant.283.sol: 424contracts//0x6a4e703c8c2bd0d9036e65acf6d476ce38f3d981_GlobalChain.sol:202
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #358:
+0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.mutant.202.sol: 424contracts//0x99e8984addb9e002953525f13d2625b409a63ffa_SunQuid.sol:109
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #359:
+0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.mutant.191.sol: 424contracts//0xe14620fdd87fa5717faab731a37abd813ef1e33e_ERC20Token.sol:116
+        allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #360:
+0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.mutant.281.sol: 424contracts//0x9a95a3aeb8ed9fc76e5992f11678d9ec3b322b31_Hostingicos.sol:202
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #361:
+0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.mutant.319.sol: 424contracts//0xdd08ad1bfcb4bdb1b8dd881581ee00b9f08834a0_LerToken.sol:199
+        allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #362:
+0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.206.sol: 424contracts//0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:61
+        allowance[_from][msg.sender] -= _value;             
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[_from][tx.origin] -= _value;             
+********************************************************************************
+MUTANT #363:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.314.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:135
+      allowed[msg.sender][spender] = tokens;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][spender] = tokens;
+********************************************************************************
+MUTANT #364:
+0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.mutant.25.sol: 424contracts//0xe7397506372c651537655a89769f3d43d01b64f1_MOROCCO_WINS.sol:16
+		balanceOf[msg.sender] = totalSupply;							
+ ==>  ...msg...sender...==>...tx...origin...
+		balanceOf[tx.origin] = totalSupply;							
+********************************************************************************
+MUTANT #365:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.131.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:104
+    allowed[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+    allowed[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #366:
+0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.mutant.133.sol: 424contracts//0x1493894bf2468f08fd232c5699b1c24dd33cec18_HFTToken.sol:45
+        allowance[msg.sender][_spender] = _value;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowance[tx.origin][_spender] = _value;
+********************************************************************************
+MUTANT #367:
+0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.mutant.184.sol: 424contracts//0xecb9dac84d77a4a31264cdb2f863288a6fc44235_Crowdsale.sol:80
+            balanceOf[msg.sender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+            balanceOf[tx.origin] = 0;
+********************************************************************************
+MUTANT #368:
+0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.mutant.511.sol: 424contracts//0x41642b325a44df26357aad70f013d828f5adc52a_DEVNETCoin.sol:202
+      pendingWithdrawals[msg.sender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      pendingWithdrawals[tx.origin] = 0;
+********************************************************************************
+MUTANT #369:
+0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.mutant.168.sol: 424contracts//0x8f3f398d0087e387743cb8c9ee7c7acbe1dbb37c_TrueLogic.sol:122
+      allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #370:
+0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.mutant.291.sol: 424contracts//0x38c99e98171e70ba535eab1cfc91dcadaeb6f3e4_TOKToken.sol:222
+      allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #371:
+0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.456.sol: 424contracts//0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.sol:641
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #372:
+0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.mutant.197.sol: 424contracts//0x9cc2ffa71ab3464b11028bda8ce5fec759e4957d_AACToken.sol:180
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #373:
+0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.mutant.148.sol: 424contracts//0xe30a71938b743d126E977A2b3F7450484F209a34_DAOToken.sol:157
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
+********************************************************************************
+MUTANT #374:
+0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.mutant.253.sol: 424contracts//0x7f4C1ea56e9E4ab0B47bddc396F131074919E25f_NinjaCoinNC.sol:281
+      allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+      allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #375:
+0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.mutant.406.sol: 424contracts//0x616085c0b50e450a084a2c3871d0297cc409b38b_TokenVault.sol:339
+        allowed[msg.sender][_spender] = 0;
+ ==>  ...msg...sender...==>...tx...origin...
+        allowed[tx.origin][_spender] = 0;
+********************************************************************************
+MUTANT #376:
+0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.mutant.155.sol: 424contracts//0x6c26dab04c8f2bb07e60f205118e36850fe90981_PoWMLottery.sol:74
+        last_round_bought[msg.sender] = current_round;
+ ==>  ...msg...sender...==>...tx...origin...
+        last_round_bought[tx.origin] = current_round;

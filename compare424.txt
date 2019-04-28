@@ -973,10 +973,6 @@ DIFF:
 < revert();
 ---
 >     // assert(b > 0); // Solidity automatically throws when dividing by 0
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 securify detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.433.sol not detected by slither
 DIFF:
@@ -984,10 +980,6 @@ DIFF:
 < revert();
 ---
 >     // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 securify detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.441.sol not detected by slither
 DIFF:
@@ -995,10 +987,6 @@ DIFF:
 < revert();
 ---
 >     assert(b <= a);
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 securify detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.447.sol not detected by slither
 DIFF:
@@ -1006,10 +994,6 @@ DIFF:
 < revert();
 ---
 >     return a - b;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.123.sol not detected by slither
@@ -1018,10 +1002,6 @@ DIFF:
 <         address _newNorse    = tx.origin;
 ---
 >         address _newNorse    = msg.sender;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.139.sol not detected by slither
 DIFF:
@@ -1029,10 +1009,6 @@ DIFF:
 <             tx.origin.send(excess);
 ---
 >             msg.sender.send(excess);
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.159.sol not detected by slither
 DIFF:
@@ -1040,10 +1016,6 @@ DIFF:
 <         address _deployer = tx.origin;
 ---
 >         address _deployer = msg.sender;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.225.sol not detected by slither
 DIFF:
@@ -1051,10 +1023,6 @@ DIFF:
 <         address _caller = tx.origin;
 ---
 >         address _caller = msg.sender;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.237.sol not detected by slither
 DIFF:
@@ -1062,10 +1030,6 @@ DIFF:
 <         arrayOfClones[_caller]  = (arrayOfClones[tx.origin].div(4)).mul(3);
 ---
 >         arrayOfClones[_caller]  = (arrayOfClones[msg.sender].div(4)).mul(3);
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.268.sol not detected by slither
 DIFF:
@@ -1073,10 +1037,6 @@ DIFF:
 <         address _buyer       = tx.origin;
 ---
 >         address _buyer       = msg.sender;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.317.sol not detected by slither
 DIFF:
@@ -1084,10 +1044,6 @@ DIFF:
 <         require(marketIdeas >= 0);
 ---
 >         require(marketIdeas == 0);
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.354.sol not detected by slither
 DIFF:
@@ -1095,10 +1051,6 @@ DIFF:
 <         address _caller        = tx.origin;
 ---
 >         address _caller        = msg.sender;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.362.sol not detected by slither
 DIFF:
@@ -1106,10 +1058,6 @@ DIFF:
 <         require(arrayOfClones[_caller]>=0);
 ---
 >         require(arrayOfClones[_caller]==0);
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.380.sol not detected by slither
 DIFF:
@@ -1117,10 +1065,6 @@ DIFF:
 <         return arrayOfClones[tx.origin];
 ---
 >         return arrayOfClones[msg.sender];
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 smartcheck detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.387.sol not detected by slither
 DIFF:
@@ -1128,10 +1072,6 @@ DIFF:
 <         address _caller = tx.origin;
 ---
 >         address _caller = msg.sender;
-259c259
-<     assert(c >= a);
----
->     /*assert(c >= a);*/
 
 
 slither detects 0x3ab4a46beae2a0b025eeed54db05819814ff287a_CloneFarmFarmer.mutant.80.sol not detected by securify
@@ -5330,10 +5270,6 @@ DIFF:
 <   function _transferOwnership(address _newOwner)  {
 ---
 >   function _transferOwnership(address _newOwner) internal {
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.48.sol not detected by slither
 DIFF:
@@ -5341,10 +5277,6 @@ DIFF:
 <     /*require(_newOwner != address(0));*/
 ---
 >     require(_newOwner != address(0));
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.102.sol not detected by slither
 DIFF:
@@ -5352,10 +5284,6 @@ DIFF:
 <   function sub(uint256 _a, uint256 _b)  pure returns (uint256) {
 ---
 >   function sub(uint256 _a, uint256 _b) internal pure returns (uint256) {
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.117.sol not detected by slither
 DIFF:
@@ -5363,10 +5291,6 @@ DIFF:
 <   function add(uint256 _a, uint256 _b)  pure returns (uint256 c) {
 ---
 >   function add(uint256 _a, uint256 _b) internal pure returns (uint256 c) {
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.136.sol not detected by slither
 DIFF:
@@ -5374,10 +5298,6 @@ DIFF:
 <     /*internal*/
 ---
 >     internal
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.140.sol not detected by slither
 DIFF:
@@ -5385,10 +5305,6 @@ DIFF:
 <     /*internal*/
 ---
 >     internal
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.141.sol not detected by slither
 DIFF:
@@ -5396,10 +5312,6 @@ DIFF:
 <     /*internal*/
 ---
 >     internal
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.185.sol not detected by slither
 DIFF:
@@ -5407,10 +5319,6 @@ DIFF:
 < selfdestruct(msg.sender);
 ---
 >    */
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.187.sol not detected by slither
 DIFF:
@@ -5418,10 +5326,6 @@ DIFF:
 <     buyTokens(tx.origin);
 ---
 >     buyTokens(msg.sender);
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.188.sol not detected by slither
 DIFF:
@@ -5429,10 +5333,6 @@ DIFF:
 < selfdestruct(msg.sender);
 ---
 >     buyTokens(msg.sender);
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.189.sol not detected by slither
 DIFF:
@@ -5440,10 +5340,6 @@ DIFF:
 < revert();
 ---
 >     buyTokens(msg.sender);
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.190.sol not detected by slither
 DIFF:
@@ -5451,10 +5347,6 @@ DIFF:
 <     /*buyTokens(msg.sender);*/
 ---
 >     buyTokens(msg.sender);
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.196.sol not detected by slither
 DIFF:
@@ -5462,10 +5354,6 @@ DIFF:
 <     /*_preValidatePurchase(_beneficiary, weiAmount);*/
 ---
 >     _preValidatePurchase(_beneficiary, weiAmount);
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.229.sol not detected by slither
 DIFF:
@@ -5473,10 +5361,6 @@ DIFF:
 <     /*require(_beneficiary != address(0));*/
 ---
 >     require(_beneficiary != address(0));
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.241.sol not detected by slither
 DIFF:
@@ -5484,17 +5368,9 @@ DIFF:
 < revert();
 ---
 >     // optional override
-383c383
-<     internal
----
->     /*internal*/
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.342.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 511c511
 <     balances[tx.origin] = balances[msg.sender].sub(_value);
 ---
@@ -5502,10 +5378,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.395.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 561c561
 <     balances[_to] = 
 ---
@@ -5513,10 +5385,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.397.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 562c562
 <     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ---
@@ -5524,10 +5392,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.400.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 562c562
 < revert();
 ---
@@ -5535,10 +5399,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.401.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 562c562
 <     /*allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);*/
 ---
@@ -5546,10 +5406,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.410.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 577c577
 <     allowed[tx.origin][_spender] = _value;
 ---
@@ -5557,10 +5413,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.427.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 615c615
 <     allowed[tx.origin][_spender] = (
 ---
@@ -5568,10 +5420,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.448.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 639c639
 <       allowed[tx.origin][_spender] = 0;
 ---
@@ -5579,10 +5427,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.456.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 641c641
 <       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ---
@@ -5590,10 +5434,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.473.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 664c664
 < selfdestruct(msg.sender);
 ---
@@ -5601,10 +5441,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.474.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 664c664
 < revert();
 ---
@@ -5612,10 +5448,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.481.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 669c669
 <     require(tx.origin == owner);
 ---
@@ -5623,10 +5455,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.482.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 669c669
 < selfdestruct(msg.sender);
 ---
@@ -5634,10 +5462,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.483.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 669c669
 < revert();
 ---
@@ -5645,10 +5469,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.484.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 669c669
 <     /*require(msg.sender == owner);*/
 ---
@@ -5656,10 +5476,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.485.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 684c684
 <     /*hasMintPermission*/
 ---
@@ -5667,10 +5483,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.567.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 812c812
 <     /*internal*/
 ---
@@ -5678,10 +5490,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.572.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 821c821
 <     /*internal*/
 ---
@@ -5689,10 +5497,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.577.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 831c831
 <     /*internal*/
 ---
@@ -5700,10 +5504,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.581.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 842c842
 <     /*internal*/
 ---
@@ -5711,10 +5511,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.597.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 902c902
 <     /*internal*/
 ---
@@ -5722,10 +5518,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.604.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 914c914
 <     /*internal*/
 ---
@@ -5733,28 +5525,16 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.783.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1177d1176
 <     break;
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.791.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1178d1177
 <       break;
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.792.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1177c1177
 < selfdestruct(msg.sender);
 ---
@@ -5762,10 +5542,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.793.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1177c1177
 < revert();
 ---
@@ -5773,19 +5549,11 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.802.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1179d1178
 <       break;
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.803.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1178c1178
 < selfdestruct(msg.sender);
 ---
@@ -5793,10 +5561,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.804.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1178c1178
 < revert();
 ---
@@ -5804,10 +5568,6 @@ DIFF:
 
 securify detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.992.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1325c1325
 <       /*crowd.setBonusRates(bonusRanges, bonusValues);*/
 ---
@@ -5820,10 +5580,6 @@ DIFF:
 <     owner = tx.origin;
 ---
 >     owner = msg.sender;
-383c383
-<     internal
----
->     /*internal*/
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.19.sol not detected by slither
 DIFF:
@@ -5831,10 +5587,6 @@ DIFF:
 <     require(tx.origin == owner);
 ---
 >     require(msg.sender == owner);
-383c383
-<     internal
----
->     /*internal*/
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.187.sol not detected by slither
 ** mutant detected by both non-slither tools **
@@ -5843,10 +5595,6 @@ DIFF:
 <     buyTokens(tx.origin);
 ---
 >     buyTokens(msg.sender);
-383c383
-<     internal
----
->     /*internal*/
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.208.sol not detected by slither
 DIFF:
@@ -5854,17 +5602,9 @@ DIFF:
 <       tx.origin,
 ---
 >       msg.sender,
-383c383
-<     internal
----
->     /*internal*/
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.267.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 438c438
 <     require(block.timestamp != openingTime && block.timestamp <= closingTime);
 ---
@@ -5872,10 +5612,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.271.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 438c438
 <     require(block.timestamp >= openingTime && block.timestamp != closingTime);
 ---
@@ -5883,10 +5619,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.287.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 449c449
 <     require(_openingTime != block.timestamp);
 ---
@@ -5895,10 +5627,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.342.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 511c511
 <     balances[tx.origin] = balances[msg.sender].sub(_value);
 ---
@@ -5906,10 +5634,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.343.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 511c511
 <     balances[msg.sender] = balances[tx.origin].sub(_value);
 ---
@@ -5917,10 +5641,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.351.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 513c513
 <     emit Transfer(tx.origin, _to, _value);
 ---
@@ -5928,10 +5648,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.357.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 514c514
 < revert();
 ---
@@ -5939,10 +5655,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.358.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 514c514
 <     /*return true;*/
 ---
@@ -5951,10 +5663,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.397.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 562c562
 <     allowed[_from][tx.origin] = allowed[_from][msg.sender].sub(_value);
 ---
@@ -5962,10 +5670,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.398.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 562c562
 <     allowed[_from][msg.sender] = allowed[_from][tx.origin].sub(_value);
 ---
@@ -5973,10 +5677,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.407.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 564c564
 < revert();
 ---
@@ -5984,10 +5684,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.408.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 564c564
 <     /*return true;*/
 ---
@@ -5996,10 +5692,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.410.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 577c577
 <     allowed[tx.origin][_spender] = _value;
 ---
@@ -6007,10 +5699,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.414.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 578c578
 <     emit Approval(tx.origin, _spender, _value);
 ---
@@ -6018,10 +5706,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.420.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 579c579
 < revert();
 ---
@@ -6029,10 +5713,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.421.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 579c579
 <     /*return true;*/
 ---
@@ -6041,10 +5721,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.427.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 615c615
 <     allowed[tx.origin][_spender] = (
 ---
@@ -6052,10 +5728,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.428.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 616c616
 <       allowed[tx.origin][_spender].add(_addedValue));
 ---
@@ -6063,10 +5735,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.429.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 617c617
 <     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
 ---
@@ -6074,10 +5742,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.430.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 617c617
 <     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
 ---
@@ -6085,10 +5749,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.439.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 637c637
 <     uint256 oldValue = allowed[tx.origin][_spender];
 ---
@@ -6097,10 +5757,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.448.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 639c639
 <       allowed[tx.origin][_spender] = 0;
 ---
@@ -6109,10 +5765,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.456.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 641c641
 <       allowed[tx.origin][_spender] = oldValue.sub(_subtractedValue);
 ---
@@ -6120,10 +5772,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.460.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 643c643
 <     emit Approval(tx.origin, _spender, allowed[msg.sender][_spender]);
 ---
@@ -6131,10 +5779,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.461.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 643c643
 <     emit Approval(msg.sender, _spender, allowed[tx.origin][_spender]);
 ---
@@ -6143,10 +5787,6 @@ DIFF:
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.481.sol not detected by slither
 ** mutant detected by both non-slither tools **
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 669c669
 <     require(tx.origin == owner);
 ---
@@ -6154,10 +5794,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.615.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 968c968
 <     checkRole(tx.origin, ROLE_OPERATOR);
 ---
@@ -6165,10 +5801,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.627.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 994c994
 <     if (weiContributions[_address] >= 0) {
 ---
@@ -6176,10 +5808,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.699.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1072c1072
 <     return block.timestamp != openingTime;
 ---
@@ -6187,10 +5815,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.857.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1286c1286
 <     require(_endTime != block.timestamp);
 ---
@@ -6198,10 +5822,6 @@ DIFF:
 
 smartcheck detects 0x9cf8496d037b897103b543758bde610a02d94605_ForkRC.mutant.994.sol not detected by slither
 DIFF:
-383c383
-<     internal
----
->     /*internal*/
 1326c1326
 <       crowd.transferOwnership(tx.origin);
 ---
