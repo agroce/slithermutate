@@ -1,0 +1,4 @@
+0xb08520f896cb81f88e837f83d817e82f832b3a59_SAGAcrowdSale.mutant.11.sol
+0xb08520f896cb81f88e837f83d817e82f832b3a59_SAGAcrowdSale.mutant.70.sol
+0xb08520f896cb81f88e837f83d817e82f832b3a59_SAGAcrowdSale.mutant.20.sol
+0xb08520f896cb81f88e837f83d817e82f832b3a59_SAGAcrowdSale.mutant.93.sol
