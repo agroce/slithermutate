@@ -22,11 +22,12 @@ pgrp = os.getpgid(P.pid)
 foundFailure = False
 start = time.time()
 lastReport = 0
-INTERVAL = 10
+INTERVAL = 60
 try:
     while ((time.time() - start) < timeout) and (not foundFailure) and (P.poll() is None):
         if ((int(time.time() - start) % INTERVAL) == 0) and (lastReport != int(time.time()-start)):
-            print(int(time.time() - start), "SECONDS ELAPSED, STILL TESTING...")
+            print(int(time.time() - start), "SECONDS ELAPSED...", end=" ")
+            sys.stdout.flush()
             lastReport = int(time.time() - start)
         if os.path.exists(echidna_out):
             with open(echidna_out, 'r') as currentResults:
@@ -45,6 +46,9 @@ try:
 finally:
     os.killpg(pgrp, signal.SIGTERM)
     subprocess.call(["mv " + echidna_out + " echidna.out"], shell=True)
+
+if lastReport != 0:
+    print()
 
 if foundFailure:
     print("FAILED IN", time.time() - start, "SECONDS:")
