@@ -12,6 +12,7 @@ contract Coin {
 
     // BEGIN_TEST_CODE
     address[] echidna_balanceholders;
+    mapping (address => bool) public inserted;
     uint echidna_totalminted = 0;
     // END_TEST_CODE
 
@@ -25,7 +26,7 @@ contract Coin {
         minter = msg.sender;
 	maxSupply = 10000;
 	maxHolders = 10;
-	maxPerHolder = 10000000;
+	maxPerHolder = 1000;
     }
 
     function mint(address receiver, uint amount) public {
@@ -35,7 +36,10 @@ contract Coin {
 	// BEGIN_TEST_CODE
 	if ((echidna_totalminted + amount) < echidna_totalminted) revert();
 	echidna_totalminted += amount;
-	echidna_balanceholders.push(receiver);
+	if ((amount > 0) && !inserted[receiver]) {
+	  echidna_balanceholders.push(receiver);
+	  inserted[receiver] = true;
+	}
 	// END_TEST_CODE
         balances[receiver] += amount;
 	everMinted += amount;
@@ -46,8 +50,9 @@ contract Coin {
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
 	// BEGIN_TEST_CODE
-	if (amount > 0) {
+	if ((amount > 0) && !inserted[receiver]) {
 	  echidna_balanceholders.push(receiver);
+	  inserted[receiver] = true;	  
 	}
 	// END_TEST_CODE
         emit Sent(msg.sender, receiver, amount);
@@ -62,7 +67,7 @@ contract Coin {
 	}
 	sum += balances[echidna_balanceholders[b]];
       }
-      return sum <= echidna_totalminted;
+      return sum == echidna_totalminted;
     }
 
     function echidna_maxholders() public view returns (bool) {
