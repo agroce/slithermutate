@@ -1,0 +1,5 @@
+0xdbf6c5ae92b10981ccde4492c5b4cf522a26c903_CESCoin.mutant.157.sol
+0xdbf6c5ae92b10981ccde4492c5b4cf522a26c903_CESCoin.mutant.163.sol
+0xdbf6c5ae92b10981ccde4492c5b4cf522a26c903_CESCoin.mutant.131.sol
+0xdbf6c5ae92b10981ccde4492c5b4cf522a26c903_CESCoin.mutant.39.sol
+0xdbf6c5ae92b10981ccde4492c5b4cf522a26c903_CESCoin.mutant.215.sol

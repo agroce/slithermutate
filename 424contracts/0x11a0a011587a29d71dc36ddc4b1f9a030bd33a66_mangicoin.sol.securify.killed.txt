@@ -1,0 +1,5 @@
+0x11a0a011587a29d71dc36ddc4b1f9a030bd33a66_mangicoin.mutant.220.sol
+0x11a0a011587a29d71dc36ddc4b1f9a030bd33a66_mangicoin.mutant.37.sol
+0x11a0a011587a29d71dc36ddc4b1f9a030bd33a66_mangicoin.mutant.135.sol
+0x11a0a011587a29d71dc36ddc4b1f9a030bd33a66_mangicoin.mutant.162.sol
+0x11a0a011587a29d71dc36ddc4b1f9a030bd33a66_mangicoin.mutant.168.sol
